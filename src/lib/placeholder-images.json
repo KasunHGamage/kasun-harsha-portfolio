@@ -9,37 +9,19 @@
     {
       "id": "projectVehicleRental",
       "description": "Image for Vehicle Rental App",
-      "imageUrl": "https://images.unsplash.com/photo-1667284152849-850edc1b341e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhcHAlMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzY1NzQ2NDE1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/projects/rentalapp.png",
       "imageHint": "app interface"
     },
     {
       "id": "projectTeacherArena",
       "description": "Placeholder for TeacherArena community",
-      "imageUrl": "https://images.unsplash.com/photo-1739298061740-5ed03045b280?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjb2xsYWJvcmF0aW9uJTIwdGVhbXxlbnwwfHx8fDE3NjU4MDM5NTh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/projects/teacherarena.png",
       "imageHint": "collaboration team"
     },
     {
       "id": "projectGameCards",
       "description": "Placeholder for Game Cards e-commerce site",
-      "imageUrl": "https://images.unsplash.com/photo-1620336655174-32ccc95d0e2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx0cmFkaW5nJTIwY2FyZHN8ZW58MHx8fHwxNzY1NzgzODU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "trading cards"
-    },
-    {
-      "id": "caseStudyHeroVehicle",
-      "description": "Hero image for vehicle rental case study",
-      "imageUrl": "https://images.unsplash.com/photo-1596742578443-7682ef5251cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxzbWFydHBob25lJTIwYXBwfGVufDB8fHx8MTc2NTgwMzk1OHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "smartphone app"
-    },
-    {
-      "id": "caseStudyHeroTeacher",
-      "description": "Hero image for teacher community case study",
-      "imageUrl": "https://images.unsplash.com/photo-1716703742287-2b06c3c6d81a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8Y29sbGFib3JhdGlvbiUyMHRlYW18ZW58MHx8fHwxNzY1ODAzOTU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "collaboration team"
-    },
-    {
-      "id": "caseStudyHeroCards",
-      "description": "Hero image for game cards case study",
-      "imageUrl": "https://images.unsplash.com/photo-1620939959519-2089b4a7d529?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHx0cmFkaW5nJTIwY2FyZHN8ZW58MHx8fHwxNzY1NzgzODU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/projects/newgamgecards.png",
       "imageHint": "trading cards"
     }
   ]

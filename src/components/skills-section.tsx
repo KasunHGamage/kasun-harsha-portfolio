@@ -9,16 +9,19 @@ import { ScrollStack, ScrollStackItem } from './scroll-stack';
 export default function SkillsSection() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.5 }}
-        className="text-center mb-12"
-      >
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Skills & Tools</h2>
-        <div className="flex justify-center mt-2"><AnimatedUnderline /></div>
-      </motion.div>
+      <div className="sticky top-16 md:top-20 z-10 bg-background/80 backdrop-blur-lg -mx-4 px-4 py-4 mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Skills & Tools</h2>
+          <div className="flex justify-center mt-2"><AnimatedUnderline /></div>
+        </motion.div>
+      </div>
+
 
       <div className="relative">
         <ScrollStack>

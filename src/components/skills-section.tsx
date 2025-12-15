@@ -21,7 +21,7 @@ export default function SkillsSection() {
       </motion.div>
 
       <div className="relative">
-        <ScrollStack itemDistance={-100} className="space-y-4">
+        <ScrollStack>
           {skills.map((skill, index) => (
             <ScrollStackItem key={skill.category} index={index}>
               <Card className="bg-card/50 border-border/30 backdrop-blur-lg shadow-2xl shadow-black/20 rounded-3xl min-h-[220px]">

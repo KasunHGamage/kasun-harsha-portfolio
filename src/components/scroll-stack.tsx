@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, type MotionValue } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 type ScrollStackProps = {
@@ -32,21 +32,19 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
           const y = useTransform(
             scrollYProgress,
             [start, end],
-            [`${(index * 100)}%`, `0%`]
+            [`${(childCount - index) * 100}vh`, `0vh`]
           );
-
-          const scale = useTransform(
-            scrollYProgress,
-            [start, end],
-            [1, 1 - (childCount - index) * 0.05]
-          );
+          
+          const smoothY = useSpring(y, {
+            stiffness: 400,
+            damping: 90,
+          });
 
           return React.cloneElement(child as React.ReactElement, {
             ...child.props,
             style: {
               ...child.props.style,
-              y,
-              scale,
+              y: smoothY,
               zIndex: index,
             },
           });
@@ -60,7 +58,7 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
 type ScrollStackItemProps = {
   children: React.ReactNode;
   index: number;
-  style?: React.CSSProperties;
+  style?: React.CSSProperties & { y: MotionValue };
 };
 
 export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({ children, style }) => {

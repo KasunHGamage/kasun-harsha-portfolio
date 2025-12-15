@@ -11,13 +11,19 @@ export default function AboutSection() {
       <div className="container mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
         <ScrollReveal
           containerClassName=""
-          textClassName="text-xl md:text-2xl leading-relaxed"
+          textClassName=""
           baseOpacity={0}
           enableBlur={true}
           baseRotation={5}
           blurStrength={10}
         >
-          {textContent}
+           <GradientText
+            colors={["#9CA3AF", "#3B82F6", "#9CA3AF"]}
+            animationSpeed={7}
+            className="text-xl md:text-2xl leading-relaxed"
+          >
+            {textContent}
+          </GradientText>
         </ScrollReveal>
       </div>
     </section>

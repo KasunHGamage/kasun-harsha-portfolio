@@ -7,7 +7,7 @@ export const navLinks = [
   { name: 'Contact', href: '#contact', id: 'contact' },
 ];
 
-export const roles = ['UI/UX Designer', 'Frontend Developer'];
+export const roles = ['UI/UX Designer', 'Frontend Developer', 'Product-Focused Creator'];
 
 export const projects = [
   {

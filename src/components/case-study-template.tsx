@@ -75,13 +75,11 @@ export default function CaseStudyTemplate({ project, nextProject, prevProject }:
         </motion.div>
         <motion.div variants={itemVariants} className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden shadow-2xl shadow-black/10 mb-24">
           {heroImage && (
-            <Image
+            <img
               src={heroImage.imageUrl}
               alt={project.title}
               data-ai-hint={heroImage.imageHint}
-              fill
-              className="object-cover"
-              priority
+              className="absolute h-full w-full object-cover"
             />
           )}
         </motion.div>

@@ -36,12 +36,10 @@ export default function ProjectCard({ project }: { project: Project }) {
         <CardHeader className="p-0">
           {projectImage && (
             <div className="aspect-[4/3] relative overflow-hidden">
-                <Image
+                <img
                   src={projectImage.imageUrl}
                   alt={project.title}
                   data-ai-hint={projectImage.imageHint}
-                  width={600}
-                  height={450}
                   className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                 />
             </div>

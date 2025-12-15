@@ -25,6 +25,9 @@ export default function RootLayout({
         <link rel="canonical" href={siteUrl} />
         <meta name="robots" content="index, follow" />
 
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.jpg" />
+
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />

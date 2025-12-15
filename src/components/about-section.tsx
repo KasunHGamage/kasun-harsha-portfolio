@@ -15,7 +15,7 @@ export default function AboutSection() {
                 baseRotation={5}
                 blurStrength={10}
             >
-                I design and develop user-focused digital experiences. From intuitive UI/UX design to modern WordPress development, I create clean, scalable, and high-performing websites.
+                I design and build user-focused digital experiences — combining thoughtful UI/UX design with modern development to create fast, intuitive, and scalable products.
             </ScrollReveal>
         </div>
     </Section>

@@ -33,7 +33,7 @@ export type CaseStudy = {
       title: 'Rent Hub - Vehicle Rental App',
       shortDescription: 'A centralized mobile marketplace connecting verified vehicle rental companies with travelers, focusing on trust, transparency, and a chat-first user experience tailored for the Sri Lankan market.',
       techStack: ['React Native', 'MongoDB', 'Product Design'],
-      heroImage: 'caseStudyHeroVehicle',
+      heroImage: 'projectVehicleRental',
       overview: {
         problem: 'In Sri Lanka, the vehicle rental market is highly fragmented. Renters currently rely on unorganized Facebook groups, classified ads (ikman.lk), or word-of-mouth. This leads to anxiety regarding scams, hidden fees (excess mileage charges), and vehicle condition. Rental Companies (SMEs) struggle with visibility and managing bookings manually via phone calls and WhatsApp, leading to double bookings and lost revenue.',
         goals: [
@@ -64,7 +64,7 @@ export type CaseStudy = {
         title: 'TeacherArena Community Platform',
         shortDescription: 'An online platform designed to empower teachers by providing a space to connect, share valuable resources, and foster professional growth.',
         techStack: ['Next.js', 'Tailwind CSS', 'Supabase', 'Community Building'],
-        heroImage: 'caseStudyHeroTeacher',
+        heroImage: 'projectTeacherArena',
         overview: {
           problem: 'Teachers often work in isolation and lack a dedicated, modern platform for collaboration and resource sharing. Existing solutions were outdated, difficult to navigate, or not tailored to their specific needs.',
           goals: [
@@ -96,7 +96,7 @@ export type CaseStudy = {
         title: 'New Game Cards E-commerce',
         shortDescription: 'A unique e-commerce experience for trading card enthusiasts, featuring an engaging, card-centric UI and smooth, animated interactions.',
         techStack: ['React', 'Framer Motion', 'Stripe', 'E-commerce'],
-        heroImage: 'caseStudyHeroCards',
+        heroImage: 'projectGameCards',
         overview: {
           problem: 'Most e-commerce websites for collectibles are generic and fail to capture the excitement of the hobby. The user experience is often transactional and lacks the fun of discovery and collection.',
           goals: [

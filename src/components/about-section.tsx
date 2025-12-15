@@ -51,7 +51,7 @@ export default function AboutSection() {
         </motion.div>
 
         <motion.p 
-          className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-foreground/80"
+          className="mt-6 max-w-2xl mx-auto text-xl leading-9 text-foreground/80"
           variants={itemVariants}
         >
           I'm a passionate UI/UX Designer and Frontend Developer dedicated to creating intuitive, beautiful, and user-centered digital experiences. With a strong foundation in both design principles and modern frontend technologies, I bridge the gap between creative vision and technical execution. My workflow is heavily centered around Figma for design and prototyping, which I then bring to life with clean, efficient, and responsive code.

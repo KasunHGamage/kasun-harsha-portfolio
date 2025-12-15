@@ -4,11 +4,11 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 type Project = {
   title: string;
@@ -32,7 +32,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <motion.div variants={itemVariants} className="h-full group">
-      <Card className="flex flex-col h-full overflow-hidden transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 rounded-2xl">
+      <Card className="flex flex-col h-full overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1 rounded-2xl">
         <CardHeader className="p-0">
           {projectImage && (
             <div className="aspect-[4/3] relative overflow-hidden">
@@ -57,9 +57,10 @@ export default function ProjectCard({ project }: { project: Project }) {
           </div>
         </CardContent>
         <CardFooter className="p-6 pt-0">
-          <Button variant="outline" className={cn("w-full group/button", "rounded-full")}>
-            View Case Study <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover/button:translate-x-1" />
-          </Button>
+           <Link href={project.caseStudyUrl} className="group/link inline-flex items-center text-primary font-medium">
+              View Case Study
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+           </Link>
         </CardFooter>
       </Card>
     </motion.div>

@@ -30,17 +30,23 @@ export default function WorkSection() {
         <div className="mt-4 inline-block"><AnimatedUnderline /></div>
       </motion.div>
       
-      <motion.div 
-        className="mt-16 grid grid-cols-1 gap-y-12 gap-x-8 md:grid-cols-2 lg:grid-cols-3"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
-        ))}
-      </motion.div>
+      <div className="relative mt-16">
+        <div className="absolute top-0 bottom-0 left-0 w-8 bg-gradient-to-r from-secondary to-transparent z-10 pointer-events-none -ml-4" />
+        <motion.div 
+          className="flex overflow-x-auto pb-8 space-x-8 no-scrollbar -mx-4 px-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          {projects.map((project, index) => (
+            <div key={index} className="flex-shrink-0 w-[380px]">
+              <ProjectCard project={project} />
+            </div>
+          ))}
+        </motion.div>
+        <div className="absolute top-0 bottom-0 right-0 w-8 bg-gradient-to-l from-secondary to-transparent z-10 pointer-events-none -mr-4" />
+      </div>
     </div>
   );
 }

@@ -7,7 +7,7 @@
   display: inline-block;
   font-size: clamp(1.6rem, 4vw, 3rem);
   line-height: 1.5;
-  font-weight: 600;
+  font-weight: 700;
   color: hsl(var(--foreground) / 0.8);
 }
 

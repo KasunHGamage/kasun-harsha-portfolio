@@ -40,7 +40,7 @@ export default function HeroSection() {
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={roles[index]}
-                    className="absolute inset-0 flex items-center justify-center lg:justify-start bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent text-3xl sm:text-4xl md:text-5xl"
+                    className="absolute inset-0 flex items-center justify-center lg:justify-start bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent font-extrabold text-3xl sm:text-4xl md:text-5xl"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}

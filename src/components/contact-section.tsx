@@ -65,7 +65,7 @@ export default function ContactSection() {
 
   return (
     <motion.div
-      className="container mx-auto max-w-2xl px-4 sm:px-6 lg:px-8"
+      className="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
@@ -113,7 +113,7 @@ export default function ContactSection() {
               render={({ field }) => (
                 <FormItem className="floating-label-container">
                   <FormControl>
-                    <Textarea {...field} className={cn("peer min-h-[160px]", "floating-label-input")} />
+                    <Textarea {...field} className={cn("peer min-h-[220px]", "floating-label-input")} />
                   </FormControl>
                   <FormLabel className="floating-label">Message</FormLabel>
                   <FormMessage />
@@ -121,7 +121,7 @@ export default function ContactSection() {
               )}
             />
             <div className="text-center pt-4">
-              <Button type="submit" variant="primary-apple" size="lg" disabled={isSubmitting || isSuccess} className="h-[52px] px-8">
+              <Button type="submit" variant="primary-apple" size="lg" disabled={isSubmitting || isSuccess} className="h-[60px] px-10 text-lg">
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-5 w-5 animate-spin" />

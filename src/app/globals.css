@@ -52,7 +52,7 @@
   }
 
   .floating-label-input {
-    @apply h-14 pt-4; /* Taller input for label room */
+    @apply h-16 pt-6; /* Taller input for label room */
   }
 
   .floating-label-input::placeholder {
@@ -62,8 +62,8 @@
   .floating-label {
     @apply absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all duration-200 ease-in-out pointer-events-none;
     @apply peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base;
-    @apply peer-focus:top-3 peer-focus:text-xs peer-focus:text-primary;
-    @apply peer-[:not(:placeholder-shown)]:top-3 peer-[:not(:placeholder-shown)]:text-xs;
+    @apply peer-focus:top-4 peer-focus:text-xs peer-focus:text-primary;
+    @apply peer-[:not(:placeholder-shown)]:top-4 peer-[:not(:placeholder-shown)]:text-xs;
   }
 }
 

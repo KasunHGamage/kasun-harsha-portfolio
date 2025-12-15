@@ -16,7 +16,6 @@ export default function HeroSection() {
       setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
     }, 2500);
 
-    // Cleanup the interval on component unmount
     return () => clearInterval(timer);
   }, []);
 

@@ -28,34 +28,34 @@ export type CaseStudy = {
   
   export const caseStudies: CaseStudy[] = [
     {
-      slug: 'vehicle-rental-app',
-      title: 'LankaRent - Vehicle Rental App',
+      slug: 'rent-hub',
+      title: 'Rent Hub - Vehicle Rental App',
       shortDescription: 'A centralized mobile marketplace connecting verified vehicle rental companies with travelers, focusing on trust, transparency, and a chat-first user experience tailored for the Sri Lankan market.',
       techStack: ['React Native', 'MongoDB', 'Product Design'],
       heroImage: 'caseStudyHeroVehicle',
       overview: {
-        problem: 'In Sri Lanka, the vehicle rental market is highly fragmented, relying on unorganized Facebook groups and classified ads. This creates anxiety for renters due to potential scams and hidden fees, while rental SMEs struggle with manual booking management, leading to lost revenue.',
+        problem: 'In Sri Lanka, the vehicle rental market is highly fragmented. Renters currently rely on unorganized Facebook groups, classified ads (ikman.lk), or word-of-mouth. This leads to anxiety regarding scams, hidden fees (excess mileage charges), and vehicle condition. Rental Companies (SMEs) struggle with visibility and managing bookings manually via phone calls and WhatsApp, leading to double bookings and lost revenue.',
         goals: [
-          'Trust: Implement identity verification for both renters and hosts.',
-          'Clarity: Provide upfront pricing, including mileage limits and excess charges.',
-          'Flexibility: A "Chat-First" approach allowing users to negotiate and confirm details before payment.'
+          'Trust: Identity verification for both renters and hosts.',
+          'Clarity: Upfront pricing including mileage limits and excess charges.',
+          'Flexibility: A "Chat-First" approach allowing users to negotiate pickup points and payment methods (Cash/Transfer) familiar to the local market.'
         ],
         role: 'Product Designer & Full Stack Developer',
       },
       process: {
         research: 'User research identified the primary pain points: lack of trust, unclear pricing, and a cultural preference for negotiation. Renters feared getting "lemon" cars, while hosts wasted time on non-converting inquiries. This highlighted the need for a solution that balanced modern convenience with local market behaviors.',
-        uxStrategy: 'The core strategy was a "Chat-First" workflow. Instead of forcing immediate online payment, which has high drop-off rates in Sri Lanka, the app uses a Request -> Accept -> Chat flow. This builds trust and allows for negotiation, mirroring real-world interactions and increasing conversion.',
-        designDecisions: 'To encourage supply, a "Switch Role" feature was designed, allowing any user to toggle between a renter and a host interface within the same app. This dual-mode approach reduces friction for casual hosts. The UI also features a modern "floating island" navigation bar to differentiate it from standard apps.',
+        uxStrategy: 'Instead of forcing an immediate credit card payment (which causes drop-offs in Sri Lanka), I implemented a Request -> Accept -> Chat flow. Why? Sri Lankans prefer to speak with the owner to confirm details before paying. How: The booking button initiates a request. Once accepted by the host, a chat channel opens for negotiation and offline payment proof.',
+        designDecisions: 'To encourage supply (more cars), I designed a "Switch Role" feature within the single app. A toggle in the profile settings transforms the entire UI from a "Shopping" interface (Customer) to a "Dashboard" interface (Company). This reduces friction for users who might want to rent out their own vehicle occasionally. To differentiate from legacy apps, I moved away from the standard edge-to-edge bottom bar. A pill-shaped navigation bar floating 30px from the bottom with drop shadows. The active tab uses a highlight color and distinct icon style (Outline vs. Filled) for immediate state recognition.',
       },
       designAndDevelopment: {
-        uiApproach: 'The UI was designed with a clean, trust-centric aesthetic. A native system font was used for readability, with a clear visual hierarchy. Key information like mileage limits and "Verified" badges are prominently displayed to address user anxieties. The color palette uses professional blues and reassuring greens to build credibility.',
-        developmentHighlights: 'The home screen features horizontal scrollable category chips for instant filtering. The profile screen emphasizes a "Verified Renter" badge. For hosts, a high-contrast dashboard shows key stats like earnings and pending requests at-a-glance, with immediate action buttons to minimize clicks.',
+        uiApproach: 'The UI was designed with a clean, trust-centric aesthetic. Font: System Sans-Serif (San Francisco/Roboto) for native readability. Hierarchy: Heavy use of Bold headers for prices and vehicle titles to scan quickly. Color Palette: Primary Blue (#2563EB) represents trust and professionalism. Status Green (#059669) for "Verified" badges. Warning Amber (#D97706) for "Pending" statuses. Background (#F3F4F6) to reduce eye strain.',
+        developmentHighlights: 'The home screen features horizontal scrollable category chips (Car, Bike, Van) allow users to filter instantly without deep menus. Cards show "Mileage Limits" upfront, addressing a major user anxiety about hidden costs. The profile has a prominent "Verified Renter" badge with a green checkmark instantly signals credibility to hosts. For hosts, a high-contrast dashboard shows key stats like earnings and pending requests at-a-glance, with immediate action buttons to minimize clicks.',
         responsiveness: 'As a mobile-first application for both iOS and Android, the design was rigorously tested across a wide range of screen sizes and aspect ratios. The "floating island" navigation and card-based layouts adapt fluidly, ensuring a consistent and optimal experience on any device.',
       },
       outcome: {
         results: 'The MVP design demonstrates a user-centered approach that tackles specific local market challenges. The "Chat-First" workflow was validated through user testing as a key differentiator that significantly increased user comfort and the likelihood of a completed booking.',
         learnings: 'The project underscored that a successful digital product in an emerging market requires deep cultural adaptation, not just translation. Technical solutions must be tailored to solve local problems, like the preference for cash transactions and direct communication, to gain user trust and adoption.',
-        finalThoughts: 'The next phase includes integrating a local payment gateway (PayHere/Stripe) to secure bookings after chat confirmation, followed by AI-powered pricing suggestions for hosts. This case study showcases a blend of thoughtful UX strategy and practical full-stack development.',
+        finalThoughts: 'Phase 2 includes integration of a Payment Gateway (PayHere/Stripe) for automated booking security. Phase 3 involves AI-powered pricing suggestions for hosts based on demand spikes (holidays/weekends). This case study demonstrates a user-centered design approach, tackling specific local market challenges with tailored technical solutions.',
       },
     },
     {

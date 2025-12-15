@@ -53,10 +53,11 @@ export default function HeroSection() {
         </motion.p>
         
         <motion.h1 
-          className="my-8 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl"
+          className="my-8 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl flex flex-col items-center"
           variants={itemVariants}
         >
-          User-focused design and development for the modern web.
+          <span className="text-primary">User-focused design</span>
+          <span className="text-foreground/80">and development for the modern web.</span>
         </motion.h1>
 
         

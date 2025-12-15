@@ -1,3 +1,4 @@
+
 export type CaseStudy = {
     slug: string;
     title: string;
@@ -124,3 +125,5 @@ export type CaseStudy = {
       }
   ];
   
+
+    

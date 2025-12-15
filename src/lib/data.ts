@@ -24,7 +24,7 @@ export const projects = [
     tech: ['Next.js', 'Tailwind CSS', 'Supabase'],
     image: 'projectTeacherArena',
     caseStudyUrl: '/work/teacher-arena-community',
-    liveUrl: '#',
+    liveUrl: 'https://teacherarena.com/',
   },
   {
     title: 'New Game Cards E-commerce',

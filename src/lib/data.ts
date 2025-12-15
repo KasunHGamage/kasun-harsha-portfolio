@@ -52,6 +52,6 @@ export const skills = [
 ];
 
 export const socialLinks = [
-    { name: 'LinkedIn', url: '#' },
+    { name: 'LinkedIn', url: 'https://lk.linkedin.com/in/kasun-harsha-gamage-062721248' },
     { name: 'GitHub', url: '#' },
 ];

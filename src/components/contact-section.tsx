@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { Check, Loader2 } from 'lucide-react';
+import { Check, Loader2, ArrowRight } from 'lucide-react';
 
 import { Button } from "@/components/ui/button";
 import {
@@ -20,6 +20,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import { socialLinks } from '@/lib/data';
 
 
 const formSchema = z.object({
@@ -38,6 +40,7 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const { toast } = useToast();
+  const linkedInUrl = socialLinks.find(link => link.name === 'LinkedIn')?.url || '#';
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -139,6 +142,12 @@ export default function ContactSection() {
             </div>
           </form>
         </Form>
+        <div className="mt-12 text-center">
+          <Link href={linkedInUrl} target="_blank" rel="noopener noreferrer" className="group/link inline-flex items-center text-muted-foreground font-medium hover:text-primary transition-colors">
+              Connect on LinkedIn
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+          </Link>
+        </div>
       </div>
     </motion.div>
   );

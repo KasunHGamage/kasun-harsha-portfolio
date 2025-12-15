@@ -3,12 +3,13 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
-import { navLinks } from '@/lib/data';
+import { Menu, X, Linkedin } from 'lucide-react';
+import { navLinks, socialLinks } from '@/lib/data';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { useScrollSpy } from '@/hooks/use-scroll-spy';
 import { cn } from '@/lib/utils';
+import { Separator } from '@/components/ui/separator';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,11 +67,25 @@ export default function Header() {
             </Link>
           </div>
           
-          <nav className="hidden md:block">
-            <ul className="flex items-baseline space-x-2">
-              {navItems}
-            </ul>
-          </nav>
+          <div className="flex items-center space-x-2">
+            <nav className="hidden md:block">
+              <ul className="flex items-baseline space-x-2">
+                {navItems}
+              </ul>
+            </nav>
+            <div className="hidden md:flex items-center space-x-2">
+              <Separator orientation="vertical" className="h-6" />
+              {socialLinks.map((link) => (
+                <Link key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="icon">
+                    {link.name === 'LinkedIn' ? <Linkedin className="h-5 w-5 text-foreground/60 hover:text-foreground transition-colors" /> : null}
+                    <span className="sr-only">{link.name}</span>
+                  </Button>
+                </Link>
+              ))}
+            </div>
+          </div>
+
 
           <div className="md:hidden">
             <Sheet>
@@ -80,7 +95,7 @@ export default function Header() {
                   <span className="sr-only">Open main menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-full max-w-xs bg-background">
+              <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
                 <div className="flex flex-col h-full">
                   <div className="flex justify-between items-center p-4 border-b">
                      <span className="text-lg font-bold">Menu</span>
@@ -103,6 +118,18 @@ export default function Header() {
                       ))}
                     </ul>
                   </nav>
+                  <div className="p-4 border-t">
+                    <div className="flex justify-start space-x-2">
+                      {socialLinks.map((link) => (
+                        <Link key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
+                          <Button variant="ghost" size="icon">
+                            {link.name === 'LinkedIn' ? <Linkedin className="h-5 w-5" /> : null}
+                            <span className="sr-only">{link.name}</span>
+                          </Button>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>

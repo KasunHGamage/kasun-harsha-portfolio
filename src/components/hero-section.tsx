@@ -26,7 +26,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.7,
-      ease: 'easeOut',
+      ease: [0.6, 0.05, 0.01, 0.9],
     },
   },
 };
@@ -35,7 +35,7 @@ export default function HeroSection() {
   return (
     <Section
       id="home"
-      className="relative flex min-h-screen items-center justify-center text-center overflow-hidden bg-background text-foreground"
+      className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center text-center overflow-hidden bg-background text-foreground"
     >
       <motion.div
         className="container mx-auto px-4 max-w-4xl"
@@ -43,6 +43,13 @@ export default function HeroSection() {
         initial="hidden"
         animate="visible"
       >
+        <motion.p
+          className="text-lg font-medium text-muted-foreground/80 md:text-xl"
+          variants={itemVariants}
+        >
+          UI/UX Designer · Frontend Developer · WordPress Specialist
+        </motion.p>
+        
         <motion.h1 
           className="mt-2 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl"
           variants={itemVariants}
@@ -50,25 +57,19 @@ export default function HeroSection() {
           User-focused design and development for the modern web.
         </motion.h1>
 
-        <motion.p
-          className="mt-4 text-lg font-medium text-foreground/60 md:text-xl"
-          variants={itemVariants}
-        >
-          UI/UX Designer · Frontend Developer · WordPress Specialist
-        </motion.p>
         
         <motion.div
           className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
           variants={itemVariants}
         >
           <Link href="#work">
-            <Button size="lg" className="group">
+            <Button variant="primary-apple" size="lg" className="group">
               View My Work
-              <ArrowRight className="ml-2 transition-transform duration-200 group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Button>
           </Link>
           <Link href="#contact">
-            <Button size="lg" variant="outline" className="border-border">
+            <Button variant="secondary-apple" size="lg">
               Get In Touch
             </Button>
           </Link>

@@ -12,7 +12,9 @@ export default function Home() {
     <div className="flex min-h-screen flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <HeroSection />
+        <div className="pt-16">
+          <HeroSection />
+        </div>
         <AboutSection />
         <Section id="work" className="bg-secondary">
           <WorkSection />

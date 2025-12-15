@@ -69,7 +69,7 @@ export default function HeroSection() {
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         {/* Name */}
-        <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl md:text-8xl">
+        <h1 className="text-4xl font-extrabold tracking-tight sm:text-6xl md:text-7xl">
           Kasun Harsha
         </h1>
 

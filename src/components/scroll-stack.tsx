@@ -29,21 +29,28 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
           const start = index / childCount;
           const end = (index + 1) / childCount;
 
+          const isFirst = index === 0;
+
+          const scale = useTransform(
+            scrollYProgress,
+            [start, end],
+            [isFirst ? 1 : 1 - (childCount - index) * 0.05, 1]
+          );
+
           const y = useTransform(
             scrollYProgress,
             [start, end],
-            [`${(childCount - index) * 100}vh`, `0vh`]
+            [isFirst ? 0 : (childCount - index) * 20, 0]
           );
-          
-          const smoothY = useSpring(y, {
-            stiffness: 400,
-            damping: 90,
-          });
+
+          const smoothScale = useSpring(scale, { stiffness: 400, damping: 90 });
+          const smoothY = useSpring(y, { stiffness: 400, damping: 90 });
 
           return React.cloneElement(child as React.ReactElement, {
             ...child.props,
             style: {
               ...child.props.style,
+              scale: smoothScale,
               y: smoothY,
               zIndex: index,
             },
@@ -58,7 +65,7 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
 type ScrollStackItemProps = {
   children: React.ReactNode;
   index: number;
-  style?: React.CSSProperties & { y: MotionValue };
+  style?: React.CSSProperties & { scale: MotionValue, y: MotionValue };
 };
 
 export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({ children, style }) => {

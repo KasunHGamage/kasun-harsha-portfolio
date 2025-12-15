@@ -15,7 +15,9 @@ export default function AboutSection() {
                 baseRotation={5}
                 blurStrength={10}
             >
-                {`I design and build user-focused digital experiences — combining thoughtful UI/UX design with modern development to create fast, intuitive, and scalable products. Every decision is guided by simplicity, usability, and attention to detail.`}
+                {`I design and build user-focused digital experiences by blending thoughtful UI/UX design with modern web development.
+
+My approach is centered on creating fast, intuitive, and scalable products that solve real user problems. Every decision I make is guided by simplicity, usability, and attention to detail—ensuring each interface feels natural, purposeful, and easy to use.`}
             </ScrollReveal>
         </div>
     </Section>

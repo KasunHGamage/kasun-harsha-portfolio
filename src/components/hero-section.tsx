@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Section } from './section';
+import ScrollIndicator from './scroll-indicator';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -108,6 +109,7 @@ export default function HeroSection() {
           </Link>
         </motion.div>
       </motion.div>
+      <ScrollIndicator />
     </Section>
   );
 }

@@ -23,58 +23,57 @@ export default function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-background py-20 md:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <div className="text-center lg:text-left">
-            <motion.div
-              className="flex flex-col"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+          <motion.div
+            className="flex flex-col items-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h1 
+              className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl"
             >
-              <h1 
-                className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl"
-              >
-                Kasun Harsha
-              </h1>
-              <div className="relative mt-2 h-16 sm:h-20">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={roles[index]}
-                    className="absolute inset-0 flex items-center justify-center lg:justify-start bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent font-extrabold text-3xl sm:text-4xl md:text-5xl"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {roles[index]}
-                  </motion.span>
-                </AnimatePresence>
-              </div>
-            </motion.div>
-            <motion.p 
-              className="mx-auto mt-6 max-w-md text-lg text-foreground/80 md:text-xl lg:mx-0"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              A creative mind focused on user-centered design and modern frontend engineering to build beautiful, functional, and engaging digital products.
-            </motion.p>
-            <motion.div 
-              className="mt-10 flex justify-center gap-4 lg:justify-start"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <Link href="#work" passHref>
-                <Button size="lg">View My Work</Button>
-              </Link>
-              <Link href="#contact" passHref>
-                <Button size="lg" variant="outline">Get In Touch</Button>
-              </Link>
-            </motion.div>
-          </div>
+              Kasun Harsha
+            </h1>
+            <div className="relative mt-2 h-12 sm:h-14 md:h-16">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={roles[index]}
+                  className="absolute inset-0 flex items-center justify-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent font-semibold text-2xl sm:text-3xl md:text-4xl"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {roles[index]}
+                </motion.span>
+              </AnimatePresence>
+            </div>
+          </motion.div>
+          <motion.p 
+            className="mt-6 max-w-xl text-lg text-foreground/80 md:text-xl"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            A creative mind focused on user-centered design and modern frontend engineering to build beautiful, functional, and engaging digital products.
+          </motion.p>
           <motion.div 
-            className="relative"
+            className="mt-10 flex flex-col sm:flex-row justify-center gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <Link href="#work" passHref>
+              <Button size="lg" className="w-full sm:w-auto">View My Work</Button>
+            </Link>
+            <Link href="#contact" passHref>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto">Get In Touch</Button>
+            </Link>
+          </motion.div>
+
+          <motion.div 
+            className="relative mt-20 w-full max-w-md"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3 }}

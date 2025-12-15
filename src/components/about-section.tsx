@@ -39,19 +39,19 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-24 sm:py-32 bg-card">
       <motion.div 
-        className="container mx-auto px-4 sm:px-6 lg:px-8"
+        className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={containerVariants}
       >
-        <motion.div variants={itemVariants}>
+        <motion.div variants={itemVariants} className="flex flex-col items-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">About Me</h2>
           <AnimatedUnderline />
         </motion.div>
 
         <motion.p 
-          className="mt-6 max-w-3xl text-lg leading-8 text-foreground/80"
+          className="mt-6 max-w-2xl mx-auto text-lg leading-8 text-foreground/80"
           variants={itemVariants}
         >
           I'm a passionate UI/UX Designer and Frontend Developer dedicated to creating intuitive, beautiful, and user-centered digital experiences. With a strong foundation in both design principles and modern frontend technologies, I bridge the gap between creative vision and technical execution. My workflow is heavily centered around Figma for design and prototyping, which I then bring to life with clean, efficient, and responsive code.
@@ -65,7 +65,7 @@ export default function AboutSection() {
             My Go-To Technologies
           </motion.h3>
           <motion.div 
-            className="mt-4 flex flex-wrap gap-2"
+            className="mt-4 flex flex-wrap gap-2 justify-center"
             variants={containerVariants}
           >
             {techBadges.map((tech) => (

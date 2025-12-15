@@ -49,7 +49,7 @@ export default function HeroSection() {
           className="text-base font-medium text-muted-foreground/70 md:text-lg mb-6"
           variants={itemVariants}
         >
-          UI/UX Designer · Frontend Developer · WordPress Specialist
+          UI/UX Designer in Sri Lanka · Frontend Development · Scalable Web Experiences
         </motion.p>
         
         <motion.h1 

@@ -2,13 +2,12 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Linkedin } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import { Section } from './section';
 import ScrollIndicator from './scroll-indicator';
 import { socialLinks } from '@/lib/data';
-import GradientText from './gradient-text';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -57,13 +56,9 @@ export default function HeroSection() {
           className="my-8 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl flex flex-col items-center"
           variants={itemVariants}
         >
-          <GradientText
-            colors={["#9CA3AF", "#3B82F6", "#9CA3AF"]}
-            animationSpeed={7}
-            className="text-center"
-          >
+          <span className="text-center">
             User-focused design <br /> and development for the modern web.
-          </GradientText>
+          </span>
         </motion.h1>
 
         

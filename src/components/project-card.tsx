@@ -6,9 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Badge } from '@/components/ui/badge';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { Button } from './ui/button';
 
 type Project = {
   title: string;
@@ -16,6 +17,7 @@ type Project = {
   tech: string[];
   image: string;
   caseStudyUrl: string;
+  liveUrl?: string;
 };
 
 const itemVariants = {
@@ -56,11 +58,17 @@ export default function ProjectCard({ project }: { project: Project }) {
             ))}
           </div>
         </CardContent>
-        <CardFooter className="p-6 pt-0">
+        <CardFooter className="p-6 pt-0 flex-wrap gap-4">
            <Link href={project.caseStudyUrl} className="group/link inline-flex items-center text-primary font-medium">
               View Case Study
               <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
            </Link>
+           {project.liveUrl && project.liveUrl !== '#' && (
+            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="group/link inline-flex items-center text-muted-foreground font-medium hover:text-primary transition-colors">
+              View Live Site
+              <ExternalLink className="ml-2 h-4 w-4" />
+            </Link>
+           )}
         </CardFooter>
       </Card>
     </motion.div>

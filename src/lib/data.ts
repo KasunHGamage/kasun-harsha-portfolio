@@ -13,9 +13,10 @@ export const projects = [
   {
     title: 'Rent Hub - Vehicle Rental App',
     description: 'A sleek mobile app for vehicle rentals, focused on a seamless user experience.',
-    tech: ['React Native', 'MongoDB', 'Product Design'],
+    tech: ['Figma', 'React Native', 'MongoDB'],
     image: 'projectVehicleRental',
     caseStudyUrl: '/work/rent-hub',
+    liveUrl: '#',
   },
   {
     title: 'TeacherArena Community',
@@ -23,6 +24,7 @@ export const projects = [
     tech: ['Next.js', 'Tailwind CSS', 'Supabase'],
     image: 'projectTeacherArena',
     caseStudyUrl: '/work/teacher-arena-community',
+    liveUrl: '#',
   },
   {
     title: 'New Game Cards E-commerce',
@@ -30,6 +32,7 @@ export const projects = [
     tech: ['React', 'Framer Motion', 'Stripe'],
     image: 'projectGameCards',
     caseStudyUrl: '/work/new-game-cards-ecommerce',
+    liveUrl: '#',
   },
 ];
 

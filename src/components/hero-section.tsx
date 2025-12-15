@@ -32,7 +32,7 @@ export default function HeroSection() {
               transition={{ duration: 0.5 }}
             >
               <span className="block">Kasun Harsha</span>
-              <div className="relative mt-2 h-12 sm:h-14 md:h-16">
+              <div className="relative mt-2 h-16 sm:h-20 md:h-24">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={roles[index]}

@@ -9,14 +9,14 @@
     {
       "id": "projectVehicleRental",
       "description": "Placeholder for Vehicle Rental App",
-      "imageUrl": "https://images.unsplash.com/photo-1542641728-6ca359b085f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxtb2JpbGUlMjBhcHB8ZW58MHx8fHwxNzY1Njg4MTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "mobile app"
+      "imageUrl": "https://images.unsplash.com/photo-1582455328909-044738a16616?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhcHAlMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzY1ODkyMTkyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "app interface"
     },
     {
       "id": "projectTeacherArena",
       "description": "Placeholder for TeacherArena community",
-      "imageUrl": "https://images.unsplash.com/photo-1569292567777-e5d61a759322?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21tdW5pdHklMjBwZW9wbGV8ZW58MHx8fHwxNzY1NzI2ODM2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "community people"
+      "imageUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb2xsYWJvcmF0aW9ufGVufDB8fHx8MTc2NTg5MjI0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "collaboration team"
     },
     {
       "id": "projectGameCards",
@@ -27,20 +27,20 @@
     {
       "id": "caseStudyHeroVehicle",
       "description": "Hero image for vehicle rental case study",
-      "imageUrl": "https://images.unsplash.com/photo-1585014165903-6d6c6ebad3e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjYXIlMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzY1NzAyODE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "car dashboard"
+      "imageUrl": "https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbWFydHBob25lJTIwYXBwfGVufDB8fHx8MTc2NTg5MjMyMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "smartphone app"
     },
     {
       "id": "caseStudyHeroTeacher",
       "description": "Hero image for teacher community case study",
-      "imageUrl": "https://images.unsplash.com/photo-1588702547954-4800ead296ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvbmxpbmUlMjBsZWFybmluZ3xlbnwwfHx8fDE3NjU3MjUxNTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "online learning"
+      "imageUrl": "https://images.unsplash.com/photo-1543269865-cbf427effbad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMGdyb3VwfGVufDB8fHx8MTc2NTg5MjM1OHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "students group"
     },
     {
       "id": "caseStudyHeroCards",
       "description": "Hero image for game cards case study",
-      "imageUrl": "https://images.unsplash.com/photo-1531415505195-40f140d44392?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGxheWluZyUyMGNhcmRzfGVufDB8fHx8MTc2NTc2Njc5MHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "playing cards"
+      "imageUrl": "https://images.unsplash.com/photo-1563941453255-f149a45b95ab?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtYWdpYyUyMGdhbWV8ZW58MHx8fHwxNzY1ODkyMzk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "magic game"
     }
   ]
 }

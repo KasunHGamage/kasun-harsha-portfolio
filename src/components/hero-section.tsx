@@ -1,30 +1,52 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
-import { roles } from "@/lib/data";
-import { Button } from "@/components/ui/button";
-import { Section } from "./section";
+import { roles } from '@/lib/data';
+import { Button } from '@/components/ui/button';
+import { Section } from './section';
+
+const AnimatedRole = ({
+  role,
+  index,
+  progress,
+  range,
+}: {
+  role: string;
+  index: number;
+  progress: any;
+  range: [number, number];
+}) => {
+  const opacity = useTransform(progress, range, [0, 1]);
+  const y = useTransform(progress, range, [30, 0]);
+
+  return (
+    <motion.p
+      style={{ opacity, y }}
+      className="absolute inset-0 bg-gradient-to-r from-primary to-accent bg-clip-text text-2xl font-semibold text-transparent sm:text-3xl md:text-4xl"
+    >
+      {role}
+    </motion.p>
+  );
+};
 
 export default function HeroSection() {
-  const [index, setIndex] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end start'],
+  });
 
-  useEffect(() => {
-    if (!roles || roles.length <= 1) return;
-
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % roles.length);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, []);
+  const numRoles = roles.length;
+  const step = 1 / numRoles;
 
   return (
     <Section
       id="home"
+      ref={containerRef}
       className="relative flex min-h-screen items-center justify-center text-center"
     >
       {/* Background glows */}
@@ -35,7 +57,7 @@ export default function HeroSection() {
           transition={{
             duration: 30,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: 'easeInOut',
           }}
         />
       </div>
@@ -44,27 +66,28 @@ export default function HeroSection() {
         className="container mx-auto px-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
       >
         {/* Name */}
         <h1 className="text-5xl font-extrabold tracking-tight sm:text-7xl md:text-8xl">
           Kasun Harsha
         </h1>
 
-        {/* Rotating role */}
+        {/* Scrolling role */}
         <div className="relative mt-4 flex h-12 items-center justify-center overflow-hidden sm:h-16">
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={`${roles[index]}-${index}`}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="absolute bg-gradient-to-r from-primary to-accent bg-clip-text text-2xl font-semibold text-transparent sm:text-3xl md:text-4xl"
-            >
-              {roles[index]}
-            </motion.p>
-          </AnimatePresence>
+          {roles.map((role, i) => {
+            const start = i * step;
+            const end = start + step;
+            return (
+              <AnimatedRole
+                key={role}
+                role={role}
+                index={i}
+                progress={scrollYProgress}
+                range={[start, end]}
+              />
+            );
+          })}
         </div>
 
         {/* Description */}

@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import type { ImagePlaceholder } from '@/lib/placeholder-images';
 import { ArrowRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 type Project = {
   title: string;
@@ -30,24 +31,24 @@ export default function ProjectCard({ project }: { project: Project }) {
   const projectImage = PlaceHolderImages.find(p => p.id === project.image) as ImagePlaceholder;
 
   return (
-    <motion.div variants={itemVariants} className="h-full">
-      <Card className="flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+    <motion.div variants={itemVariants} className="h-full group">
+      <Card className="flex flex-col h-full overflow-hidden transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1 rounded-2xl">
         <CardHeader className="p-0">
           {projectImage && (
-            <div className="aspect-video relative overflow-hidden">
+            <div className="aspect-[4/3] relative overflow-hidden">
                 <Image
                   src={projectImage.imageUrl}
                   alt={project.title}
                   data-ai-hint={projectImage.imageHint}
                   width={600}
-                  height={400}
-                  className="object-cover w-full h-full"
+                  height={450}
+                  className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                 />
             </div>
           )}
         </CardHeader>
         <CardContent className="p-6 flex-grow">
-          <CardTitle className="text-xl font-semibold mb-2">{project.title}</CardTitle>
+          <CardTitle className="text-xl font-bold mb-2">{project.title}</CardTitle>
           <CardDescription className="text-foreground/70 mb-4">{project.description}</CardDescription>
           <div className="flex flex-wrap gap-2">
             {project.tech.map((tag) => (
@@ -56,8 +57,8 @@ export default function ProjectCard({ project }: { project: Project }) {
           </div>
         </CardContent>
         <CardFooter className="p-6 pt-0">
-          <Button variant="outline" className="w-full">
-            View Case Study <ArrowRight className="ml-2 h-4 w-4" />
+          <Button variant="outline" className={cn("w-full group/button", "rounded-full")}>
+            View Case Study <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover/button:translate-x-1" />
           </Button>
         </CardFooter>
       </Card>

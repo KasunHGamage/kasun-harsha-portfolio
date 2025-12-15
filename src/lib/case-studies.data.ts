@@ -61,34 +61,34 @@ export type CaseStudy = {
     },
     {
         slug: 'teacher-arena-community',
-        title: 'TeacherArena Community Platform',
-        shortDescription: 'An online platform designed to empower teachers by providing a space to connect, share valuable resources, and foster professional growth.',
-        techStack: ['Next.js', 'Tailwind CSS', 'Supabase', 'Community Building'],
+        title: 'Teacher Arena – A Commission-Free Marketplace for Educators',
+        shortDescription: 'An independent, commission-free e-commerce platform for educators to buy and sell digital resources.',
+        techStack: ['WordPress', 'WooCommerce', 'Elementor Pro', 'Custom CSS/HTML', 'Brevo Integration'],
         heroImage: 'projectTeacherArena',
         overview: {
-          problem: 'Teachers often work in isolation and lack a dedicated, modern platform for collaboration and resource sharing. Existing solutions were outdated, difficult to navigate, or not tailored to their specific needs.',
+          problem: 'My client, an established creator of educational resources, was relying heavily on Teachers Pay Teachers (TpT) as their primary sales channel. While TpT provided traffic, it came at a steep cost: high transaction fees, no ownership of customer data, and limited branding capabilities.',
           goals: [
-            'Create a vibrant and engaging online community for educators.',
-            'Develop an intuitive system for uploading, sharing, and discovering teaching resources.',
-            'Implement features for professional networking and discussion forums.',
-            'Ensure the platform is highly performant and accessible on all devices.'
+            'Build an independent, scalable e-commerce platform to sell digital resources directly.',
+            'Eliminate high commission fees from third-party marketplaces.',
+            'Enable direct customer data collection for marketing and relationship building.',
+            'Provide full brand control and a customizable storefront experience.'
           ],
-          role: 'I led the project as the sole designer and developer, responsible for UX/UI design, frontend and backend development, and database architecture.',
+          role: 'Lead Developer & UI/UX Designer',
         },
         process: {
-          research: 'I conducted surveys and interviews with teachers to gather insights into their daily challenges and what they would want from a community platform. The research highlighted a need for easy content discovery and peer-to-peer communication.',
-          uxStrategy: 'The strategy was to build a platform that felt both professional and welcoming. I prioritized a powerful search and filtering system for resources and designed user profiles to encourage connection and networking.',
-          designDecisions: 'The design, created in Figma, is clean, organized, and content-focused. A soft, academic-inspired color palette was used. The layout was structured to handle a large volume of user-generated content without feeling cluttered.',
+          research: 'I designed and developed Teacher Arena, a custom WordPress-based marketplace tailored specifically for digital downloads. The platform prioritizes a clean, trust-inspiring UX that rivals major marketplaces while offering the flexibility of a standalone website. Key features included a digital e-commerce engine with WooCommerce, a custom contributor onboarding flow, and marketing automation with Brevo.',
+          uxStrategy: 'The target audience is busy teachers looking for reliable, high-quality materials. The design needed to be clean, scannable, and professional. I utilized a trustworthy color palette of Medical Blue (#0D47A1) and Soft Blue (#E3F2FD) to reduce cognitive load and chose Inter for its high legibility. The shopping and checkout experience was optimized with a mobile-first approach.',
+          designDecisions: 'This project required significant custom development. I migrated legacy layouts to modern Flexbox Containers in Elementor for better performance. To solve style leakage from landing pages, I engineered a scoped CSS class system to encapsulate styles, allowing unique page designs without breaking the global layout. Performance was also improved by hand-coding custom HTML/CSS widgets instead of relying on heavy plugins.',
         },
         designAndDevelopment: {
-          uiApproach: 'The frontend was built with Next.js for its performance benefits (SSR/SSG) and excellent developer experience. Tailwind CSS was used for utility-first styling, enabling rapid UI implementation.',
-          developmentHighlights: 'Supabase was chosen as the backend-as-a-service to handle the database, authentication, and storage. Its PostgreSQL core and simple API made it a powerful and efficient choice for building out community features.',
-          responsiveness: 'A responsive-first mindset was key. The platform was designed to work seamlessly on desktops for resource preparation and on mobile devices for quick access and communication on the go.',
+          uiApproach: 'The UI was designed to be clean, scannable, and professional to appeal to busy teachers. A trustworthy color palette of Medical Blue (#0D47A1) and Soft Blue (#E3F2FD) against a clean White background was used to reduce cognitive load. The typography, using the highly legible sans-serif font Inter, ensures readability across all devices.',
+          developmentHighlights: 'Significant custom development was undertaken. Legacy section-based layouts were migrated to modern Flexbox Containers for better performance. I engineered a scoped CSS class system (e.g., .subscribe-page-wrapper) to prevent style leakage from landing pages to the global header/footer, ensuring layout consistency. Custom HTML/CSS widgets were hand-coded for critical forms to minimize plugin bloat and optimize performance.',
+          responsiveness: 'A mobile-first approach was central to the design. The shopping cart and checkout flow were specifically optimized for mobile devices, ensuring a seamless purchase experience for teachers on the go. Horizontal scrolling issues were resolved by strictly managing overflow and element widths in the CSS.',
         },
         outcome: {
-          results: 'TeacherArena quickly grew to over 1,000 active members in its first three months. The resource-sharing feature became the most popular part of the platform, with hundreds of resources exchanged weekly.',
-          learnings: 'Building a community platform taught me the importance of moderation tools and clear community guidelines from day one. It also highlighted the power of a strong user feedback loop in prioritizing new features.',
-          finalThoughts: 'TeacherArena is a project I\'m incredibly proud of, as it serves a meaningful purpose and showcases my ability to build a full-stack application from the ground up to solve a real-world problem.',
+          results: 'Teacher Arena successfully launched as a fully independent platform. The client now saves thousands annually in marketplace fees, owns their customer list for direct retargeting, and has established a strong brand authority. "By moving from a rented audience on TpT to an owned platform on WordPress, we turned a 20% commission loss into a 100% profit gain per sale, while offering a better user experience for our teachers."',
+          learnings: 'The project highlighted the immense value of owning your platform. It frees you from the commissions and constraints of third-party marketplaces, enabling direct customer relationships and full control over branding and user experience.',
+          finalThoughts: 'Teacher Arena stands as a testament to the power of a well-executed custom e-commerce solution. It not only solved the client\'s immediate financial pain points but also provided a scalable foundation for future growth and community building.',
         },
       },
       {

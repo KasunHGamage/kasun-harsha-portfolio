@@ -19,9 +19,9 @@ export const projects = [
     liveUrl: '#',
   },
   {
-    title: 'TeacherArena Community',
-    description: 'An online platform for teachers to connect, share resources, and grow professionally.',
-    tech: ['Next.js', 'Tailwind CSS', 'Supabase'],
+    title: 'TeacherArena Marketplace',
+    description: 'A commission-free platform for educators to buy and sell digital resources directly.',
+    tech: ['WordPress', 'WooCommerce', 'Elementor'],
     image: 'projectTeacherArena',
     caseStudyUrl: '/work/teacher-arena-community',
     liveUrl: 'https://teacherarena.com/',

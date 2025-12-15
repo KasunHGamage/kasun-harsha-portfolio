@@ -28,7 +28,7 @@ export const projects = [
   },
   {
     title: 'New Game Cards E-commerce',
-    description: 'An e-commerce site for trading cards with a unique, engaging card-based UI.',
+    description: 'An interactive e-commerce site for trading cards with a unique, engaging, card-centric UI.',
     tech: ['React', 'Framer Motion', 'Stripe'],
     image: 'projectGameCards',
     caseStudyUrl: '/work/new-game-cards-ecommerce',

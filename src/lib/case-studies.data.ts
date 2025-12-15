@@ -94,34 +94,35 @@ export type CaseStudy = {
     },
       {
         slug: 'new-game-cards-ecommerce',
-        title: 'New Game Cards E-commerce',
-        shortDescription: 'A unique e-commerce experience for trading card enthusiasts, featuring an engaging, card-centric UI and smooth, animated interactions.',
+        title: 'New Game Cards — Interactive E-commerce Experience',
+        shortDescription: 'An e-commerce platform for trading card enthusiasts, featuring a card-centric UI, smooth animations, and immersive interactions.',
         techStack: ['React', 'Framer Motion', 'Stripe', 'E-commerce'],
         heroImage: 'projectGameCards',
         overview: {
-          problem: 'Most e-commerce websites for collectibles are generic and fail to capture the excitement of the hobby. The user experience is often transactional and lacks the fun of discovery and collection.',
+          problem: 'Most collectible e-commerce websites follow generic shopping patterns. While functional, they often feel transactional and fail to capture the emotion, discovery, and excitement that collectors associate with trading cards. As a result: Products feel static and interchangeable, Browsing lacks a sense of exploration, The experience does not reflect the hobby itself. The challenge was to design an e-commerce experience that feels alive, expressive, and memorable, without sacrificing usability or performance.',
           goals: [
-            'Design an immersive and visually engaging shopping experience tailored to card collectors.',
-            'Create a highly interactive UI with animations that enhance, rather than distract.',
-            'Integrate a secure and seamless checkout process with Stripe.',
-            'Develop a front-end that is both beautiful and performant.'
+            'Design an immersive shopping experience tailored to card collectors',
+            'Make the cards themselves the visual and interactive focus',
+            'Use animations to enhance clarity and delight, not distract',
+            'Integrate a secure, seamless checkout with Stripe',
+            'Deliver a fast, responsive frontend despite rich interactions',
           ],
-          role: 'I was the lead Frontend Developer and UI Designer, focusing on creating a memorable user interface and bringing it to life with code.',
+          role: 'Lead Frontend Developer & UI Designer. I was responsible for: UI/UX design and interaction concepts, Frontend architecture and component design, Animation implementation with Framer Motion, Stripe checkout integration, Performance optimization.',
         },
         process: {
-          research: 'My research involved analyzing both e-commerce best practices and the design language of popular trading card games. The goal was to blend the two to create something that felt both familiar and innovative to the target audience.',
-          uxStrategy: 'The core strategy was to make the product—the cards—the hero of the experience. This meant large card images, interactive hover effects, and a browsing experience that mimics sorting through a physical collection.',
+          research: 'Research focused on two areas: E-commerce usability best practices, Visual and interaction patterns from popular trading card games. The goal was to merge familiarity with innovation—creating an interface that feels intuitive while still capturing the fantasy and excitement of card collecting.',
+          uxStrategy: 'The core UX strategy was simple: make the cards the hero. This meant: Large, high-quality card visuals, Interactive hover and focus states, Browsing that feels like sorting through a physical collection, Clear hierarchy so animations support, not obscure, decision-making. The experience encourages exploration while keeping purchasing straightforward.',
           designDecisions: 'The design is dark and thematic, using colors and typography that complement the fantasy and sci-fi art of the cards. A card-based layout was used throughout the site to maintain a consistent theme.',
         },
         designAndDevelopment: {
-          uiApproach: 'The UI was built in React, which allowed for the creation of dynamic and stateful components. I used Framer Motion extensively to create fluid animations for card flips, page transitions, and adding items to the cart. This added a layer of polish and delight.',
-          developmentHighlights: 'The Stripe integration was a key part of the project. I implemented a custom checkout flow that was both secure and perfectly matched the site\'s design, avoiding a jarring redirect to a generic payment page.',
-          responsiveness: 'The card-based layout naturally lent itself to a responsive design. Using a CSS grid system, the layout fluidly adapts from a multi-column desktop view to a single-column mobile experience without compromising the user experience.',
+          uiApproach: 'The interface was built in React, enabling dynamic, reusable components across the site. Framer Motion was used extensively to introduce smooth, natural animations such as: Card hover and focus interactions, Page transitions, Add-to-cart feedback. Animations were carefully timed and restrained to add polish without impacting usability.',
+          developmentHighlights: 'Custom Stripe Checkout: Implemented a seamless checkout experience that matches the site’s visual identity, avoiding jarring redirects to generic payment pages. Animation Performance: Optimized animation triggers and transitions to maintain smooth performance, even with multiple animated elements on screen.',
+          responsiveness: 'The card-based layout was designed to be fully responsive: CSS Grid adapts seamlessly from multi-column desktop layouts to single-column mobile views, Touch-friendly interactions on mobile devices, Consistent visual hierarchy across screen sizes. Despite heavy use of animation, the site remains fast and responsive.',
         },
         outcome: {
-          results: 'The site received praise for its unique design and engaging user experience. Average session duration was 25% longer than industry benchmarks, and the conversion rate saw a 10% uplift compared to the previous, more generic site design.',
-          learnings: 'This project taught me how to balance complex animations with performance. I learned techniques for optimizing animations and ensuring the site remained fast and responsive, even with many moving parts.',
-          finalThoughts: 'This project was a fantastic opportunity to merge my passion for design and development. It shows that e-commerce doesn’t have to be boring and that thoughtful design and animation can lead to a more engaging and profitable user experience.',
+          results: 'Strong positive feedback on visual design and interaction quality. 25% increase in average session duration compared to industry benchmarks. 10% uplift in conversion rate versus the previous generic store design.',
+          learnings: 'This project reinforced the importance of balancing animation and performance. Thoughtful motion design can significantly enhance engagement—but only when implemented with restraint and technical care.',
+          finalThoughts: 'New Game Cards demonstrates how e-commerce experiences can move beyond basic transactions. By combining strong UI/UX principles with modern frontend development, the project shows that engaging design and smooth interaction can directly improve both user enjoyment and business results.',
         },
       }
   ];

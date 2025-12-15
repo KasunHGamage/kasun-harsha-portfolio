@@ -5,6 +5,7 @@ import WorkSection from '@/components/work-section';
 import SkillsSection from '@/components/skills-section';
 import ContactSection from '@/components/contact-section';
 import Footer from '@/components/footer';
+import { Section } from '@/components/section';
 
 export default function Home() {
   return (
@@ -12,10 +13,18 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <AboutSection />
-        <WorkSection />
-        <SkillsSection />
-        <ContactSection />
+        <Section id="about">
+          <AboutSection />
+        </Section>
+        <Section id="work">
+          <WorkSection />
+        </Section>
+        <Section id="skills">
+          <SkillsSection />
+        </Section>
+        <Section id="contact">
+          <ContactSection />
+        </Section>
       </main>
       <Footer />
     </div>

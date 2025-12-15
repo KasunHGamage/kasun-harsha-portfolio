@@ -37,9 +37,9 @@ const itemVariants = {
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-24 sm:py-32 bg-card">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
       <motion.div 
-        className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center"
+        className="w-full"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
@@ -76,6 +76,6 @@ export default function AboutSection() {
           </motion.div>
         </motion.div>
       </motion.div>
-    </section>
+    </div>
   );
 }

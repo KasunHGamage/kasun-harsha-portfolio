@@ -20,8 +20,8 @@ export const projects = [
   },
   {
     title: 'TeacherArena Marketplace',
-    description: 'A commission-free platform for educators to buy and sell digital resources directly.',
-    tech: ['WordPress', 'WooCommerce', 'Elementor'],
+    description: 'An independent, commission-free e-commerce platform for educators to buy and sell digital resources.',
+    tech: ['WordPress', 'WooCommerce', 'Stripe'],
     image: 'projectTeacherArena',
     caseStudyUrl: '/work/teacher-arena-community',
     liveUrl: 'https://teacherarena.com/',

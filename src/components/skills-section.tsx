@@ -24,7 +24,7 @@ export default function SkillsSection() {
         <ScrollStack>
           {skills.map((skill, index) => (
             <ScrollStackItem key={skill.category}>
-              <Card className="bg-white/80 border-border/30 backdrop-blur-lg shadow-2xl shadow-black/10 rounded-3xl min-h-[300px]">
+              <Card className="bg-card/80 border-border/30 backdrop-blur-lg shadow-2xl shadow-black/10 rounded-3xl min-h-[300px]">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-4 text-2xl font-bold">
                     <skill.icon className="h-6 w-6 text-primary" />

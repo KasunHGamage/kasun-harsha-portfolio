@@ -1,81 +1,25 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Badge } from '@/components/ui/badge';
-import { AnimatedUnderline } from '@/components/animated-underline';
 
-const techBadges = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Figma",
-  "Tailwind CSS",
-  "Firebase"
-];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-        type: 'spring',
-        stiffness: 100
-    }
-  },
+const motionProps = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.3 },
+  transition: { duration: 0.8, ease: 'easeOut' },
 };
 
 export default function AboutSection() {
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl text-center">
-      <motion.div 
-        className="w-full"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={containerVariants}
-      >
-        <motion.div variants={itemVariants} className="flex flex-col items-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">About Me</h2>
-          <AnimatedUnderline />
-        </motion.div>
-
-        <motion.p 
-          className="mt-6 max-w-2xl mx-auto text-xl leading-9 text-foreground/80"
-          variants={itemVariants}
+    <section id="about" className="py-24 sm:py-32 bg-secondary">
+      <div className="container mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+        <motion.p
+          className="text-center text-xl text-foreground/80 md:text-2xl leading-relaxed"
+          {...motionProps}
         >
-          I'm a passionate UI/UX Designer and Frontend Developer dedicated to creating intuitive, beautiful, and user-centered digital experiences. With a strong foundation in both design principles and modern frontend technologies, I bridge the gap between creative vision and technical execution. My workflow is heavily centered around Figma for design and prototyping, which I then bring to life with clean, efficient, and responsive code.
+          I design intuitive user experiences and build fast, scalable websites using modern frontend technologies and WordPress. From concept to launch, I focus on clarity, performance, and usability.
         </motion.p>
-        
-        <motion.div className="mt-12" variants={containerVariants}>
-          <motion.h3 
-            className="text-lg font-semibold text-foreground"
-            variants={itemVariants}
-          >
-            My Go-To Technologies
-          </motion.h3>
-          <motion.div 
-            className="mt-4 flex flex-wrap gap-2 justify-center"
-            variants={containerVariants}
-          >
-            {techBadges.map((tech) => (
-              <motion.div key={tech} variants={itemVariants}>
-                <Badge variant="secondary" className="text-sm px-3 py-1 bg-white hover:bg-neutral-100 text-foreground border border-border">{tech}</Badge>
-              </motion.div>
-            ))}
-          </motion.div>
-        </motion.div>
-      </motion.div>
-    </div>
+      </div>
+    </section>
   );
 }

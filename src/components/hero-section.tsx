@@ -41,7 +41,7 @@ export default function HeroSection() {
   return (
     <Section
       id="home"
-      className="relative flex min-h-screen items-center justify-center text-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center text-center overflow-hidden bg-white text-neutral-800"
     >
       {/* Background glows */}
       <div className="absolute inset-0 -z-10">
@@ -71,7 +71,7 @@ export default function HeroSection() {
           </motion.p>
           
           <motion.h1 
-            className="mt-2 text-4xl font-extrabold tracking-tight sm:text-6xl"
+            className="mt-2 text-4xl font-extrabold tracking-tight text-neutral-900 sm:text-6xl"
             variants={itemVariants}
           >
             Designing modern, user-focused web experiences.
@@ -79,7 +79,7 @@ export default function HeroSection() {
         </motion.div>
         
         <motion.p 
-          className="mx-auto mt-6 max-w-2xl text-lg text-foreground/80 md:text-xl"
+          className="mx-auto mt-6 max-w-2xl text-lg text-neutral-600 md:text-xl"
           variants={itemVariants}
         >
           I turn ideas into clean, intuitive interfaces using modern frontend technologies.
@@ -96,7 +96,7 @@ export default function HeroSection() {
             </Button>
           </Link>
           <Link href="#contact">
-            <Button size="lg" variant="outline">
+            <Button size="lg" variant="outline" className="border-neutral-300 hover:bg-neutral-100">
               Get In Touch
             </Button>
           </Link>

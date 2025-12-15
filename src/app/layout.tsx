@@ -15,7 +15,7 @@ export default function RootLayout({
   const ogImageUrl = `${siteUrl}/og-image.png`; // Replace with a path to your OG image
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* SEO Meta Tags */}
         <title>Kasun Harsha | UI/UX Designer & Frontend Developer</title>

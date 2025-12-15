@@ -3,17 +3,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import Image from 'next/image';
 import Link from 'next/link';
 import { roles } from '@/lib/data';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { ArrowRight } from 'lucide-react';
 import { Section } from './section';
 
 export default function HeroSection() {
   const [index, setIndex] = useState(0);
-  const heroImage = PlaceHolderImages.find(p => p.id === 'heroImage');
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -66,37 +62,51 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div
-            className="relative mt-12 lg:mt-0"
+            className="relative mt-12 lg:mt-0 h-[300px] lg:h-[400px] flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
+            {/* Soft Gradient Glow */}
+            <div className="absolute inset-0 overflow-hidden rounded-3xl">
+              <div className="absolute -bottom-1/4 -right-1/4 w-1/2 h-1/2 bg-primary/20 rounded-full blur-3xl" />
+              <div className="absolute -top-1/4 -left-1/4 w-2/3 h-2/3 bg-accent/10 rounded-full blur-3xl" />
+            </div>
+
             <motion.div
               animate={{
-                y: ["-8px", "8px"],
+                y: ["-6px", "6px"],
               }}
               transition={{
-                duration: 4,
+                duration: 5,
                 repeat: Infinity,
                 repeatType: "mirror",
                 ease: "easeInOut",
               }}
+              className="w-full h-full"
             >
-              <Card className="overflow-hidden rounded-2xl border-2 border-border/30 bg-card shadow-2xl shadow-primary/10">
-                <CardContent className="p-0">
-                  {heroImage && (
-                    <Image
-                      src={heroImage.imageUrl}
-                      alt={heroImage.description}
-                      data-ai-hint={heroImage.imageHint}
-                      width={1000}
-                      height={600}
-                      priority
-                      className="aspect-video w-full object-cover"
-                    />
-                  )}
-                </CardContent>
-              </Card>
+              {/* Glassmorphism Panel */}
+              <div className="relative w-full h-full rounded-3xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-black/30">
+                {/* Inner reflection/gradient */}
+                <motion.div
+                  className="absolute inset-0 w-full h-full"
+                  animate={{
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent, hsla(var(--primary)/0.05), transparent)",
+                    backgroundSize: "400% 400%",
+                  }}
+                />
+                {/* Inner highlight */}
+                <div className="absolute top-0 left-0 w-full h-full rounded-3xl ring-1 ring-inset ring-white/10" />
+              </div>
             </motion.div>
           </motion.div>
         </div>

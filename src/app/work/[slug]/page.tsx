@@ -16,7 +16,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function CaseStudyPage({ params }: CaseStudyPageProps) {
+export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const { slug } = params;
   const project = caseStudies.find((p) => p.slug === slug);
   const currentIndex = caseStudies.findIndex((p) => p.slug === slug);

@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Section } from './section';
 import ScrollIndicator from './scroll-indicator';
 import { socialLinks } from '@/lib/data';
+import GradientText from './gradient-text';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -56,7 +57,13 @@ export default function HeroSection() {
           className="my-8 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl flex flex-col items-center"
           variants={itemVariants}
         >
-          <span className="relative inline-block after:content-[''] after:absolute after:bottom-[-8px] after:left-[5%] after:w-[90%] after:h-0.5 after:bg-primary after:rounded-full">User-focused design</span>
+          <GradientText
+            colors={["#0071E3", "#5E9CFF", "#0071E3"]}
+            animationSpeed={6}
+            showBorder={false}
+          >
+            User-focused design
+          </GradientText>
           <span className="text-foreground/80">and development for the modern web.</span>
         </motion.h1>
 

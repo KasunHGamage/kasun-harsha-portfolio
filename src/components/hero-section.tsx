@@ -70,11 +70,9 @@ export default function HeroSection() {
               <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Button>
           </Link>
-          <Link href={linkedInUrl} target="_blank" rel="noopener noreferrer">
-            <Button variant="secondary-apple" size="lg" className="group">
-              <Linkedin className="mr-2 h-4 w-4" />
-              Connect on LinkedIn
-            </Button>
+          <Link href={linkedInUrl} target="_blank" rel="noopener noreferrer" className="group/link inline-flex items-center text-secondary-foreground font-medium hover:text-primary transition-colors h-11 px-8">
+            Connect on LinkedIn
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
           </Link>
         </motion.div>
       </motion.div>

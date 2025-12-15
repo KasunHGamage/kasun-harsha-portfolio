@@ -15,7 +15,7 @@ export default function AboutSection() {
                 baseRotation={5}
                 blurStrength={10}
             >
-                When does a man die? When he is hit by a bullet? No! When he suffers a disease? No! When he ate a soup made out of a poisonous mushroom? No! A man dies when he is forgotten!
+                I design and develop user-focused digital experiences. From intuitive UI/UX design to modern WordPress development, I create clean, scalable, and high-performing websites.
             </ScrollReveal>
         </div>
     </Section>

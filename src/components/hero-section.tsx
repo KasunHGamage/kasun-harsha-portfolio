@@ -67,14 +67,14 @@ export default function HeroSection() {
             className="text-lg font-medium text-primary"
             variants={itemVariants}
           >
-            Kasun Harsha — UI/UX Designer
+            UI/UX Designer & Frontend Developer
           </motion.p>
           
           <motion.h1 
-            className="mt-2 text-5xl font-extrabold tracking-tight sm:text-7xl"
+            className="mt-2 text-4xl font-extrabold tracking-tight sm:text-6xl"
             variants={itemVariants}
           >
-            Digital experiences that feel effortless.
+            Designing modern, user-focused web experiences.
           </motion.h1>
         </motion.div>
         
@@ -82,7 +82,7 @@ export default function HeroSection() {
           className="mx-auto mt-6 max-w-2xl text-lg text-foreground/80 md:text-xl"
           variants={itemVariants}
         >
-          Focused on clarity, usability, and modern frontend craft.
+          I turn ideas into clean, intuitive interfaces using modern frontend technologies.
         </motion.p>
 
         <motion.div

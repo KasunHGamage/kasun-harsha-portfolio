@@ -6,21 +6,20 @@ interface GradientTextProps extends React.HTMLAttributes<HTMLSpanElement> {
   children: React.ReactNode;
   colors?: string[];
   animationSpeed?: number;
-  showBorder?: boolean;
 }
 
 const GradientText: React.FC<GradientTextProps> = ({
   children,
   colors = ['#0071E3', '#5E9CFF', '#0071E3'],
   animationSpeed = 6,
-  showBorder = false,
   className,
   ...props
 }) => {
   const gradientStyle: React.CSSProperties = {
-    '--gradient-colors': colors.join(', '),
-    '--animation-speed': `${animationSpeed}s`,
-  } as React.CSSProperties;
+    backgroundImage: `linear-gradient(90deg, ${colors.join(', ')})`,
+    animation: `gradient-animation ${animationSpeed}s ease infinite`,
+    backgroundSize: '200% auto',
+  };
 
   return (
     <span

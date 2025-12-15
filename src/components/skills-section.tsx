@@ -24,18 +24,18 @@ export default function SkillsSection() {
         <ScrollStack>
           {skills.map((skill, index) => (
             <ScrollStackItem key={skill.category}>
-              <Card className="bg-card/50 border-border/30 backdrop-blur-lg shadow-2xl shadow-black/20 rounded-3xl min-h-[250px]">
+              <Card className="bg-card/50 border-border/30 backdrop-blur-lg shadow-2xl shadow-black/20 rounded-3xl min-h-[300px]">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-lg font-semibold">
-                    <skill.icon className="h-5 w-5 text-primary" />
+                  <CardTitle className="flex items-center gap-4 text-2xl font-bold">
+                    <skill.icon className="h-6 w-6 text-primary" />
                     {skill.category}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="pt-2">
-                  <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
+                <CardContent className="pt-4">
+                  <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
                     {skill.items.map((item) => (
-                      <li key={item} className="flex items-center text-sm text-foreground/70">
-                        <span className="mr-2.5 h-1 w-1 rounded-full bg-primary/70"></span>
+                      <li key={item} className="flex items-center text-base text-foreground/80">
+                        <span className="mr-3 h-1.5 w-1.5 rounded-full bg-primary/80"></span>
                         {item}
                       </li>
                     ))}

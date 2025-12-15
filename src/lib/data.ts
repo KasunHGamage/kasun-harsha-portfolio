@@ -15,21 +15,21 @@ export const projects = [
     description: 'A sleek mobile app for vehicle rentals, focused on a seamless user experience.',
     tech: ['Figma', 'React Native', 'Firebase'],
     image: 'projectVehicleRental',
-    caseStudyUrl: '#',
+    caseStudyUrl: '/work/vehicle-rental-app',
   },
   {
     title: 'TeacherArena Community',
     description: 'An online platform for teachers to connect, share resources, and grow professionally.',
     tech: ['Next.js', 'Tailwind CSS', 'Supabase'],
     image: 'projectTeacherArena',
-    caseStudyUrl: '#',
+    caseStudyUrl: '/work/teacher-arena-community',
   },
   {
     title: 'New Game Cards E-commerce',
     description: 'An e-commerce site for trading cards with a unique, engaging card-based UI.',
     tech: ['React', 'Framer Motion', 'Stripe'],
     image: 'projectGameCards',
-    caseStudyUrl: '#',
+    caseStudyUrl: '/work/new-game-cards-ecommerce',
   },
 ];
 

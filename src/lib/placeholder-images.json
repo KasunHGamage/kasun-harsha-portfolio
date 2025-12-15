@@ -23,6 +23,24 @@
       "description": "Placeholder for Game Cards e-commerce site",
       "imageUrl": "https://images.unsplash.com/photo-1613771404721-1f92d799e49f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx0cmFkaW5nJTIwY2FyZHN8ZW58MHx8fHwxNzY1NzgzODU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "trading cards"
+    },
+    {
+      "id": "caseStudyHeroVehicle",
+      "description": "Hero image for vehicle rental case study",
+      "imageUrl": "https://images.unsplash.com/photo-1585014165903-6d6c6ebad3e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjYXIlMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzY1NzAyODE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car dashboard"
+    },
+    {
+      "id": "caseStudyHeroTeacher",
+      "description": "Hero image for teacher community case study",
+      "imageUrl": "https://images.unsplash.com/photo-1588702547954-4800ead296ef?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxvbmxpbmUlMjBsZWFybmluZ3xlbnwwfHx8fDE3NjU3MjUxNTl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "online learning"
+    },
+    {
+      "id": "caseStudyHeroCards",
+      "description": "Hero image for game cards case study",
+      "imageUrl": "https://images.unsplash.com/photo-1531415505195-40f140d44392?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGxheWluZyUyMGNhcmRzfGVufDB8fHx8MTc2NTc2Njc5MHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "playing cards"
     }
   ]
 }

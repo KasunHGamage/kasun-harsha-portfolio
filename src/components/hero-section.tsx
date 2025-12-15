@@ -46,14 +46,14 @@ export default function HeroSection() {
         animate="visible"
       >
         <motion.p
-          className="text-lg font-medium text-muted-foreground/80 md:text-xl"
+          className="text-base font-medium text-muted-foreground/70 md:text-lg"
           variants={itemVariants}
         >
           UI/UX Designer · Frontend Developer · WordPress Specialist
         </motion.p>
         
         <motion.h1 
-          className="mt-2 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl"
+          className="mt-4 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl"
           variants={itemVariants}
         >
           User-focused design and development for the modern web.
@@ -61,7 +61,7 @@ export default function HeroSection() {
 
         
         <motion.div
-          className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
+          className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
           variants={itemVariants}
         >
           <Link href="#work">

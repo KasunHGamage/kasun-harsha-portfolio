@@ -76,7 +76,7 @@ export default function HeroSection() {
           Kasun Harsha
         </h1>
         
-        <div className="relative mt-2 h-10 sm:h-12 md:h-16 flex items-center justify-center overflow-hidden">
+        <div className="relative mt-2 flex h-10 items-center justify-center overflow-hidden sm:h-12 md:h-16">
             <AnimatePresence mode="wait">
               <motion.p
                 key={roles[currentRoleIndex]}
@@ -84,25 +84,25 @@ export default function HeroSection() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -20, opacity: 0 }}
                 transition={{ ease: 'easeInOut', duration: 0.5 }}
-                className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent font-semibold text-2xl sm:text-3xl md:text-4xl absolute"
+                className="absolute bg-gradient-to-r from-primary to-accent bg-clip-text text-2xl font-semibold text-transparent sm:text-3xl md:text-4xl"
               >
                 {roles[currentRoleIndex]}
               </motion.p>
             </AnimatePresence>
         </div>
 
-        <p className="mt-6 max-w-2xl mx-auto text-lg text-foreground/80 md:text-xl">
+        <p className="mx-auto mt-6 max-w-2xl text-lg text-foreground/80 md:text-xl">
           I design and build high-quality digital products with a focus on seamless user experience and modern engineering.
         </p>
         <motion.div 
-          className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4"
+          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         >
           <motion.div whileHover={{ scale: 1.05, y: -2 }} transition={{ type: "spring", stiffness: 300 }}>
             <Link href="#work" passHref>
-              <Button size="lg" className="w-full sm:w-auto shadow-lg shadow-primary/20">
+              <Button size="lg" className="w-full shadow-lg shadow-primary/20 sm:w-auto">
                 View My Work
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>

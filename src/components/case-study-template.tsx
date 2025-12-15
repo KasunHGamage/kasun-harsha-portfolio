@@ -82,6 +82,7 @@ export default function CaseStudyTemplate({ project, nextProject, prevProject }:
               height={750}
               data-ai-hint={heroImage.imageHint}
               className="object-cover"
+              priority
             />
           )}
         </motion.div>

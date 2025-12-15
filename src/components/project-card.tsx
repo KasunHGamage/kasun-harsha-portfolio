@@ -43,6 +43,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                   height={450}
                   data-ai-hint={projectImage.imageHint}
                   className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                  loading="eager"
                 />
             </div>
           )}

@@ -12,10 +12,12 @@ export default function HeroSection() {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
-    }, 2500); // Change role every 2.5 seconds
-    return () => clearInterval(interval);
+    }, 2500);
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(timer);
   }, []);
 
   return (

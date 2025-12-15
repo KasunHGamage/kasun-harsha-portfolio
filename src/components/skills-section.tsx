@@ -21,21 +21,21 @@ export default function SkillsSection() {
       </motion.div>
 
       <div className="relative">
-        <ScrollStack itemDistance={-50} className="space-y-4">
+        <ScrollStack itemDistance={-100} className="space-y-4">
           {skills.map((skill, index) => (
             <ScrollStackItem key={skill.category} index={index}>
-              <Card className="bg-card border-border/50 min-h-[250px]">
+              <Card className="bg-card/50 border-border/30 backdrop-blur-lg shadow-2xl shadow-black/20 rounded-3xl min-h-[220px]">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-xl">
-                    <skill.icon className="h-6 w-6 text-primary" />
+                  <CardTitle className="flex items-center gap-3 text-lg font-semibold">
+                    <skill.icon className="h-5 w-5 text-primary" />
                     {skill.category}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
+                <CardContent className="pt-2">
+                  <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
                     {skill.items.map((item) => (
-                      <li key={item} className="flex items-center text-foreground/80">
-                        <span className="mr-2 h-1 w-1 rounded-full bg-primary"></span>
+                      <li key={item} className="flex items-center text-sm text-foreground/70">
+                        <span className="mr-2.5 h-1 w-1 rounded-full bg-primary/70"></span>
                         {item}
                       </li>
                     ))}

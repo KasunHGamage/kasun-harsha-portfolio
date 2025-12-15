@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring, type MotionValue } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 type ScrollStackProps = {
@@ -28,30 +28,28 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
           
           const start = index / childCount;
           const end = (index + 1) / childCount;
-
-          const isFirst = index === 0;
-
-          const scale = useTransform(
-            scrollYProgress,
-            [start, end],
-            [isFirst ? 1 : 1 - (childCount - index) * 0.05, 1]
-          );
-
+          
           const y = useTransform(
             scrollYProgress,
             [start, end],
-            [isFirst ? 0 : (childCount - index) * 20, 0]
+            [`${(childCount - index - 1) * 15}%`, `-${index * 20}px`]
+          );
+          
+          const scale = useTransform(
+            scrollYProgress,
+            [start, end],
+            [1 - (childCount - index - 1) * 0.05, 1]
           );
 
-          const smoothScale = useSpring(scale, { stiffness: 400, damping: 90 });
           const smoothY = useSpring(y, { stiffness: 400, damping: 90 });
+          const smoothScale = useSpring(scale, { stiffness: 400, damping: 90 });
 
           return React.cloneElement(child as React.ReactElement, {
             ...child.props,
             style: {
               ...child.props.style,
-              scale: smoothScale,
               y: smoothY,
+              scale: smoothScale,
               zIndex: index,
             },
           });
@@ -64,8 +62,7 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
 
 type ScrollStackItemProps = {
   children: React.ReactNode;
-  index: number;
-  style?: React.CSSProperties & { scale: MotionValue, y: MotionValue };
+  style?: React.CSSProperties & { scale: any; y: any };
 };
 
 export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({ children, style }) => {

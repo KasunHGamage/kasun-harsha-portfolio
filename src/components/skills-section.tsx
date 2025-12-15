@@ -23,7 +23,7 @@ export default function SkillsSection() {
       <div className="relative">
         <ScrollStack>
           {skills.map((skill, index) => (
-            <ScrollStackItem key={skill.category} index={index}>
+            <ScrollStackItem key={skill.category}>
               <Card className="bg-card/50 border-border/30 backdrop-blur-lg shadow-2xl shadow-black/20 rounded-3xl min-h-[220px]">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-lg font-semibold">

@@ -1,6 +1,7 @@
+
 "use client";
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { motion, useTransform, useScroll } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 type ScrollStackProps = {
@@ -12,43 +13,41 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
   children,
   className,
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end end'],
   });
 
-  const childCount = React.Children.count(children);
+  const cards = React.Children.toArray(children);
+  const cardCount = cards.length;
 
   return (
-    <div ref={containerRef} className={cn('relative', className)} style={{ height: `${childCount * 100}vh` }}>
+    <div ref={containerRef} className={cn('relative', className)} style={{ height: `${cardCount * 100}vh` }}>
       <div className="sticky top-0 flex h-screen items-center justify-center overflow-hidden">
-        {React.Children.map(children, (child, index) => {
-          if (!React.isValidElement(child)) return null;
+        {cards.map((card, index) => {
+          if (!React.isValidElement(card)) return null;
+
+          const input = [
+            (index - 1) / cardCount,
+            index / cardCount,
+            (index + 1) / cardCount,
+          ];
+          const output = [ '30px', '0px', '-30px'];
+          const y = useTransform(scrollYProgress, input, output);
           
-          const start = index / childCount;
-          const end = (index + 1) / childCount;
+          const scaleInput = [index / cardCount, (index + 1) / cardCount];
+          const scaleOutput = [1, 0.95];
+          const scale = useTransform(scrollYProgress, scaleInput, scaleOutput);
 
-          const y = useTransform(
-            scrollYProgress,
-            [start, end],
-            ['100vh', `${index * 16}px`]
-          );
-
-          const scale = useTransform(
-            scrollYProgress,
-            [start, end],
-            [1, 1 - (childCount - index - 1) * 0.05]
-          );
-
-          return React.cloneElement(child as React.ReactElement, {
-            ...child.props,
+          return React.cloneElement(card as React.ReactElement, {
+            ...card.props,
             style: {
-              ...child.props.style,
+              ...card.props.style,
               position: 'absolute',
               y,
               scale,
-              zIndex: index,
+              zIndex: cardCount - index,
             },
           });
         })}

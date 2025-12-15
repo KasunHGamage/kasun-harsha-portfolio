@@ -1,0 +1,114 @@
+"use client";
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+import { navLinks } from '@/lib/data';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { useScrollSpy } from '@/hooks/use-scroll-spy';
+import { cn } from '@/lib/utils';
+
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const activeSection = useScrollSpy(navLinks.map(link => link.id));
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = (
+    <>
+      {navLinks.map((link) => (
+        <li key={link.name} className="relative">
+          <Link href={link.href} passHref>
+            <Button
+              variant="ghost"
+              className={cn(
+                "text-foreground/80 hover:text-foreground transition-colors",
+                activeSection === link.id && "text-foreground"
+              )}
+            >
+              {link.name}
+            </Button>
+          </Link>
+          {activeSection === link.id && (
+            <motion.div
+              layoutId="active-section-indicator"
+              className="absolute bottom-1 left-0 right-0 h-0.5 bg-primary"
+              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            />
+          )}
+        </li>
+      ))}
+    </>
+  );
+
+  return (
+    <header
+      className={cn(
+        "sticky top-0 z-50 transition-all duration-300",
+        isScrolled ? "bg-background/80 backdrop-blur-lg border-b border-border" : "bg-transparent"
+      )}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
+          <div className="flex-shrink-0">
+            <Link href="/" passHref>
+              <span className="text-xl font-bold tracking-tight text-foreground">
+                Kasun Harsha
+              </span>
+            </Link>
+          </div>
+          
+          <nav className="hidden md:block">
+            <ul className="flex items-baseline space-x-2">
+              {navItems}
+            </ul>
+          </nav>
+
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open main menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-full max-w-xs bg-background">
+                <div className="flex flex-col h-full">
+                  <div className="flex justify-between items-center p-4 border-b">
+                     <span className="text-lg font-bold">Menu</span>
+                     <SheetClose asChild>
+                        <Button variant="ghost" size="icon">
+                            <X className="h-6 w-6" />
+                        </Button>
+                    </SheetClose>
+                  </div>
+                  <nav className="flex-1 p-4">
+                    <ul className="flex flex-col space-y-4">
+                      {navLinks.map((link) => (
+                         <li key={link.name}>
+                            <SheetClose asChild>
+                                <Link href={link.href} passHref>
+                                    <Button variant="ghost" className="w-full justify-start text-lg">{link.name}</Button>
+                                </Link>
+                            </SheetClose>
+                         </li>
+                      ))}
+                    </ul>
+                  </nav>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}

@@ -60,14 +60,9 @@ export default function HeroSection() {
           <GradientText
             colors={["#0071E3", "#5E9CFF", "#0071E3"]}
             animationSpeed={6}
+            className="text-center"
           >
-            User-focused design
-          </GradientText>
-          <GradientText
-            colors={["hsl(var(--foreground))", "hsl(var(--muted-foreground))", "hsl(var(--foreground))"]}
-            animationSpeed={8}
-          >
-            and development for the modern web.
+            User-focused design <br /> and development for the modern web.
           </GradientText>
         </motion.h1>
 

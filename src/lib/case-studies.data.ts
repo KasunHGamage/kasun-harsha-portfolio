@@ -29,34 +29,33 @@ export type CaseStudy = {
   export const caseStudies: CaseStudy[] = [
     {
       slug: 'vehicle-rental-app',
-      title: 'Vehicle Rental Mobile App',
-      shortDescription: 'A sleek and intuitive mobile application designed to streamline the vehicle rental process, offering a seamless user experience from booking to return.',
-      techStack: ['Figma', 'React Native', 'MongoDB'],
+      title: 'LankaRent - Vehicle Rental App',
+      shortDescription: 'A centralized mobile marketplace connecting verified vehicle rental companies with travelers, focusing on trust, transparency, and a chat-first user experience tailored for the Sri Lankan market.',
+      techStack: ['React Native', 'MongoDB', 'Product Design'],
       heroImage: 'caseStudyHeroVehicle',
       overview: {
-        problem: 'The existing vehicle rental market was fragmented, with many apps offering clunky interfaces, confusing booking flows, and a lack of transparency in pricing. Users needed a simpler, more trustworthy solution.',
+        problem: 'In Sri Lanka, the vehicle rental market is highly fragmented, relying on unorganized Facebook groups and classified ads. This creates anxiety for renters due to potential scams and hidden fees, while rental SMEs struggle with manual booking management, leading to lost revenue.',
         goals: [
-          'Design a user-centric interface that simplifies the booking process.',
-          'Build a scalable cross-platform mobile app for both iOS and Android.',
-          'Integrate a secure payment and user authentication system.',
-          'Ensure real-time availability and transparent pricing.'
+          'Trust: Implement identity verification for both renters and hosts.',
+          'Clarity: Provide upfront pricing, including mileage limits and excess charges.',
+          'Flexibility: A "Chat-First" approach allowing users to negotiate and confirm details before payment.'
         ],
-        role: 'As the lead UI/UX Designer and Frontend Developer, I was responsible for the entire product lifecycle, from initial user research and wireframing to building the final production-ready mobile application.',
+        role: 'Product Designer & Full Stack Developer',
       },
       process: {
-        research: 'I started with competitive analysis and user interviews to understand pain points in the current rental market. Key findings showed a demand for clearer pricing, easier vehicle comparison, and a faster checkout process.',
-        uxStrategy: 'The strategy was to create a "less is more" experience. I focused on a linear booking flow, reducing the number of steps required to complete a reservation. I also prioritized visual cues and clear information hierarchy to guide the user.',
-        designDecisions: 'A minimalist design system with a clean, modern aesthetic was developed in Figma. The color palette was chosen to evoke trust and reliability. Interactive prototypes were built and tested with users to validate the design choices before development.',
+        research: 'User research identified the primary pain points: lack of trust, unclear pricing, and a cultural preference for negotiation. Renters feared getting "lemon" cars, while hosts wasted time on non-converting inquiries. This highlighted the need for a solution that balanced modern convenience with local market behaviors.',
+        uxStrategy: 'The core strategy was a "Chat-First" workflow. Instead of forcing immediate online payment, which has high drop-off rates in Sri Lanka, the app uses a Request -> Accept -> Chat flow. This builds trust and allows for negotiation, mirroring real-world interactions and increasing conversion.',
+        designDecisions: 'To encourage supply, a "Switch Role" feature was designed, allowing any user to toggle between a renter and a host interface within the same app. This dual-mode approach reduces friction for casual hosts. The UI also features a modern "floating island" navigation bar to differentiate it from standard apps.',
       },
       designAndDevelopment: {
-        uiApproach: 'The UI was built with a component-based architecture using React Native, allowing for a consistent look and feel across platforms. I used atomic design principles to create a reusable library of UI elements.',
-        developmentHighlights: 'MongoDB was leveraged for the backend, handling user authentication, real-time database for bookings, and cloud functions for business logic. This choice enabled rapid development and scalability.',
-        responsiveness: 'While a mobile-first approach was natural, careful attention was paid to ensure the layout adapted perfectly to a wide range of screen sizes and aspect ratios, from small phones to large tablets.',
+        uiApproach: 'The UI was designed with a clean, trust-centric aesthetic. A native system font was used for readability, with a clear visual hierarchy. Key information like mileage limits and "Verified" badges are prominently displayed to address user anxieties. The color palette uses professional blues and reassuring greens to build credibility.',
+        developmentHighlights: 'The home screen features horizontal scrollable category chips for instant filtering. The profile screen emphasizes a "Verified Renter" badge. For hosts, a high-contrast dashboard shows key stats like earnings and pending requests at-a-glance, with immediate action buttons to minimize clicks.',
+        responsiveness: 'As a mobile-first application for both iOS and Android, the design was rigorously tested across a wide range of screen sizes and aspect ratios. The "floating island" navigation and card-based layouts adapt fluidly, ensuring a consistent and optimal experience on any device.',
       },
       outcome: {
-        results: 'The app launched to positive user feedback, with a 40% reduction in average booking time compared to competitors. The intuitive UI was frequently cited as a key differentiator in app store reviews.',
-        learnings: 'This project reinforced the importance of iterative user testing. Early feedback on the prototype saved significant development time by identifying UX issues before a single line of code was written.',
-        finalThoughts: 'The Vehicle Rental App successfully demonstrates how a focus on user-centered design can disrupt a crowded market. It serves as a strong example of my ability to deliver end-to-end product solutions.',
+        results: 'The MVP design demonstrates a user-centered approach that tackles specific local market challenges. The "Chat-First" workflow was validated through user testing as a key differentiator that significantly increased user comfort and the likelihood of a completed booking.',
+        learnings: 'The project underscored that a successful digital product in an emerging market requires deep cultural adaptation, not just translation. Technical solutions must be tailored to solve local problems, like the preference for cash transactions and direct communication, to gain user trust and adoption.',
+        finalThoughts: 'The next phase includes integrating a local payment gateway (PayHere/Stripe) to secure bookings after chat confirmation, followed by AI-powered pricing suggestions for hosts. This case study showcases a blend of thoughtful UX strategy and practical full-stack development.',
       },
     },
     {

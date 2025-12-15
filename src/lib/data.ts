@@ -11,9 +11,9 @@ export const roles = ['UI/UX Designer', 'Frontend Developer', 'Product-Focused C
 
 export const projects = [
   {
-    title: 'Vehicle Rental Mobile App',
+    title: 'LankaRent - Vehicle Rental App',
     description: 'A sleek mobile app for vehicle rentals, focused on a seamless user experience.',
-    tech: ['Figma', 'React Native', 'MongoDB'],
+    tech: ['React Native', 'MongoDB', 'Product Design'],
     image: 'projectVehicleRental',
     caseStudyUrl: '/work/vehicle-rental-app',
   },

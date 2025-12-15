@@ -1,6 +1,5 @@
-"use client";
-
 import React from 'react';
+import './gradient-text.css';
 import { cn } from '@/lib/utils';
 
 interface GradientTextProps extends React.HTMLAttributes<HTMLSpanElement> {
@@ -21,18 +20,14 @@ const GradientText: React.FC<GradientTextProps> = ({
   const gradientStyle: React.CSSProperties = {
     '--gradient-colors': colors.join(', '),
     '--animation-speed': `${animationSpeed}s`,
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-    color: 'transparent',
-    backgroundImage: `linear-gradient(90deg, var(--gradient-colors))`,
-    backgroundSize: '200% 200%',
-    animation: `gradient-animation var(--animation-speed) ease infinite`,
-    ...(showBorder && { borderBottom: '1px solid currentColor' }),
-  };
+  } as React.CSSProperties;
 
   return (
-    <span className={cn('inline-block', className)} style={gradientStyle} {...props}>
+    <span
+      className={cn('animated-gradient-text', className)}
+      style={gradientStyle}
+      {...props}
+    >
       {children}
     </span>
   );

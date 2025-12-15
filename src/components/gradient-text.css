@@ -1,0 +1,22 @@
+.animated-gradient-text {
+  background-image: linear-gradient(90deg, var(--gradient-colors));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-animation var(--animation-speed) linear infinite;
+  display: inline-block;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

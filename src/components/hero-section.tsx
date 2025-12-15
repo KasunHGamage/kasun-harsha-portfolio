@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { roles } from '@/lib/data';
@@ -9,15 +8,6 @@ import { ArrowRight } from 'lucide-react';
 import { Section } from './section';
 
 export default function HeroSection() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <Section id="home" className="flex items-center justify-center text-center !min-h-screen">
       {/* Background Glows */}
@@ -75,19 +65,10 @@ export default function HeroSection() {
         <h1 className="text-5xl font-extrabold tracking-tighter text-foreground sm:text-7xl md:text-8xl">
           Kasun Harsha
         </h1>
-        <div className="relative mt-2 h-10 sm:h-12 md:h-16">
-          <AnimatePresence mode="wait">
-            <motion.span
-              key={roles[index]}
-              className="absolute inset-0 flex items-center justify-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent font-semibold text-2xl sm:text-3xl md:text-4xl"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-            >
-              {roles[index]}
-            </motion.span>
-          </AnimatePresence>
+        <div className="mt-4">
+          <p className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent font-semibold text-2xl sm:text-3xl md:text-4xl">
+            {roles.join('  •  ')}
+          </p>
         </div>
         <p className="mt-6 max-w-2xl mx-auto text-lg text-foreground/80 md:text-xl">
           I design and build high-quality digital products with a focus on seamless user experience and modern engineering.

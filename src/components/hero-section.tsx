@@ -7,7 +7,6 @@ import Link from 'next/link';
 import { roles } from '@/lib/data';
 import { ArrowRight } from 'lucide-react';
 import { Section } from './section';
-import { cn } from '@/lib/utils';
 
 export default function HeroSection() {
   const [index, setIndex] = useState(0);

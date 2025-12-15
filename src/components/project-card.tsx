@@ -39,7 +39,8 @@ export default function ProjectCard({ project }: { project: Project }) {
                 <Image
                   src={projectImage.imageUrl}
                   alt={project.title}
-                  fill
+                  width={600}
+                  height={450}
                   data-ai-hint={projectImage.imageHint}
                   className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                 />

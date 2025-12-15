@@ -78,7 +78,8 @@ export default function CaseStudyTemplate({ project, nextProject, prevProject }:
             <Image
               src={heroImage.imageUrl}
               alt={project.title}
-              fill
+              width={1200}
+              height={750}
               data-ai-hint={heroImage.imageHint}
               className="object-cover"
             />

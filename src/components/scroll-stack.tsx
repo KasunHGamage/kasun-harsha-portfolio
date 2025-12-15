@@ -28,17 +28,20 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
         {cards.map((card, index) => {
           if (!React.isValidElement(card)) return null;
 
-          const input = [
-            (index - 1) / cardCount,
-            index / cardCount,
-            (index + 1) / cardCount,
-          ];
-          const output = [ '30px', '0px', '-30px'];
-          const y = useTransform(scrollYProgress, input, output);
+          const startProgress = index / cardCount;
+          const endProgress = (index + 1) / cardCount;
+
+          const y = useTransform(
+            scrollYProgress,
+            [startProgress, endProgress],
+            [index === 0 ? '0vh' : '100vh', `${index * -4}vh`]
+          );
           
-          const scaleInput = [index / cardCount, (index + 1) / cardCount];
-          const scaleOutput = [1, 0.95];
-          const scale = useTransform(scrollYProgress, scaleInput, scaleOutput);
+          const scale = useTransform(
+            scrollYProgress,
+            [startProgress, endProgress],
+            [index === 0 ? 1 : 1.2, 1 - (cardCount - 1 - index) * 0.05]
+          );
 
           return React.cloneElement(card as React.ReactElement, {
             ...card.props,
@@ -47,7 +50,7 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
               position: 'absolute',
               y,
               scale,
-              zIndex: cardCount - index,
+              zIndex: index,
             },
           });
         })}

@@ -6,13 +6,11 @@ import { cn } from '@/lib/utils';
 type ScrollStackProps = {
   children: React.ReactNode;
   className?: string;
-  itemDistance?: number;
 };
 
 export const ScrollStack: React.FC<ScrollStackProps> = ({
   children,
   className,
-  itemDistance = -50,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -29,18 +27,18 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
           if (!React.isValidElement(child)) return null;
           
           const start = index / childCount;
-          const end = start + 1 / childCount;
+          const end = (index + 1) / childCount;
 
           const y = useTransform(
             scrollYProgress,
             [start, end],
-            [`${(index * 100)}%`, `${(childCount - 1 - index) * itemDistance}px`]
+            [`${(index * 100)}%`, `0%`]
           );
 
           const scale = useTransform(
             scrollYProgress,
             [start, end],
-            [1, 1 - (childCount - 1 - index) * 0.05]
+            [1, 1 - (childCount - index) * 0.05]
           );
 
           return React.cloneElement(child as React.ReactElement, {

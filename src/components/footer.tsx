@@ -5,7 +5,7 @@ import { socialLinks } from '@/lib/data';
 
 export default function Footer() {
   return (
-    <footer className="bg-card">
+    <footer className="bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center justify-between gap-4 border-t py-6 sm:flex-row">
           <p className="text-sm text-foreground/60">

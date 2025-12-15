@@ -70,7 +70,7 @@ export default function AboutSection() {
           >
             {techBadges.map((tech) => (
               <motion.div key={tech} variants={itemVariants}>
-                <Badge variant="secondary" className="text-sm px-3 py-1">{tech}</Badge>
+                <Badge variant="secondary" className="text-sm px-3 py-1 bg-white hover:bg-neutral-100 text-foreground border border-border">{tech}</Badge>
               </motion.div>
             ))}
           </motion.div>

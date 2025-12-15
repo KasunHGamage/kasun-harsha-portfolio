@@ -31,7 +31,7 @@ export default function ProjectCard({ project }: { project: Project }) {
 
   return (
     <motion.div variants={itemVariants} className="h-full">
-      <Card className="flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1 border-border/50">
+      <Card className="flex flex-col h-full overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
         <CardHeader className="p-0">
           {projectImage && (
             <div className="aspect-video relative overflow-hidden">

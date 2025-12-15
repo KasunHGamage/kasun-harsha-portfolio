@@ -30,7 +30,7 @@ export default function Header() {
             <Button
               variant="ghost"
               className={cn(
-                "text-foreground/80 hover:text-foreground transition-colors",
+                "text-foreground/60 hover:text-foreground transition-colors",
                 activeSection === link.id && "text-foreground"
               )}
             >

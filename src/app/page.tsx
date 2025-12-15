@@ -13,13 +13,13 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <Section id="about">
+        <Section id="about" className="bg-secondary">
           <AboutSection />
         </Section>
         <Section id="work">
           <WorkSection />
         </Section>
-        <Section id="skills">
+        <Section id="skills" className="bg-secondary">
           <SkillsSection />
         </Section>
         <Section id="contact">

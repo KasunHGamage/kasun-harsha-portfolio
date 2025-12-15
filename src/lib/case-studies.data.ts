@@ -31,7 +31,7 @@ export type CaseStudy = {
       slug: 'vehicle-rental-app',
       title: 'Vehicle Rental Mobile App',
       shortDescription: 'A sleek and intuitive mobile application designed to streamline the vehicle rental process, offering a seamless user experience from booking to return.',
-      techStack: ['Figma', 'React Native', 'Firebase', 'User Research'],
+      techStack: ['Figma', 'React Native', 'MongoDB'],
       heroImage: 'caseStudyHeroVehicle',
       overview: {
         problem: 'The existing vehicle rental market was fragmented, with many apps offering clunky interfaces, confusing booking flows, and a lack of transparency in pricing. Users needed a simpler, more trustworthy solution.',
@@ -50,7 +50,7 @@ export type CaseStudy = {
       },
       designAndDevelopment: {
         uiApproach: 'The UI was built with a component-based architecture using React Native, allowing for a consistent look and feel across platforms. I used atomic design principles to create a reusable library of UI elements.',
-        developmentHighlights: 'Firebase was leveraged for the backend, handling user authentication, real-time database for bookings, and cloud functions for business logic. This choice enabled rapid development and scalability.',
+        developmentHighlights: 'MongoDB was leveraged for the backend, handling user authentication, real-time database for bookings, and cloud functions for business logic. This choice enabled rapid development and scalability.',
         responsiveness: 'While a mobile-first approach was natural, careful attention was paid to ensure the layout adapted perfectly to a wide range of screen sizes and aspect ratios, from small phones to large tablets.',
       },
       outcome: {

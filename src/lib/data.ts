@@ -13,7 +13,7 @@ export const projects = [
   {
     title: 'Vehicle Rental Mobile App',
     description: 'A sleek mobile app for vehicle rentals, focused on a seamless user experience.',
-    tech: ['Figma', 'React Native', 'Firebase'],
+    tech: ['Figma', 'React Native', 'MongoDB'],
     image: 'projectVehicleRental',
     caseStudyUrl: '/work/vehicle-rental-app',
   },

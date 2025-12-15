@@ -25,7 +25,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.7,
-      ease: [0.6, 0.05, -0.01, 0.9],
+      ease: "easeOut",
     },
   },
 };
@@ -35,7 +35,7 @@ export default function HeroSection() {
       offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "8%"]);
 
   return (
     <Section

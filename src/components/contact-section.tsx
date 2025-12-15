@@ -113,15 +113,15 @@ export default function ContactSection() {
               render={({ field }) => (
                 <FormItem className="floating-label-container">
                   <FormControl>
-                    <Textarea {...field} rows={5} className={cn("peer min-h-[120px]", "floating-label-input")} />
+                    <Textarea {...field} className={cn("peer min-h-[160px]", "floating-label-input")} />
                   </FormControl>
                   <FormLabel className="floating-label">Message</FormLabel>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <div className="text-center">
-              <Button type="submit" variant="primary-apple" size="lg" disabled={isSubmitting || isSuccess}>
+            <div className="text-center pt-4">
+              <Button type="submit" variant="primary-apple" size="lg" disabled={isSubmitting || isSuccess} className="h-[52px] px-8">
                 {isSubmitting ? (
                   <>
                     <Loader2 className="mr-2 h-5 w-5 animate-spin" />

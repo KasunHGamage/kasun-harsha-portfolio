@@ -1,23 +1,23 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import ScrollReveal from './scroll-reveal';
+import { Section } from './section';
 
 export default function AboutSection() {
-  const textContent = "I design intuitive user experiences and build fast, scalable websites using modern frontend technologies and WordPress. From concept to launch, I focus on clarity, performance, and usability.";
-
   return (
-    <section id="about" className="py-24 sm:py-32 bg-background">
-      <motion.div 
-        className="container mx-auto max-w-2xl px-4 sm:px-6 lg:px-8"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.5 }}
-      >
-        <p className="text-xl md:text-2xl leading-relaxed text-foreground/80 text-center">
-            {textContent}
-        </p>
-      </motion.div>
-    </section>
+    <Section id="about" className="bg-background">
+        <div className="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <ScrollReveal
+                containerClassName="text-center"
+                textClassName="text-2xl md:text-4xl leading-relaxed"
+                baseOpacity={0}
+                enableBlur={true}
+                baseRotation={5}
+                blurStrength={10}
+            >
+                When does a man die? When he is hit by a bullet? No! When he suffers a disease? No! When he ate a soup made out of a poisonous mushroom? No! A man dies when he is forgotten!
+            </ScrollReveal>
+        </div>
+    </Section>
   );
 }

@@ -37,7 +37,7 @@ export default function SkillsSection() {
                 <CardContent className="pt-4">
                   <ul className="grid grid-cols-2 gap-x-8 gap-y-3">
                     {skill.items.map((item) => (
-                      <li key={item} className="flex items-center text-base text-foreground">
+                      <li key={item} className="flex items-center text-base text-foreground font-medium">
                         <span className="mr-3 h-1.5 w-1.5 rounded-full bg-primary/80"></span>
                         {item}
                       </li>

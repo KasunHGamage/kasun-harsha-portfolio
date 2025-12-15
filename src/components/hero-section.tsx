@@ -46,14 +46,14 @@ export default function HeroSection() {
         animate="visible"
       >
         <motion.p
-          className="text-base font-medium text-muted-foreground/70 md:text-lg"
+          className="text-base font-medium text-muted-foreground/70 md:text-lg mb-6"
           variants={itemVariants}
         >
           UI/UX Designer · Frontend Developer · WordPress Specialist
         </motion.p>
         
         <motion.h1 
-          className="mt-4 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl"
+          className="my-8 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl"
           variants={itemVariants}
         >
           User-focused design and development for the modern web.

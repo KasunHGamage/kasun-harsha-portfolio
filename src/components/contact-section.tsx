@@ -19,7 +19,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { AnimatedUnderline } from './animated-underline';
 import { cn } from '@/lib/utils';
 
 
@@ -88,7 +87,7 @@ export default function ContactSection() {
               render={({ field }) => (
                 <FormItem className="floating-label-container">
                   <FormControl>
-                    <Input placeholder="Name" {...field} className={cn("peer", "floating-label-input")} />
+                    <Input {...field} className={cn("peer", "floating-label-input")} />
                   </FormControl>
                   <FormLabel className="floating-label">Name</FormLabel>
                   <FormMessage />
@@ -101,7 +100,7 @@ export default function ContactSection() {
               render={({ field }) => (
                 <FormItem className="floating-label-container">
                   <FormControl>
-                    <Input type="email" placeholder="Email" {...field} className={cn("peer", "floating-label-input")} />
+                    <Input type="email" {...field} className={cn("peer", "floating-label-input")} />
                   </FormControl>
                   <FormLabel className="floating-label">Email</FormLabel>
                   <FormMessage />
@@ -114,7 +113,7 @@ export default function ContactSection() {
               render={({ field }) => (
                 <FormItem className="floating-label-container">
                   <FormControl>
-                    <Textarea placeholder="Message" {...field} rows={5} className={cn("peer min-h-[120px]", "floating-label-input")} />
+                    <Textarea {...field} rows={5} className={cn("peer min-h-[120px]", "floating-label-input")} />
                   </FormControl>
                   <FormLabel className="floating-label">Message</FormLabel>
                   <FormMessage />

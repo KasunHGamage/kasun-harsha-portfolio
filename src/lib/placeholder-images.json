@@ -8,8 +8,8 @@
     },
     {
       "id": "projectVehicleRental",
-      "description": "Placeholder for Vehicle Rental App",
-      "imageUrl": "https://images.unsplash.com/photo-1582455328909-044738a16616?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhcHAlMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzY1ODkyMTkyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "Image for Vehicle Rental App",
+      "imageUrl": "https://i.imgur.com/9e1zF8s.png",
       "imageHint": "app interface"
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": "caseStudyHeroVehicle",
       "description": "Hero image for vehicle rental case study",
-      "imageUrl": "https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxzbWFydHBob25lJTIwYXBwfGVufDB8fHx8MTc2NTg5MjMyMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://i.imgur.com/9e1zF8s.png",
       "imageHint": "smartphone app"
     },
     {

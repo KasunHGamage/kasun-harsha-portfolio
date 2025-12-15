@@ -1,0 +1,19 @@
+.scroll-reveal {
+  perspective: 800px;
+  text-align: center;
+}
+
+.scroll-reveal-text {
+  display: inline-block;
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  line-height: 1.6;
+  color: hsl(var(--foreground) / 0.8);
+}
+
+.word {
+  display: inline-block;
+}
+
+.word.whitespace-pre {
+  white-space: pre;
+}

@@ -50,7 +50,7 @@ export const skills = [
   {
     category: 'CMS & Platforms',
     icon: Database,
-    items: ['WordPress', 'Firebase', 'Supabase', 'Vercel', 'Shopify'],
+    items: ['WordPress', 'Webflow', 'Framer', 'Shopify'],
   },
 ];
 

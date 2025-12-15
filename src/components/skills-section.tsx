@@ -20,30 +20,32 @@ export default function SkillsSection() {
         <div className="flex justify-center mt-2"><AnimatedUnderline /></div>
       </motion.div>
 
-      <ScrollStack useWindowScroll={true} itemDistance={150}>
-        {skills.map((skill) => (
-          <ScrollStackItem key={skill.category}>
-            <Card className="bg-card border-border/50">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl">
-                  <skill.icon className="h-6 w-6 text-primary" />
-                  {skill.category}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {skill.items.map((item) => (
-                    <li key={item} className="flex items-center text-foreground/80">
-                      <span className="mr-2 h-1 w-1 rounded-full bg-primary"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </ScrollStackItem>
-        ))}
-      </ScrollStack>
+      <div className="relative">
+        <ScrollStack itemDistance={-50} className="space-y-4">
+          {skills.map((skill, index) => (
+            <ScrollStackItem key={skill.category} index={index}>
+              <Card className="bg-card border-border/50 min-h-[250px]">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-3 text-xl">
+                    <skill.icon className="h-6 w-6 text-primary" />
+                    {skill.category}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {skill.items.map((item) => (
+                      <li key={item} className="flex items-center text-foreground/80">
+                        <span className="mr-2 h-1 w-1 rounded-full bg-primary"></span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            </ScrollStackItem>
+          ))}
+        </ScrollStack>
+      </div>
     </div>
   );
 }

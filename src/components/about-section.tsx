@@ -13,7 +13,7 @@ export default function AboutSection() {
                 baseOpacity={0}
                 enableBlur={true}
                 baseRotation={5}
-                blurStrength={10}
+                blurStrength={20}
             >
                 {`I design and build user-focused digital experiences by blending thoughtful UI/UX design with modern web development.
 

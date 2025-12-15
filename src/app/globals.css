@@ -61,7 +61,7 @@
 
   .floating-label {
     @apply absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all duration-200 ease-in-out pointer-events-none;
-    @apply peer-focus:top-3 peer-focus:scale-75 peer-focus:text-primary;
-    @apply peer-[:not(:placeholder-shown)]:top-3 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:text-primary;
+    @apply peer-focus:top-3 peer-focus:text-xs peer-focus:text-primary;
+    @apply peer-[:not(:placeholder-shown)]:top-3 peer-[:not(:placeholder-shown)]:text-xs peer-[:not(:placeholder-shown)]:text-primary;
   }
 }

@@ -66,23 +66,22 @@ export default function ContactSection() {
 
   return (
     <motion.div
-      className="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8"
+      className="container mx-auto max-w-2xl px-4 sm:px-6 lg:px-8"
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.5 }}
     >
       <div className="text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Get In Touch</h2>
-        <div className="flex justify-center mt-2"><AnimatedUnderline /></div>
-        <p className="mt-4 text-lg leading-8 text-foreground/80">
-          I’m currently available for freelance work and new opportunities. Have a project in mind? Let's talk.
+        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Get in Touch</h2>
+        <p className="mt-4 text-lg leading-8 text-foreground/80 max-w-xl mx-auto">
+          Have a project in mind? I’m available for freelance work and collaborations.
         </p>
       </div>
       
       <div className="mt-12">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
               control={form.control}
               name="name"
@@ -115,28 +114,30 @@ export default function ContactSection() {
               render={({ field }) => (
                 <FormItem className="floating-label-container">
                   <FormControl>
-                    <Textarea placeholder="Message" {...field} className={cn("peer min-h-[120px]", "floating-label-input")} />
+                    <Textarea placeholder="Message" {...field} rows={5} className={cn("peer min-h-[120px]", "floating-label-input")} />
                   </FormControl>
                   <FormLabel className="floating-label">Message</FormLabel>
                   <FormMessage />
                 </FormItem>
               )}
             />
-            <Button type="submit" disabled={isSubmitting || isSuccess} className="w-full text-lg py-6">
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Sending...
-                </>
-              ) : isSuccess ? (
-                <>
-                  <Check className="mr-2 h-5 w-5" />
-                  Message Sent!
-                </>
-              ) : (
-                "Send Message"
-              )}
-            </Button>
+            <div className="text-center">
+              <Button type="submit" variant="primary-apple" size="lg" disabled={isSubmitting || isSuccess}>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                    Sending...
+                  </>
+                ) : isSuccess ? (
+                  <>
+                    <Check className="mr-2 h-5 w-5" />
+                    Message Sent!
+                  </>
+                ) : (
+                  "Send Message"
+                )}
+              </Button>
+            </div>
           </form>
         </Form>
       </div>

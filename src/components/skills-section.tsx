@@ -53,30 +53,21 @@ const SkillCard = ({ skill, index, scrollYProgress }: SkillCardProps) => {
   const totalCards = skills.length;
   const start = index / totalCards;
   const end = start + (1 / totalCards);
-
-  const scale = useTransform(scrollYProgress, [start, end], [1, 0.9]);
-  const opacity = useTransform(scrollYProgress, [start, end], [1, 0]);
+  
+  const scale = useTransform(scrollYProgress, [start, end], [1, 1 - (totalCards - index) * 0.05]);
+  const y = useTransform(scrollYProgress, [start, end], [0, -(index * 40)]);
 
   return (
     <motion.div
       className="absolute inset-0"
       style={{
+        zIndex: totalCards - index,
+        y,
         scale,
-        opacity,
       }}
     >
-      <div className={cn("flex flex-col items-center justify-start h-full", {
-          "pt-0": index === 0,
-          "pt-2": index === 1,
-          "pt-4": index === 2,
-        })}>
-        <Card 
-            style={{
-                top: `${index * 2}rem`,
-                zIndex: totalCards - index,
-            }}
-            className="w-full max-w-2xl mx-auto bg-card border-border/50"
-        >
+      <div className={cn("flex flex-col items-center justify-start h-full")}>
+        <Card className="w-full max-w-2xl mx-auto bg-card border-border/50">
           <CardHeader>
             <CardTitle className="flex items-center gap-3 text-xl">
               <skill.icon className="h-6 w-6 text-primary" />

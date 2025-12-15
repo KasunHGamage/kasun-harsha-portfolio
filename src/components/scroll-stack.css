@@ -1,0 +1,24 @@
+.scroll-stack-scroller {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.scroll-stack-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.scroll-stack-card {
+  width: 100%;
+  max-width: 48rem; /* max-w-2xl from skills-section */
+  margin: 0 auto;
+}
+
+.scroll-stack-end {
+  height: 100vh;
+}

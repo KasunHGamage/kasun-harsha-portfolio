@@ -63,8 +63,8 @@ export default function HeroSection() {
             showBorder={false}
           >
             User-focused design
+            <span className="text-foreground/80">and development for the modern web.</span>
           </GradientText>
-          <span className="text-foreground/80">and development for the modern web.</span>
         </motion.h1>
 
         

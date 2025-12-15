@@ -25,18 +25,22 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
           <div className="text-center lg:text-left">
-            <motion.h1 
-              className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl"
+            <motion.div
+              className="flex flex-col"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="block">Kasun Harsha</span>
-              <div className="relative mt-2 h-24 sm:h-28 md:h-32">
+              <h1 
+                className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl"
+              >
+                Kasun Harsha
+              </h1>
+              <div className="relative mt-2 h-16 sm:h-20">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={roles[index]}
-                    className="block bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent text-3xl sm:text-4xl md:text-5xl"
+                    className="absolute inset-0 flex items-center justify-center lg:justify-start bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent text-3xl sm:text-4xl md:text-5xl"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
@@ -46,7 +50,7 @@ export default function HeroSection() {
                   </motion.span>
                 </AnimatePresence>
               </div>
-            </motion.h1>
+            </motion.div>
             <motion.p 
               className="mx-auto mt-6 max-w-md text-lg text-foreground/80 md:text-xl lg:mx-0"
               initial={{ opacity: 0, y: 20 }}

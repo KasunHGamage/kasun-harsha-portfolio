@@ -53,7 +53,7 @@ export default function HeroSection() {
         </motion.p>
         
         <motion.h1 
-          className="my-8 text-4xl font-extrabold tracking-tight text-foreground sm:text-6xl flex flex-col items-center"
+          className="my-8 text-4xl font-extrabold tracking-tight text-foreground sm:text-7xl flex flex-col items-center"
           variants={itemVariants}
         >
           <span className="text-center">

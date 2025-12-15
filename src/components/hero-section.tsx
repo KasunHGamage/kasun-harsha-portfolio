@@ -13,7 +13,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
       delayChildren: 0.1,
     },
   },
@@ -57,41 +57,34 @@ export default function HeroSection() {
       </div>
 
       <motion.div
-        className="container mx-auto px-4"
+        className="container mx-auto px-4 max-w-4xl"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <motion.div style={{ y }}>
-          {/* Name */}
+          <motion.p 
+            className="text-lg font-medium text-primary"
+            variants={itemVariants}
+          >
+            Kasun Harsha — UI/UX Designer
+          </motion.p>
+          
           <motion.h1 
-            className="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl"
+            className="mt-2 text-5xl font-extrabold tracking-tight sm:text-7xl"
             variants={itemVariants}
           >
-            Kasun Harsha
+            Digital experiences that feel effortless.
           </motion.h1>
-
-          {/* Static Role */}
-           <motion.div 
-            className="relative mt-4 flex h-12 items-center justify-center overflow-hidden sm:h-16"
-            variants={itemVariants}
-          >
-            <p className="bg-gradient-to-r from-primary to-accent bg-clip-text text-2xl font-semibold text-transparent sm:text-3xl md:text-4xl">
-              UI/UX Designer
-            </p>
-          </motion.div>
         </motion.div>
         
-        {/* Description */}
         <motion.p 
           className="mx-auto mt-6 max-w-2xl text-lg text-foreground/80 md:text-xl"
           variants={itemVariants}
         >
-          I design and build high-quality digital products with a focus on
-          seamless user experience and modern engineering.
+          Focused on clarity, usability, and modern frontend craft.
         </motion.p>
 
-        {/* Buttons */}
         <motion.div
           className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
           variants={itemVariants}

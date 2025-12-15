@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 type ScrollStackProps = {
@@ -27,29 +27,45 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
           if (!React.isValidElement(child)) return null;
           
           const start = index / childCount;
-          const end = (index + 1) / childCount;
-          
+          const end = 1; // All animations complete at the end
+
           const y = useTransform(
             scrollYProgress,
             [start, end],
-            [`${(childCount - index - 1) * 15}%`, `-${index * 20}px`]
+            [`${(index * 4) + 40}vh`, '0vh']
           );
           
           const scale = useTransform(
             scrollYProgress,
-            [start, end],
-            [1 - (childCount - index - 1) * 0.05, 1]
+            [start, 1],
+            [1, 1 - (childCount - index - 1) * 0.05]
           );
 
-          const smoothY = useSpring(y, { stiffness: 400, damping: 90 });
-          const smoothScale = useSpring(scale, { stiffness: 400, damping: 90 });
+          // Apply offset to cards that are "behind" the current one
+          const yOffset = useTransform(
+            scrollYProgress,
+            (latest) => {
+              const cardProgress = (latest * childCount);
+              const distance = cardProgress - index;
+              if (distance > 0) {
+                // Card is behind the top-most active card
+                return Math.min(distance, childCount - 1 - index) * 12; 
+              }
+              return 0;
+            }
+          );
+          
+          const combinedY = useTransform([y, yOffset], ([yVal, yOffsetVal]) => {
+              return `calc(${yVal} + ${yOffsetVal}px)`;
+          });
+
 
           return React.cloneElement(child as React.ReactElement, {
             ...child.props,
             style: {
               ...child.props.style,
-              y: smoothY,
-              scale: smoothScale,
+              y: combinedY,
+              scale: scale,
               zIndex: index,
             },
           });

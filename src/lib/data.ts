@@ -1,10 +1,10 @@
 import { Figma, Component, Database } from 'lucide-react';
 
 export const navLinks = [
-  { name: 'About', href: '#about', id: 'about' },
-  { name: 'Work', href: '#work', id: 'work' },
-  { name: 'Skills', href: '#skills', id: 'skills' },
-  { name: 'Contact', href: '#contact', id: 'contact' },
+  { name: 'About', href: '/#about', id: 'about' },
+  { name: 'Work', href: '/#work', id: 'work' },
+  { name: 'Skills', href: '/#skills', id: 'skills' },
+  { name: 'Contact', href: '/#contact', id: 'contact' },
 ];
 
 export const roles = ['UI/UX Designer', 'Frontend Developer', 'Product-Focused Creator'];

@@ -9,7 +9,7 @@
     {
       "id": "projectVehicleRental",
       "description": "Image for Vehicle Rental App",
-      "imageUrl": "https://i.imgur.com/9e1zF8s.png",
+      "imageUrl": "/projects/rental.png",
       "imageHint": "app interface"
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": "caseStudyHeroVehicle",
       "description": "Hero image for vehicle rental case study",
-      "imageUrl": "https://i.imgur.com/9e1zF8s.png",
+      "imageUrl": "/projects/rental.png",
       "imageHint": "smartphone app"
     },
     {

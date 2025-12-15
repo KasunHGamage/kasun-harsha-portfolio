@@ -15,7 +15,14 @@ export default function AboutSection() {
       <div className="container mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
         <motion.p
           className="text-center text-xl text-foreground/80 md:text-2xl leading-relaxed"
-          {...motionProps}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
         >
           I design intuitive user experiences and build fast, scalable websites using modern frontend technologies and WordPress. From concept to launch, I focus on clarity, performance, and usability.
         </motion.p>

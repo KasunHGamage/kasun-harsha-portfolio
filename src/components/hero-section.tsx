@@ -32,11 +32,11 @@ export default function HeroSection() {
               transition={{ duration: 0.5 }}
             >
               <span className="block">Kasun Harsha</span>
-              <div className="relative mt-2 h-16 sm:h-20 md:h-24">
+              <div className="relative mt-2 h-20 sm:h-24 md:h-28">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={roles[index]}
-                    className="block bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent"
+                    className="block bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent text-4xl sm:text-5xl md:text-6xl"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}

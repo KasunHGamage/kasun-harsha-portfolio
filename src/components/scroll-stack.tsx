@@ -30,21 +30,18 @@ export const ScrollStack: React.FC<ScrollStackProps> = ({
           
           const start = index / childCount;
           const end = start + 1 / childCount;
-          const initialOffset = 30; // Initial vertical separation
-          const finalOffset = itemDistance; // From props, controls final stacking distance
 
           const y = useTransform(
             scrollYProgress,
             [start, end],
-            [index * initialOffset, (childCount - 1 - index) * finalOffset]
+            [`${(index * 100)}%`, `${(childCount - 1 - index) * itemDistance}px`]
           );
 
           const scale = useTransform(
             scrollYProgress,
             [start, end],
-            [1 - index * 0.05, 1 - (childCount - 1 - index) * 0.05]
+            [1, 1 - (childCount - 1 - index) * 0.05]
           );
-
 
           return React.cloneElement(child as React.ReactElement, {
             ...child.props,

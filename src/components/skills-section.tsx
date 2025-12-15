@@ -1,31 +1,19 @@
 "use client";
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { skills } from '@/lib/data';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedUnderline } from './animated-underline';
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { type: 'spring' }
-  },
-};
+import { cn } from '@/lib/utils';
 
 export default function SkillsSection() {
+  const targetRef = useRef<HTMLDivElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ['start start', 'end end'],
+  });
+
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <motion.div
@@ -33,41 +21,80 @@ export default function SkillsSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5 }}
+        className="text-center"
       >
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Skills & Tools</h2>
-        <AnimatedUnderline />
+        <div className="flex justify-center mt-2"><AnimatedUnderline /></div>
       </motion.div>
 
-      <motion.div 
-        className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        {skills.map((skillCategory) => (
-          <motion.div key={skillCategory.category} variants={itemVariants} className="h-full">
-            <Card className="h-full bg-background/50 border-border/50 transition-all duration-300 hover:border-primary/50 hover:shadow-lg">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl">
-                  <skillCategory.icon className="h-6 w-6 text-primary" />
-                  {skillCategory.category}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {skillCategory.items.map((item) => (
-                    <li key={item} className="flex items-center text-foreground/80">
-                      <span className="mr-2 h-1 w-1 rounded-full bg-primary"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          </motion.div>
-        ))}
-      </motion.div>
+      <div ref={targetRef} className="relative mt-12 h-[300vh]">
+        <div className="sticky top-1/4">
+          {skills.map((skill, index) => (
+            <SkillCard
+              key={skill.category}
+              skill={skill}
+              index={index}
+              scrollYProgress={scrollYProgress}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
+
+interface SkillCardProps {
+  skill: (typeof skills)[0];
+  index: number;
+  scrollYProgress: ReturnType<typeof useScroll>['scrollYProgress'];
+}
+
+const SkillCard = ({ skill, index, scrollYProgress }: SkillCardProps) => {
+  const totalCards = skills.length;
+  const start = index / totalCards;
+  const end = start + (1 / totalCards);
+
+  const scale = useTransform(scrollYProgress, [start, end], [1, 0.9]);
+  const opacity = useTransform(scrollYProgress, [start, end], [1, 0]);
+
+  return (
+    <motion.div
+      className="absolute inset-0"
+      style={{
+        scale,
+        opacity,
+      }}
+    >
+      <div className={cn("flex flex-col items-center justify-start h-full", {
+          "pt-0": index === 0,
+          "pt-2": index === 1,
+          "pt-4": index === 2,
+        })}>
+        <Card 
+            style={{
+                top: `${index * 2}rem`,
+                zIndex: totalCards - index,
+            }}
+            className="w-full max-w-2xl mx-auto bg-card border-border/50"
+        >
+          <CardHeader>
+            <CardTitle className="flex items-center gap-3 text-xl">
+              <skill.icon className="h-6 w-6 text-primary" />
+              {skill.category}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2">
+              {skill.items.map((item) => (
+                <li key={item} className="flex items-center text-foreground/80">
+                  <span className="mr-2 h-1 w-1 rounded-full bg-primary"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      </div>
+    </motion.div>
+  );
+};

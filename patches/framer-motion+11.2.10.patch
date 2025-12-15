@@ -1,0 +1,13 @@
+diff --git a/node_modules/framer-motion/dist/es/utils/use-isomorphic-layout-effect.js b/node_modules/framer-motion/dist/es/utils/use-isomorphic-layout-effect.js
+index 9a20216..911c9dd 100644
+--- a/node_modules/framer-motion/dist/es/utils/use-isomorphic-layout-effect.js
++++ b/node_modules/framer-motion/dist/es/utils/use-isomorphic-layout-effect.js
+@@ -1,7 +1,7 @@
+ import { useEffect, useLayoutEffect } from "react";
+ import { isBrowser } from "../utils/is-browser.js";
+ 
+-const useIsomorphicLayoutEffect = isBrowser ? useLayoutEffect : useEffect;
++const useIsomorphicLayoutEffect = isBrowser ? useEffect : useEffect;
+ 
+ export { useIsomorphicLayoutEffect };
+ //# sourceMappingURL=use-isomorphic-layout-effect.js.map

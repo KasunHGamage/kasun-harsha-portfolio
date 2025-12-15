@@ -58,7 +58,7 @@ export default function HeroSection() {
           variants={itemVariants}
         >
           <GradientText
-            colors={["#0071E3", "#5E9CFF", "#0071E3"]}
+            colors={['#666666', '#DDDDDD', '#666666']}
             animationSpeed={6}
             className="text-center"
           >

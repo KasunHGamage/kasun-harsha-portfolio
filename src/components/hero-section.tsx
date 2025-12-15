@@ -63,7 +63,14 @@ export default function HeroSection() {
             showBorder={false}
           >
             User-focused design
-            <span className="text-foreground/80">and development for the modern web.</span>
+          </GradientText>
+          <GradientText
+            colors={["#0071E3", "#5E9CFF", "#0071E3"]}
+            animationSpeed={6}
+            showBorder={false}
+            className="text-foreground/80"
+          >
+            and development for the modern web.
           </GradientText>
         </motion.h1>
 

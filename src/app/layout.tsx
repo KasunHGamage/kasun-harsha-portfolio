@@ -3,6 +3,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
+import { usePageReloader } from '@/hooks/use-page-reloader';
 
 // Note: Metadata is not supported in client components. 
 // If you need to set metadata, you would do it in a server component parent or on a page-by-page basis.
@@ -12,6 +13,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  usePageReloader();
 
   return (
     <html lang="en">

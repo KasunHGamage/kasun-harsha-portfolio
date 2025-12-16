@@ -9,7 +9,7 @@ import { ScrollStack, ScrollStackItem } from './scroll-stack';
 export default function SkillsSection() {
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="sticky top-16 z-10 bg-background/80 backdrop-blur-lg -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-4 mb-8">
+      <div className="sticky top-16 z-10 bg-background/80 backdrop-blur-lg -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ export default function SkillsSection() {
       </div>
 
 
-      <div className="relative">
+      <div className="relative pt-8">
         <ScrollStack>
           {skills.map((skill, index) => (
             <ScrollStackItem key={skill.category}>

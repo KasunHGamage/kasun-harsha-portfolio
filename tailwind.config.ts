@@ -14,6 +14,9 @@ export default {
         headline: ['Inter', 'sans-serif'],
         code: ['monospace'],
       },
+      boxShadow: {
+        'glass-shadow': 'inset 0 1px 0 rgba(255,255,255,0.4), 0 10px 30px rgba(0,0,0,0.08)',
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -84,16 +87,16 @@ export default {
           from: {
             height: 'var(--radix-accordion-content-height)',
           },
-          to: {
-            height: '0',
-          },
-        },
-      },
-      animation: {
-        'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out',
-      },
-    },
-  },
-  plugins: [require('tailwindcss-animate')],
+to: {
+height: '0',
+},
+},
+},
+animation: {
+'accordion-down': 'accordion-down 0.2s ease-out',
+'accordion-up': 'accordion-up 0.2s ease-out',
+},
+},
+},
+plugins: [require('tailwindcss-animate')],
 } satisfies Config;

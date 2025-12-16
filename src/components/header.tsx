@@ -17,7 +17,8 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      // Trigger animation after scrolling 50px
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -57,92 +58,91 @@ export default function Header() {
         isScrolled ? "py-2" : "py-0"
       )}
     >
-        <div
-            className={cn(
-                "mx-auto rounded-xl transition-all duration-300",
-                isScrolled 
-                ? "max-w-5xl bg-background/80 backdrop-blur-lg shadow-lg shadow-black/5" 
-                : "max-w-full"
-            )}
-        >
-            <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
-                <div className="flex-shrink-0">
-                    <Link href="/" passHref>
-                    <span className="text-xl font-bold tracking-tight text-foreground">
-                        Kasun Harsha
-                    </span>
-                    </Link>
-                </div>
-                
-                <div className="flex items-center space-x-2">
-                    <nav className="hidden md:block">
-                    <ul className="flex items-baseline space-x-2">
-                        {navItems}
-                    </ul>
-                    </nav>
-                    <div className="hidden md:flex items-center space-x-2">
-                    <Separator orientation="vertical" className="h-6" />
-                    {socialLinks.map((link) => (
-                        <Link key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
-                        <Button variant="ghost" size="icon">
-                            {link.name === 'LinkedIn' ? <Linkedin className="h-5 w-5 text-foreground/60 hover:text-foreground transition-colors" /> : null}
-                            <span className="sr-only">{link.name}</span>
-                        </Button>
-                        </Link>
-                    ))}
-                    </div>
-                </div>
-
-
-                <div className="md:hidden">
-                    <Sheet>
-                    <SheetTrigger asChild>
-                        <Button variant="ghost" size="icon">
-                        <Menu className="h-6 w-6" />
-                        <span className="sr-only">Open main menu</span>
-                        </Button>
-                    </SheetTrigger>
-                    <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
-                        <div className="flex flex-col h-full">
-                        <div className="flex justify-between items-center p-4 border-b">
-                            <span className="text-lg font-bold">Menu</span>
-                            <SheetClose asChild>
-                                <Button variant="ghost" size="icon">
-                                    <X className="h-6 w-6" />
-                                </Button>
-                            </SheetClose>
-                        </div>
-                        <nav className="flex-1 p-4">
-                            <ul className="flex flex-col space-y-4">
-                            {navLinks.map((link) => (
-                                <li key={link.name}>
-                                    <SheetClose asChild>
-                                        <Link href={link.href} passHref>
-                                            <Button variant="ghost" className="w-full justify-start text-lg">{link.name}</Button>
-                                        </Link>
-                                    </SheetClose>
-                                </li>
-                            ))}
-                            </ul>
-                        </nav>
-                        <div className="p-4 border-t">
-                            <div className="flex justify-start space-x-2">
-                            {socialLinks.map((link) => (
-                                <Link key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
-                                <Button variant="ghost" size="icon">
-                                    {link.name === 'LinkedIn' ? <Linkedin className="h-5 w-5" /> : null}
-                                    <span className="sr-only">{link.name}</span>
-                                </Button>
-                                </Link>
-                            ))}
-                            </div>
-                        </div>
-                        </div>
-                    </SheetContent>
-                    </Sheet>
-                </div>
+      <div
+        className={cn(
+          "mx-auto transition-all duration-300 ease-in-out",
+          isScrolled
+            ? "max-w-4xl rounded-2xl liquid-glass"
+            : "max-w-full rounded-none"
+        )}
+      >
+        <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex-shrink-0">
+            <Link href="/" passHref>
+              <span className="text-xl font-bold tracking-tight text-foreground">
+                Kasun Harsha
+              </span>
+            </Link>
+          </div>
+          
+          <div className="flex items-center space-x-2">
+            <nav className="hidden md:block">
+              <ul className="flex items-baseline space-x-2">
+                {navItems}
+              </ul>
+            </nav>
+            <div className="hidden md:flex items-center space-x-2">
+              <Separator orientation="vertical" className="h-6" />
+              {socialLinks.map((link) => (
+                <Link key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
+                  <Button variant="ghost" size="icon">
+                    {link.name === 'LinkedIn' ? <Linkedin className="h-5 w-5 text-foreground/60 hover:text-foreground transition-colors" /> : null}
+                    <span className="sr-only">{link.name}</span>
+                  </Button>
+                </Link>
+              ))}
             </div>
+          </div>
+
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open main menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-full max-w-xs bg-background p-0">
+                <div className="flex flex-col h-full">
+                  <div className="flex justify-between items-center p-4 border-b">
+                    <span className="text-lg font-bold">Menu</span>
+                    <SheetClose asChild>
+                      <Button variant="ghost" size="icon">
+                        <X className="h-6 w-6" />
+                      </Button>
+                    </SheetClose>
+                  </div>
+                  <nav className="flex-1 p-4">
+                    <ul className="flex flex-col space-y-4">
+                      {navLinks.map((link) => (
+                        <li key={link.name}>
+                          <SheetClose asChild>
+                            <Link href={link.href} passHref>
+                              <Button variant="ghost" className="w-full justify-start text-lg">{link.name}</Button>
+                            </Link>
+                          </SheetClose>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                  <div className="p-4 border-t">
+                    <div className="flex justify-start space-x-2">
+                      {socialLinks.map((link) => (
+                        <Link key={link.name} href={link.url} target="_blank" rel="noopener noreferrer">
+                          <Button variant="ghost" size="icon">
+                            {link.name === 'LinkedIn' ? <Linkedin className="h-5 w-5" /> : null}
+                            <span className="sr-only">{link.name}</span>
+                          </Button>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
+      </div>
     </header>
   );
 }

@@ -79,7 +79,7 @@
   }
 
   .liquid-glass {
-    @apply bg-background/75 shadow-glass-shadow;
+    @apply bg-background/90 shadow-glass-shadow;
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     transition: background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),

@@ -23,7 +23,7 @@ export default function SkillsSection() {
       </div>
 
 
-      <div className="relative pt-8">
+      <div className="relative">
         <ScrollStack>
           {skills.map((skill, index) => (
             <ScrollStackItem key={skill.category}>

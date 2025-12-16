@@ -71,6 +71,12 @@
     @apply peer-focus:top-4 peer-focus:text-xs peer-focus:text-primary;
     @apply peer-[:not(:placeholder-shown)]:top-4 peer-[:not(:placeholder-shown)]:text-xs;
   }
+
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
 }
 
 /* For hiding scrollbars */

@@ -54,16 +54,16 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 transition-all duration-300",
-        isScrolled ? "py-2" : "py-0"
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        isScrolled ? "py-2" : "py-4"
       )}
     >
       <div
         className={cn(
-          "mx-auto transition-all duration-300 ease-in-out",
+          "mx-auto rounded-2xl transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
           isScrolled
-            ? "max-w-4xl rounded-2xl liquid-glass"
-            : "max-w-full rounded-none"
+            ? "max-w-4xl liquid-glass"
+            : "max-w-5xl"
         )}
       >
         <div className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">

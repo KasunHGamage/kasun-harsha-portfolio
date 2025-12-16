@@ -90,7 +90,7 @@ export default function ContactSection() {
               render={({ field }) => (
                 <FormItem className="floating-label-container">
                   <FormControl>
-                    <Input {...field} className={cn("peer", "floating-label-input")} />
+                    <Input placeholder=" " {...field} className={cn("peer", "floating-label-input")} />
                   </FormControl>
                   <FormLabel className="floating-label">Name</FormLabel>
                   <FormMessage />
@@ -103,7 +103,7 @@ export default function ContactSection() {
               render={({ field }) => (
                 <FormItem className="floating-label-container">
                   <FormControl>
-                    <Input type="email" {...field} className={cn("peer", "floating-label-input")} />
+                    <Input type="email" placeholder=" " {...field} className={cn("peer", "floating-label-input")} />
                   </FormControl>
                   <FormLabel className="floating-label">Email</FormLabel>
                   <FormMessage />
@@ -116,7 +116,7 @@ export default function ContactSection() {
               render={({ field }) => (
                 <FormItem className="floating-label-container">
                   <FormControl>
-                    <Textarea {...field} className={cn("peer min-h-[220px]", "floating-label-input")} />
+                    <Textarea placeholder=" " {...field} className={cn("peer min-h-[220px]", "floating-label-input")} />
                   </FormControl>
                   <FormLabel className="floating-label">Message</FormLabel>
                   <FormMessage />

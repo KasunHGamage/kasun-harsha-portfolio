@@ -44,7 +44,7 @@ The website emphasizes clarity, usability, performance, and smooth interactions.
 
 ## 🌐 Live Website
 
-👉 *(Add your live URL here when deployed)*
+👉 https://kasunharsha.com
 
 ---
 

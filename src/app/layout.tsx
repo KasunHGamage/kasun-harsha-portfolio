@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     images: ogImageUrl,
   },
   icons: {
-    icon: '/favicon.jpg',
+    icon: '/projects/favicon.ico',
   },
 };
 

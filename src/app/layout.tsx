@@ -2,6 +2,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import InnerLayout from './inner-layout';
+import { Analytics } from '@vercel/analytics/react';
 
 const siteUrl = "https://your-portfolio-url.com"; // Replace with your actual domain
 const ogImageUrl = `${siteUrl}/og-image.png`; // Replace with a path to your OG image
@@ -47,6 +48,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <InnerLayout>{children}</InnerLayout>
+        <Analytics />
       </body>
     </html>
   );

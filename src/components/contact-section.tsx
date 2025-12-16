@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import * as z from "zod";
 import { Check, Loader2, ArrowRight } from 'lucide-react';
 
@@ -50,6 +50,10 @@ export default function ContactSection() {
       message: "",
     },
   });
+  
+  const nameValue = useWatch({ control: form.control, name: 'name' });
+  const emailValue = useWatch({ control: form.control, name: 'email' });
+  const messageValue = useWatch({ control: form.control, name: 'message' });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
@@ -88,9 +92,12 @@ export default function ContactSection() {
               control={form.control}
               name="name"
               render={({ field }) => (
-                <FormItem className="floating-label-container">
+                <FormItem 
+                  className="floating-label-container"
+                  data-state={nameValue ? 'has-value' : 'empty'}
+                >
                   <FormControl>
-                    <Input placeholder=" " {...field} className={cn("peer", "floating-label-input")} />
+                    <Input {...field} className="floating-label-input" />
                   </FormControl>
                   <FormLabel className="floating-label">Name</FormLabel>
                   <FormMessage />
@@ -101,9 +108,12 @@ export default function ContactSection() {
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem className="floating-label-container">
+                <FormItem 
+                  className="floating-label-container"
+                  data-state={emailValue ? 'has-value' : 'empty'}
+                >
                   <FormControl>
-                    <Input type="email" placeholder=" " {...field} className={cn("peer", "floating-label-input")} />
+                    <Input type="email" {...field} className="floating-label-input" />
                   </FormControl>
                   <FormLabel className="floating-label">Email</FormLabel>
                   <FormMessage />
@@ -114,9 +124,12 @@ export default function ContactSection() {
               control={form.control}
               name="message"
               render={({ field }) => (
-                <FormItem className="floating-label-container">
+                <FormItem 
+                  className="floating-label-container"
+                  data-state={messageValue ? 'has-value' : 'empty'}
+                >
                   <FormControl>
-                    <Textarea placeholder=" " {...field} className={cn("peer min-h-[220px]", "floating-label-input")} />
+                    <Textarea {...field} className="min-h-[220px] floating-label-input" />
                   </FormControl>
                   <FormLabel className="floating-label">Message</FormLabel>
                   <FormMessage />

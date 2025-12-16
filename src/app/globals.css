@@ -54,27 +54,33 @@
 /* Custom styles for floating labels */
 @layer components {
   .floating-label-container {
-    @apply relative;
+      @apply relative;
   }
 
   .floating-label-input {
-    @apply h-16 pt-6; /* Taller input for label room */
-  }
-
-  .floating-label-input::placeholder {
-    @apply text-transparent;
+      @apply h-16 pt-6;
   }
 
   .floating-label {
-    @apply absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all duration-200 ease-in-out pointer-events-none;
-    @apply peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base;
-    @apply peer-focus:top-4 peer-focus:text-xs peer-focus:text-primary;
-    @apply peer-[:not(:placeholder-shown)]:top-4 peer-[:not(:placeholder-shown)]:text-xs;
+      @apply absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground transition-all duration-300 pointer-events-none;
+      transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   }
+
+  /* When input is focused OR has value (via data-state), float the label up */
+  .floating-label-input:focus ~ .floating-label,
+  .floating-label-container[data-state="has-value"] .floating-label {
+      @apply top-4 text-xs;
+  }
+
+  /* Make label primary color on focus */
+  .floating-label-input:focus ~ .floating-label {
+      @apply text-primary;
+  }
+
 
   .transition-all {
     transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
     transition-duration: 300ms;
   }
 

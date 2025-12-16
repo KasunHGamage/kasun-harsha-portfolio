@@ -14,6 +14,7 @@ export default function AboutSection() {
                 enableBlur={true}
                 baseRotation={5}
                 blurStrength={20}
+                wordAnimationEnd="center center+=10%"
             >
                 {`I design and build user-focused digital experiences by combining thoughtful UI/UX design with modern web development to create fast, intuitive, and scalable products. Every decision is guided by simplicity, usability, and attention to detail, ensuring each interface feels natural, purposeful, and easy to use while solving real user problems`}
             </ScrollReveal>

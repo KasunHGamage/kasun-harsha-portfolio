@@ -9,7 +9,7 @@ import { socialLinks } from '@/lib/data';
 
 export default function ContactSection() {
   const linkedInUrl = socialLinks.find(link => link.name === 'LinkedIn')?.url || '#';
-  const email = 'hello@kasunharsha.com'; // Replace with your actual email
+  const email = 'kasunharshagamage@gmail.com'; // Replace with your actual email
 
   return (
     <motion.div

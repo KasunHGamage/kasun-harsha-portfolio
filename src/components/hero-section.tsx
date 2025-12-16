@@ -36,10 +36,10 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col items-center justify-center text-center bg-background text-foreground"
+      className="relative flex min-h-[95vh] flex-col items-center justify-center text-center bg-background text-foreground"
     >
       <motion.div
-        className="container mx-auto px-4 max-w-4xl"
+        className="container mx-auto px-4 max-w-4xl -mt-16"
         variants={containerVariants}
         initial="hidden"
         animate="visible"

@@ -37,7 +37,7 @@ export default function HeroSection() {
   return (
     <Section
       id="home"
-      className="relative flex items-center justify-center text-center overflow-hidden bg-background text-foreground"
+      className="relative flex items-center justify-center text-center overflow-hidden bg-background text-foreground pt-16"
     >
       <motion.div
         className="container mx-auto px-4 max-w-4xl"

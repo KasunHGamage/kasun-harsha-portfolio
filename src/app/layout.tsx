@@ -2,7 +2,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import InnerLayout from './inner-layout';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 
 const siteUrl = "https://your-portfolio-url.com"; // Replace with your actual domain
 const ogImageUrl = `${siteUrl}/og-image.png`; // Replace with a path to your OG image

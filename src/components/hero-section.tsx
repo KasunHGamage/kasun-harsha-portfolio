@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
-import { Section } from './section';
 import ScrollIndicator from './scroll-indicator';
 import { socialLinks } from '@/lib/data';
 
@@ -35,9 +34,9 @@ const itemVariants = {
 export default function HeroSection() {
   const linkedInUrl = socialLinks.find(link => link.name === 'LinkedIn')?.url || '#';
   return (
-    <Section
+    <section
       id="home"
-      className="relative flex items-center justify-center text-center bg-background text-foreground"
+      className="relative flex min-h-screen flex-col items-center justify-center text-center bg-background text-foreground"
     >
       <motion.div
         className="container mx-auto px-4 max-w-4xl"
@@ -79,6 +78,6 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
       <ScrollIndicator />
-    </Section>
+    </section>
   );
 }

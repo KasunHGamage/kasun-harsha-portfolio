@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -13,11 +14,11 @@ import { Separator } from '@/components/ui/separator';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const activeSection = useScrollSpy(navLinks.map(link => link.id));
 
   useEffect(() => {
     const handleScroll = () => {
-      // Trigger animation after scrolling 50px
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -27,23 +28,30 @@ export default function Header() {
   const navItems = (
     <>
       {navLinks.map((link) => (
-        <li key={link.name} className="relative">
+        <li 
+          key={link.name} 
+          className="relative"
+          onMouseEnter={() => setHoveredItem(link.id)}
+          onMouseLeave={() => setHoveredItem(null)}
+        >
           <Link href={link.href} passHref>
             <Button
               variant="ghost"
               className={cn(
-                "text-foreground/60 hover:text-foreground transition-colors",
-                activeSection === link.id && "text-foreground"
+                "relative z-10 transition-colors duration-300",
+                activeSection === link.id || hoveredItem === link.id
+                  ? "text-foreground"
+                  : "text-foreground/60 hover:text-foreground"
               )}
             >
               {link.name}
             </Button>
           </Link>
-          {activeSection === link.id && (
-            <motion.div
-              layoutId="active-section-indicator"
-              className="absolute bottom-1 left-0 right-0 h-0.5 bg-primary"
-              transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+          {(activeSection === link.id || hoveredItem === link.id) && (
+            <motion.span
+              layoutId="header-nav-bubble"
+              className="absolute inset-0 z-0 liquid-bubble"
+              transition={{ type: 'spring', stiffness: 400, damping: 35 }}
             />
           )}
         </li>
@@ -77,7 +85,7 @@ export default function Header() {
           
           <div className="flex items-center space-x-2">
             <nav className="hidden md:block">
-              <ul className="flex items-baseline space-x-2">
+              <ul className="flex items-baseline space-x-1">
                 {navItems}
               </ul>
             </nav>

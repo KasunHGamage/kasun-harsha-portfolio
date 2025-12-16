@@ -11,7 +11,7 @@ export function Section({ children, className, id }: SectionProps) {
     <section 
       id={id} 
       className={cn(
-        "relative min-h-screen flex flex-col justify-center pt-24 sm:pt-32 pb-16 sm:pb-24",
+        "relative min-h-screen flex flex-col justify-center pt-16 sm:pt-24",
         className
       )}
     >

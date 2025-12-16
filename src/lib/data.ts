@@ -1,3 +1,4 @@
+
 import { Figma, Component, Database } from 'lucide-react';
 
 export const navLinks = [
@@ -32,7 +33,7 @@ export const projects = [
     tech: ['React', 'Framer Motion', 'Stripe'],
     image: 'projectGameCards',
     caseStudyUrl: '/work/new-game-cards-ecommerce',
-    liveUrl: '#',
+    liveUrl: 'https://newgamecards.com/',
   },
 ];
 

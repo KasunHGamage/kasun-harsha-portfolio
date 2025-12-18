@@ -31,23 +31,23 @@ export default function WorkSection() {
       </motion.div>
       
       <div className="relative mt-16">
-        <div className="absolute top-0 bottom-0 left-0 w-8 bg-gradient-to-r from-secondary to-transparent z-10 pointer-events-none -ml-4" />
-        <div className="flex justify-center">
+        <div className="absolute top-0 bottom-0 left-0 w-8 bg-gradient-to-r from-secondary to-transparent z-10 pointer-events-none -ml-4 hidden md:block" />
+        <div className="md:flex md:justify-center">
             <motion.div 
-              className="flex overflow-x-auto pb-8 space-x-8 no-scrollbar -mx-4 px-4"
+              className="flex flex-col space-y-8 md:flex-row md:space-y-0 md:overflow-x-auto md:pb-8 md:space-x-8 no-scrollbar md:-mx-4 md:px-4"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.1 }}
             >
               {projects.map((project, index) => (
-                <div key={index} className="flex-shrink-0 w-[380px]">
+                <div key={index} className="md:flex-shrink-0 md:w-[380px]">
                   <ProjectCard project={project} />
                 </div>
               ))}
             </motion.div>
         </div>
-        <div className="absolute top-0 bottom-0 right-0 w-8 bg-gradient-to-l from-secondary to-transparent z-10 pointer-events-none -mr-4" />
+        <div className="absolute top-0 bottom-0 right-0 w-8 bg-gradient-to-l from-secondary to-transparent z-10 pointer-events-none -mr-4 hidden md:block" />
       </div>
     </div>
   );

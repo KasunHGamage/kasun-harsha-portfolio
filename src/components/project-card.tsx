@@ -57,7 +57,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             ))}
           </div>
         </CardContent>
-        <CardFooter className="p-6 pt-0 flex items-center gap-6">
+        <CardFooter className="p-6 pt-0 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
            <Link href={project.caseStudyUrl} className="group/link inline-flex items-center text-primary font-medium">
               View Case Study
               <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />

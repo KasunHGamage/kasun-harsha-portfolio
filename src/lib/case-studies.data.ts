@@ -7,6 +7,7 @@ export type CaseStudy = {
     heroImage: string;
     overview: {
       problem: string;
+      problemImage?: string;
       goals: string[];
       role: string;
     };
@@ -14,6 +15,7 @@ export type CaseStudy = {
       research: string;
       uxStrategy: string;
       designDecisions: string;
+      comparisonImage?: string;
     };
     designAndDevelopment: {
       uiApproach: string;
@@ -24,6 +26,7 @@ export type CaseStudy = {
       results: string;
       learnings: string;
       finalThoughts: string;
+      finalImage?: string;
     };
   };
   
@@ -36,6 +39,7 @@ export type CaseStudy = {
         heroImage: 'mysltHero',
         overview: {
           problem: 'The existing MySLT app provides essential functionality, but the experience often feels dense and difficult to scan, especially during quick, task-focused usage. Key issues observed: Important information such as remaining data and active packages lacks clear visual priority. Screens present too much information at once, increasing cognitive load. Primary actions are available, but not always easy to identify at a glance.',
+          problemImage: 'mysltProblem',
           goals: [
             'Clarify information hierarchy so users can immediately understand their account status.',
             'Reduce visual clutter to support faster scanning and decision-making.',
@@ -47,6 +51,7 @@ export type CaseStudy = {
           research: 'The project is a personal UX/UI redesign case study created for portfolio purposes. The goal was to improve clarity, information hierarchy, and usability across core screens, while keeping the experience familiar to existing users.',
           uxStrategy: 'This project focuses on refining existing screens, not adding new features. The approach was to reorganize content based on importance and usage frequency, use spacing, alignment, and typography to guide attention, and simplify layouts while preserving familiarity for current users.',
           designDecisions: 'Key UX improvements focused on clearer hierarchy by surfacing primary information like data usage immediately. Layouts were cleaned by minimizing non-essential elements. Actions were grouped and placed consistently to reduce cognitive effort.',
+          comparisonImage: 'mysltBeforeAfter',
         },
         designAndDevelopment: {
           uiApproach: 'The visual design follows a light, modern, and restrained UI style, suitable for a national ISP product. It features light backgrounds with generous white space, selective use of SLT Mobitel brand colors for emphasis, a clear typographic hierarchy, and subtle depth instead of heavy decoration.',
@@ -57,6 +62,7 @@ export type CaseStudy = {
           results: 'This redesign demonstrates how improving structure, hierarchy, and clarity can significantly enhance the usability of a complex utility app—without altering its core functionality.',
           learnings: 'The project reinforces a design philosophy of focusing on clarity first, then supporting it with thoughtful visual design to create intuitive and effective user experiences.',
           finalThoughts: 'This is an independent redesign concept created for portfolio purposes only and is not affiliated with or endorsed by SLT-Mobitel.',
+          finalImage: 'mysltFinal',
         },
       },
     {

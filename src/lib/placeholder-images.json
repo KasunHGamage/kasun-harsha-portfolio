@@ -21,37 +21,19 @@
     {
       "id": "mysltProblem",
       "description": "Image showing the problem in the old MySLT app",
-      "imageUrl": "https://images.unsplash.com/photo-1654764450213-f9ac2d1f307a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhcHAlMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzY2MTEzMDM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/projects/Myslt/2.png",
       "imageHint": "app interface"
-    },
-    {
-      "id": "mysltGoals",
-      "description": "Image representing the design goals",
-      "imageUrl": "https://images.unsplash.com/photo-1760388307429-17300d7b320f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjbGVhbiUyMGhpZXJhcmNoeXxlbnwwfHx8fDE3NjYxMjc0MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "clean hierarchy"
     },
     {
       "id": "mysltBeforeAfter",
       "description": "Before and after comparison of the app",
-      "imageUrl": "https://images.unsplash.com/photo-1760597371579-da4fd99d44ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxhcHAlMjBjb21wYXJpc29ufGVufDB8fHx8MTc2NjEyNzQwN3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/projects/Myslt/3.png",
       "imageHint": "app comparison"
-    },
-    {
-      "id": "mysltImprovements",
-      "description": "Image showing key UX improvements",
-      "imageUrl": "https://images.unsplash.com/photo-1760531953684-769354b5ebb4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxkYXRhJTIwdXNhZ2V8ZW58MHx8fHwxNzY2MTI3NDA3fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "data usage"
-    },
-    {
-      "id": "mysltVisuals",
-      "description": "Image showing the visual direction",
-      "imageUrl": "https://picsum.photos/seed/myslt7/1200/750",
-      "imageHint": "visual consistency"
     },
     {
       "id": "mysltFinal",
       "description": "Final showcase of the redesigned screens",
-      "imageUrl": "https://images.unsplash.com/photo-1723705027411-9bfc3c99c2e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhcHAlMjBzaG93Y2FzZXxlbnwwfHx8fDE3NjYxMjc0MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/projects/Myslt/4.png",
       "imageHint": "app showcase"
     },
     {

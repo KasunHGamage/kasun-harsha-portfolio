@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -37,6 +38,32 @@ const itemVariants = {
       ease: [0.6, 0.05, 0.01, 0.9],
     },
   },
+};
+
+const CaseStudyImage = ({ imageId, alt }: { imageId?: string; alt: string }) => {
+  if (!imageId) return null;
+
+  const image = PlaceHolderImages.find(p => p.id === imageId) as ImagePlaceholder;
+  if (!image) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className="relative aspect-[16/10] w-full rounded-xl overflow-hidden shadow-lg shadow-black/5 mt-8"
+    >
+      <Image
+        src={image.imageUrl}
+        alt={alt}
+        width={1200}
+        height={750}
+        data-ai-hint={image.imageHint}
+        className="object-cover"
+      />
+    </motion.div>
+  );
 };
 
 const CaseStudySection = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -94,6 +121,7 @@ export default function CaseStudyTemplate({ project, nextProject, prevProject }:
           <div>
             <h4 className="font-semibold text-foreground/90 mb-2 text-lg">The Problem</h4>
             <p>{project.overview.problem}</p>
+            <CaseStudyImage imageId={project.overview.problemImage} alt="The problem" />
           </div>
           <div>
             <h4 className="font-semibold text-foreground/90 mb-2 text-lg">Project Goals</h4>
@@ -119,6 +147,7 @@ export default function CaseStudyTemplate({ project, nextProject, prevProject }:
             <div>
                 <h4 className="font-semibold text-foreground/90 mb-2 text-lg">Design Decisions</h4>
                 <p>{project.process.designDecisions}</p>
+                <CaseStudyImage imageId={project.process.comparisonImage} alt="Comparison" />
             </div>
         </CaseStudySection>
         
@@ -149,6 +178,7 @@ export default function CaseStudyTemplate({ project, nextProject, prevProject }:
              <div>
                 <h4 className="font-semibold text-foreground/90 mb-2 text-lg">Final Thoughts</h4>
                 <p>{project.outcome.finalThoughts}</p>
+                 <CaseStudyImage imageId={project.outcome.finalImage} alt="Final result" />
             </div>
         </CaseStudySection>
 

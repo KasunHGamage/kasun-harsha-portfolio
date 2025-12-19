@@ -40,7 +40,7 @@ export type CaseStudy = {
         heroImage: 'mysltHero',
         overview: {
           problem: 'The existing MySLT app provides essential functionality, but the experience often feels dense and difficult to scan, especially during quick, task-focused usage. Key issues observed: Important information such as remaining data and active packages lacks clear visual priority. Screens present too much information at once, increasing cognitive load. Primary actions are available, but not always easy to identify at a glance.',
-          problemImage: 'mysltHero',
+          problemImage: 'mysltProblem',
           goals: [
             'Clarify information hierarchy so users can immediately understand their account status.',
             'Reduce visual clutter to support faster scanning and decision-making.',
@@ -138,7 +138,7 @@ export type CaseStudy = {
         techStack: ['React', 'Framer Motion', 'Stripe', 'E-commerce'],
         heroImage: 'projectGameCards',
         overview: {
-          problem: 'Most collectible e-commerce websites follow generic shopping patterns. While functional, they often feel transactional and fail to capture the emotion, discovery, and excitement that collectors associate with trading cards. As a result: Products feel static and interchangeable, Browsing lacks a sense of exploration, The experience does not reflect the hobby itself. The challenge was to design an e-commerce experience that feels alive, expressive, and memorable, without sacrificing usability or performance.',
+          problem: 'Most collectible e-commerce websites follow generic shopping patterns. While functional, they often feel transactional and fail to capture the emotion, discovery, and excitement that collectors associate with trading cards. As a result: Products feel static and interchangeable, Browsing lacks a sense of exploration, The experience does not reflect the hobby itself. The challenge was to design an experience that feels alive, expressive, and memorable, without sacrificing usability or performance.',
           goals: [
             'Design an immersive shopping experience tailored to card collectors',
             'Make the cards themselves the visual and interactive focus',
@@ -161,7 +161,7 @@ export type CaseStudy = {
         outcome: {
           results: 'Strong positive feedback on visual design and interaction quality. 25% increase in average session duration compared to industry benchmarks. 10% uplift in conversion rate versus the previous generic store design.',
           learnings: 'This project reinforced the importance of balancing animation and performance. Thoughtful motion design can significantly enhance engagement—but only when implemented with restraint and technical care.',
-          finalThoughts: 'New Game Cards demonstrates how e-commerce experiences can move beyond basic transactions. By combining strong UI/UX principles with modern frontend development, the project shows that engaging design and smooth interaction can directly improve both user enjoyment and business results.',
+          finalThoughts: 'New Game Cards demonstrates how e-commerce experiences can move beyond transactions. By combining strong UI/UX principles with modern frontend development, the project shows that engaging design and smooth interaction can directly improve both user enjoyment and business results.',
         },
       }
   ];
@@ -171,5 +171,7 @@ export type CaseStudy = {
 
 
 
+
+    
 
     

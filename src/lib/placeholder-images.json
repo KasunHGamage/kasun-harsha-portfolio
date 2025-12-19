@@ -9,13 +9,13 @@
     {
       "id": "projectMySLT",
       "description": "Thumbnail for MySLT Redesign project",
-      "imageUrl": "https://images.unsplash.com/photo-1654764450213-f9ac2d1f307a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhcHAlMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzY2MTEzMDM4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/projects/Myslt/1.png",
       "imageHint": "app interface"
     },
     {
       "id": "mysltHero",
       "description": "Hero image for MySLT Redesign",
-      "imageUrl": "https://images.unsplash.com/photo-1738640679960-58d445857945?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhcHAlMjBob21lc2NyZWVufGVufDB8fHx8MTc2NjEyNzQwOHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "/projects/Myslt/1.png",
       "imageHint": "app homescreen"
     },
     {

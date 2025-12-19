@@ -21,6 +21,7 @@ export type CaseStudy = {
       uiApproach: string;
       developmentHighlights: string;
       responsiveness: string;
+      image?: string;
     };
     outcome: {
       results: string;
@@ -57,6 +58,7 @@ export type CaseStudy = {
           uiApproach: 'The visual design follows a light, modern, and restrained UI style, suitable for a national ISP product. It features light backgrounds with generous white space, selective use of SLT Mobitel brand colors for emphasis, a clear typographic hierarchy, and subtle depth instead of heavy decoration.',
           developmentHighlights: 'As a conceptual design project, the focus was on UI/UX strategy and visual execution in Figma rather than code implementation. The design system was built to be easily translatable to React Native or native development environments.',
           responsiveness: 'The designs were created with a mobile-first approach, ensuring that layouts, typography, and touch targets were optimized for both Android and iOS devices of various sizes.',
+          image: 'mysltBeforeAfter'
         },
         outcome: {
           results: 'This redesign demonstrates how improving structure, hierarchy, and clarity can significantly enhance the usability of a complex utility app—without altering its core functionality.',
@@ -168,3 +170,6 @@ export type CaseStudy = {
     
 
 
+
+
+    

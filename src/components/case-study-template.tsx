@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import Image from 'next/image';
@@ -163,6 +164,7 @@ export default function CaseStudyTemplate({ project, nextProject, prevProject }:
             <div>
                 <h4 className="font-semibold text-foreground/90 mb-2 text-lg">Performance & Responsiveness</h4>
                 <p>{project.designAndDevelopment.responsiveness}</p>
+                <CaseStudyImage imageId={project.designAndDevelopment.image} alt="Design and Development" />
             </div>
         </CaseStudySection>
 
@@ -226,3 +228,5 @@ export default function CaseStudyTemplate({ project, nextProject, prevProject }:
     </div>
   );
 }
+
+    

@@ -58,7 +58,7 @@ export type CaseStudy = {
           uiApproach: 'The visual design follows a light, modern, and restrained UI style, suitable for a national ISP product. It features light backgrounds with generous white space, selective use of SLT Mobitel brand colors for emphasis, a clear typographic hierarchy, and subtle depth instead of heavy decoration.',
           developmentHighlights: 'As a conceptual design project, the focus was on UI/UX strategy and visual execution in Figma rather than code implementation. The design system was built to be easily translatable to React Native or native development environments.',
           responsiveness: 'The designs were created with a mobile-first approach, ensuring that layouts, typography, and touch targets were optimized for both Android and iOS devices of various sizes.',
-          image: 'mysltBeforeAfter'
+          image: 'mysltHero'
         },
         outcome: {
           results: 'This redesign demonstrates how improving structure, hierarchy, and clarity can significantly enhance the usability of a complex utility app—without altering its core functionality.',
@@ -122,7 +122,7 @@ export type CaseStudy = {
       },
       designAndDevelopment: {
         uiApproach: 'The interface was designed to be clean, calm, and trustworthy: Color Palette: Medical Blue (#0D47A1) for credibility, Soft Blue (#E3F2FD) for visual balance, White backgrounds to reduce cognitive load. Typography: Inter for high readability across all devices. Mobile-First Design: Cart and checkout flows optimized for small screens, Strict control of spacing and overflow to eliminate horizontal scrolling.',
-        developmentHighlights: 'This project required more than standard page building: Modern Layout System: Migrated legacy layouts to Elementor Flexbox Containers for better performance and responsiveness. Scoped CSS Architecture: Solved style-leakage issues by implementing isolated CSS wrappers (e.g., .subscribe-page-wrapper) to allow unique landing pages without affecting global styles. Performance Optimization: Reduced plugin bloat by hand-coding custom HTML/CSS widgets for critical forms, improving load times and maintainability. Marketing & Payments: Integrated Brevo for email automation and Stripe for secure digital transactions.',
+        developmentHighlights: 'This project required more than standard page building: Modern Layout System: Migrated legacy layouts to Elementor Flexbox Containers for better performance and responsiveness. Scoped CSS Architecture: Solved style-leakage issues by implementing isolated CSS wrappers (e.g., .subscribe-page-wrapper) to allow unique landing pages without affecting global styles. Performance Optimization: Reduced plugin bloat by hand-coding custom HTML/CSS widgets for critical forms, improving load times and maintainability. Marketing &amp; Payments: Integrated Brevo for email automation and Stripe for secure digital transactions.',
         responsiveness: 'A mobile-first approach guided every design decision. The platform was tested across devices to ensure: Smooth browsing on mobile, Fast checkout experience, Consistent layouts across screen sizes. All horizontal scrolling issues were resolved through careful CSS management and layout constraints.',
       },
       outcome: {

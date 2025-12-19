@@ -39,7 +39,7 @@ export type CaseStudy = {
         heroImage: 'mysltHero',
         overview: {
           problem: 'The existing MySLT app provides essential functionality, but the experience often feels dense and difficult to scan, especially during quick, task-focused usage. Key issues observed: Important information such as remaining data and active packages lacks clear visual priority. Screens present too much information at once, increasing cognitive load. Primary actions are available, but not always easy to identify at a glance.',
-          problemImage: 'mysltProblem',
+          problemImage: 'mysltHero',
           goals: [
             'Clarify information hierarchy so users can immediately understand their account status.',
             'Reduce visual clutter to support faster scanning and decision-making.',
@@ -166,4 +166,5 @@ export type CaseStudy = {
   
 
     
+
 

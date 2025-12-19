@@ -12,6 +12,13 @@ export const roles = ['UI/UX Designer', 'Frontend Developer', 'Product-Focused C
 
 export const projects = [
   {
+    title: 'MySLT Mobile App Redesign',
+    description: 'Improving clarity, hierarchy, and user experience for a national ISP app.',
+    tech: ['UX/UI Design', 'Case Study', 'Mobile App'],
+    image: 'projectMySLT',
+    caseStudyUrl: '/work/myslt-redesign',
+  },
+  {
     title: 'Rent Hub - Vehicle Rental App',
     description: 'A sleek mobile app for vehicle rentals, focused on a seamless user experience.',
     tech: ['Figma', 'React Native', 'MongoDB'],

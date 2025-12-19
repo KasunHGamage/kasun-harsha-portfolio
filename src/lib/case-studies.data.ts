@@ -29,6 +29,37 @@ export type CaseStudy = {
   
   export const caseStudies: CaseStudy[] = [
     {
+        slug: 'myslt-redesign',
+        title: 'MySLT Mobile App Redesign',
+        shortDescription: 'An independent redesign concept focused on improving clarity, hierarchy, and user experience for a national ISP’s mobile application.',
+        techStack: ['UX/UI Design', 'Case Study', 'Mobile App', 'Figma'],
+        heroImage: 'mysltHero',
+        overview: {
+          problem: 'The existing MySLT app provides essential functionality, but the experience often feels dense and difficult to scan, especially during quick, task-focused usage. Key issues observed: Important information such as remaining data and active packages lacks clear visual priority. Screens present too much information at once, increasing cognitive load. Primary actions are available, but not always easy to identify at a glance.',
+          goals: [
+            'Clarify information hierarchy so users can immediately understand their account status.',
+            'Reduce visual clutter to support faster scanning and decision-making.',
+            'Improve consistency across screens to make interactions predictable and intuitive.'
+          ],
+          role: 'UX/UI Designer. This was an independent redesign concept for portfolio purposes.',
+        },
+        process: {
+          research: 'The project is a personal UX/UI redesign case study created for portfolio purposes. The goal was to improve clarity, information hierarchy, and usability across core screens, while keeping the experience familiar to existing users.',
+          uxStrategy: 'This project focuses on refining existing screens, not adding new features. The approach was to reorganize content based on importance and usage frequency, use spacing, alignment, and typography to guide attention, and simplify layouts while preserving familiarity for current users.',
+          designDecisions: 'Key UX improvements focused on clearer hierarchy by surfacing primary information like data usage immediately. Layouts were cleaned by minimizing non-essential elements. Actions were grouped and placed consistently to reduce cognitive effort.',
+        },
+        designAndDevelopment: {
+          uiApproach: 'The visual design follows a light, modern, and restrained UI style, suitable for a national ISP product. It features light backgrounds with generous white space, selective use of SLT Mobitel brand colors for emphasis, a clear typographic hierarchy, and subtle depth instead of heavy decoration.',
+          developmentHighlights: 'As a conceptual design project, the focus was on UI/UX strategy and visual execution in Figma rather than code implementation. The design system was built to be easily translatable to React Native or native development environments.',
+          responsiveness: 'The designs were created with a mobile-first approach, ensuring that layouts, typography, and touch targets were optimized for both Android and iOS devices of various sizes.',
+        },
+        outcome: {
+          results: 'This redesign demonstrates how improving structure, hierarchy, and clarity can significantly enhance the usability of a complex utility app—without altering its core functionality.',
+          learnings: 'The project reinforces a design philosophy of focusing on clarity first, then supporting it with thoughtful visual design to create intuitive and effective user experiences.',
+          finalThoughts: 'This is an independent redesign concept created for portfolio purposes only and is not affiliated with or endorsed by SLT-Mobitel.',
+        },
+      },
+    {
       slug: 'rent-hub',
       title: 'Rent Hub - Vehicle Rental App',
       shortDescription: 'Rent Hub is a mobile vehicle rental marketplace designed for the Sri Lankan market. It connects verified vehicle rental companies with travelers through a centralized platform focused on trust, pricing transparency, and a chat-first booking experience.',

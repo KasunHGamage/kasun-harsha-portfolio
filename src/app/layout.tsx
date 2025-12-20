@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import InnerLayout from './inner-layout';
 import { Analytics } from '@vercel/analytics/next';
 
-const siteUrl = "https://your-portfolio-url.com"; // Replace with your actual domain
+const siteUrl = "https://kasunharsha.com";
 const ogImageUrl = `${siteUrl}/og-image.png`; // Replace with a path to your OG image
 
 export const metadata: Metadata = {
@@ -38,6 +38,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Kasun Harsha',
+    url: 'https://kasunharsha.com',
+    jobTitle: 'UI/UX Designer & Frontend Developer',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'Sri Lanka',
+    },
+    sameAs: [
+      'https://www.linkedin.com/in/kasun-harsha-gamage-062721248/',
+      'https://github.com/KasunHGamage',
+    ],
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
        <head>
@@ -45,6 +61,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+
+        {/* JSON-LD Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className="font-body antialiased">
         <InnerLayout>{children}</InnerLayout>

@@ -3,7 +3,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
+import { motion, type HTMLMotionProps } from 'framer-motion';
 import { Menu, X, Linkedin } from 'lucide-react';
 import { navLinks, socialLinks } from '@/lib/data';
 import { Button } from '@/components/ui/button';
@@ -12,10 +13,16 @@ import { useScrollSpy } from '@/hooks/use-scroll-spy';
 import { cn } from '@/lib/utils';
 import { Separator } from '@/components/ui/separator';
 
+const MotionSpan = motion.span as React.FC<HTMLMotionProps<'span'> & { className?: string; layoutId?: string }>;
+
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const activeSection = useScrollSpy(navLinks.map(link => link.id));
+  const pathname = usePathname();
+
+  // Only track scroll sections for links that are hash-based (home page sections)
+  const sectionIds = navLinks.filter(l => l.href.startsWith('/#')).map(l => l.id);
+  const activeSection = useScrollSpy(sectionIds);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,11 +32,21 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Determine active state: page-route links use pathname, section links use scroll-spy
+  const isActive = (link: { href: string; id: string }) => {
+    if (link.href.startsWith('/#')) {
+      // section-based: only active when on the home page
+      return pathname === '/' && activeSection === link.id;
+    }
+    // page-route: active when pathname starts with the link href
+    return pathname.startsWith(link.href);
+  };
+
   const navItems = (
     <>
       {navLinks.map((link) => (
-        <li 
-          key={link.name} 
+        <li
+          key={link.name}
           className="relative"
           onMouseEnter={() => setHoveredItem(link.id)}
           onMouseLeave={() => setHoveredItem(null)}
@@ -39,7 +56,7 @@ export default function Header() {
               variant="ghost"
               className={cn(
                 "relative z-10 transition-colors duration-300",
-                activeSection === link.id || hoveredItem === link.id
+                isActive(link) || hoveredItem === link.id
                   ? "text-foreground"
                   : "text-foreground/60 hover:text-foreground"
               )}
@@ -47,8 +64,8 @@ export default function Header() {
               {link.name}
             </Button>
           </Link>
-          {(activeSection === link.id || hoveredItem === link.id) && (
-            <motion.span
+          {(isActive(link) || hoveredItem === link.id) && (
+            <MotionSpan
               layoutId="header-nav-bubble"
               className="absolute inset-0 z-0 liquid-bubble"
               transition={{ type: 'spring', stiffness: 400, damping: 35 }}
@@ -126,7 +143,15 @@ export default function Header() {
                         <li key={link.name}>
                           <SheetClose asChild>
                             <Link href={link.href} passHref>
-                              <Button variant="ghost" className="w-full justify-start text-lg">{link.name}</Button>
+                              <Button
+                                variant="ghost"
+                                className={cn(
+                                  "w-full justify-start text-lg",
+                                  isActive(link) && "text-primary font-semibold"
+                                )}
+                              >
+                                {link.name}
+                              </Button>
                             </Link>
                           </SheetClose>
                         </li>

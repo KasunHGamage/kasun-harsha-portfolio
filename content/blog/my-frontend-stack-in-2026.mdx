@@ -1,0 +1,177 @@
+---
+title: "My Frontend Stack in 2026"
+description: "The tools, frameworks, and workflows I use to ship production-grade frontend products — and why I chose them."
+date: "2026-03-20"
+updatedAt: "2026-03-29"
+category: "Development"
+tags: ["Frontend", "Next.js", "TypeScript", "React", "Developer Tools", "Tailwind CSS"]
+coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=630&fit=crop"
+tldr: "My production frontend stack in 2026 is Next.js 15 App Router, TypeScript in strict mode, and Tailwind CSS. Redux is gone — replaced by React primitives, React Context, and Zustand for complex cases. Forms are handled by React Hook Form + Zod. Deployment is Vercel + Supabase. Every choice here is based on what I actually ship with, not what's trending."
+tldrPoints:
+  - "Next.js 15 App Router with Server Components is the foundation — it changes how you think about data fetching entirely"
+  - "TypeScript strict mode eliminates an entire class of runtime bugs at the cost of slightly more upfront type definitions"
+  - "Tailwind CSS with clsx + tailwind-merge enables faster shipping without sacrificing design system consistency"
+  - "Redux is no longer necessary for most apps — React hooks and Zustand cover virtually every state management use case"
+  - "React Hook Form + Zod is the most ergonomic form validation solution in the React ecosystem"
+keyTakeaways:
+  - "Adopt Next.js App Router — Server Components fundamentally simplify data fetching architecture"
+  - "Enable TypeScript strict mode from day one — retrofitting it later is significantly more painful"
+  - "CSS transitions handle micro-interactions better than Framer Motion for hover/focus states"
+  - "Zod schema-first validation gives you runtime type safety AND TypeScript inference from a single definition"
+  - "The best stack is the one you know deeply — master your tools before chasing new ones"
+faq:
+  - question: "What is the best frontend stack in 2026?"
+    answer: "The most productive frontend stack for production applications in 2026 is Next.js 15 (App Router) with TypeScript in strict mode, Tailwind CSS, and Vercel deployment. For state management, React's built-in hooks handle most cases, with Zustand for more complex shared state. React Hook Form with Zod validation covers form handling. This stack offers excellent developer experience, strong performance, and a mature ecosystem."
+  - question: "Should I use Redux in 2026?"
+    answer: "For most modern React applications, Redux is no longer necessary. React's own primitives — useState, useReducer, and Context — handle the majority of state management needs. For complex shared state (e.g. optimistic UI, kanban-style interactions), Zustand is a lightweight and predictable alternative. Redux is still valid for very large-scale applications with complex state interactions, but that describes a small fraction of projects."
+  - question: "Why use Next.js App Router over the Pages Router?"
+    answer: "The App Router enables React Server Components, which run on the server and can fetch data directly without needing API endpoints. This eliminates a whole category of client-side data fetching complexity. Features like nested layouts (shared UI that persists across routes without re-rendering), generateStaticParams for SSG, and Server Actions for form handling all represent significant developer experience improvements over the Pages Router."
+  - question: "What is the difference between Tailwind CSS and CSS-in-JS solutions like styled-components?"
+    answer: "Tailwind CSS applies utility classes directly in JSX markup, eliminating context-switching between component files and style files. It enforces a consistent design system by constraining choices to predefined tokens (spacing, colours, typography). CSS-in-JS solutions like styled-components offer more isolation but add runtime overhead and complexity. In 2026, Tailwind with clsx/tailwind-merge provides the best balance of speed, consistency, and performance for most projects."
+---
+
+
+Developers love talking about their stack. I'm no exception — but I want to be practical here. Every choice I've made has a reason, usually learned the hard way. This is not aspirational. It's what I actually ship with.
+
+## The Foundation
+
+### Next.js 15 (App Router)
+
+I moved fully to the App Router in 2024 and haven't looked back. Server Components have genuinely changed how I think about data fetching — the mental model of "this component runs on the server, this one on the client" is powerful once it clicks.
+
+What I specifically love:
+- **Nested layouts** — shared UI that persists across routes without re-rendering
+- **`generateStaticParams`** — painless static generation for dynamic routes
+- **`server actions`** — form handling without building an API endpoint
+
+The turbopack dev server (now stable in Next.js 15) is also noticeably faster. Cold starts that used to take 4-5 seconds are down to under a second.
+
+### TypeScript (strict mode)
+
+I used to write TypeScript loosely — adding `any` whenever the types got complex. Strict mode forced me to be precise, and the resulting code is dramatically more maintainable.
+
+```typescript
+// Before: lazy typing
+const fetchPost = async (slug: any) => {
+  const data: any = await fetch(`/api/posts/${slug}`);
+  return data;
+};
+
+// After: strict, explicit, self-documenting
+interface BlogPost {
+  slug: string;
+  title: string;
+  publishedAt: Date;
+  content: string;
+}
+
+const fetchPost = async (slug: string): Promise<BlogPost> => {
+  const res = await fetch(`/api/posts/${slug}`);
+  if (!res.ok) throw new Error(`Post not found: ${slug}`);
+  return res.json() as Promise<BlogPost>;
+};
+```
+
+The second version is slightly more code. It also prevents an entire class of runtime bugs.
+
+### Tailwind CSS
+
+The argument against Tailwind — "it clutters your markup" — is valid. The argument for it: I ship faster, I don't context-switch between files, and the design system is baked in.
+
+I pair Tailwind with:
+- `clsx` + `tailwind-merge` for conditional class logic
+- A design tokens file for custom colours, spacing, and typography scales that Figma matches exactly
+
+## Animation
+
+### Framer Motion
+
+For complex UI animations — page transitions, gesture-based interactions, staggered list entrances — Framer Motion is still the best tool in the React ecosystem.
+
+```tsx
+<motion.div
+  initial={{ opacity: 0, y: 24 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+>
+  {children}
+</motion.div>
+```
+
+One thing I've learned: `cubic-bezier(0.22, 1, 0.36, 1)` is the Apple easing curve. It makes everything feel premium. I use it for almost every motion on this site.
+
+### CSS Transitions for Micro-interactions
+
+Not everything needs Framer Motion. Hover states, focus rings, colour changes — these are better handled with CSS transitions. It's lighter and avoids the JavaScript overhead.
+
+```css
+.button {
+  transition: all 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+```
+
+## State Management
+
+In 2026, I use:
+
+- **React `useState` / `useReducer`** — for local component state
+- **React Context** — for shared state within a subtree (theme, auth user)
+- **Server state via `fetch` + React cache** — for remote data in Server Components
+
+**I no longer use Redux.** For the kinds of apps I build, it's overkill. The new React model — with Server Components managing data and Client Components managing interactivity — removes most of the problems Redux was solving.
+
+The one exception: if I'm building something with complex optimistic UI (like a kanban board with drag-and-drop), I'll reach for Zustand. It's lightweight and predictable.
+
+## Forms
+
+### React Hook Form + Zod
+
+This combination is excellent. Zod gives you runtime validation with TypeScript inference — you define your schema once and get both the form validation logic and the TypeScript types for free.
+
+```typescript
+import { z } from 'zod';
+
+const contactSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  email: z.string().email('Please enter a valid email'),
+  message: z.string().min(10, 'Message must be at least 10 characters'),
+});
+
+type ContactForm = z.infer<typeof contactSchema>; // type derived automatically
+```
+
+## Tooling
+
+### VS Code + these extensions
+- **ESLint** + **Prettier** — non-negotiable
+- **Tailwind CSS IntelliSense** — autocomplete for class names
+- **Error Lens** — shows errors inline, no need to hover
+- **GitLens** — makes `git blame` a first-class citizen
+
+### Git workflow
+- Feature branches, always
+- Conventional commits (`feat:`, `fix:`, `chore:`)
+- PR descriptions that explain *why*, not *what*
+
+## Deployment
+
+**Vercel** for frontend. Zero-config Next.js deployment, preview environments on every PR, and edge functions that actually work.
+
+For databases: **Supabase** (Postgres + auth + realtime in one). For file storage: **Supabase Storage** or **Cloudinary** for image-heavy projects.
+
+## What I Deliberately Don't Use
+
+- **Redux** — solved by React's own primitives + Zustand for edge cases
+- **GraphQL** — REST is simpler for most projects; GraphQL's benefits show only at massive scale
+- **Styled Components / Emotion** — Tailwind + CSS modules cover my needs
+- **Create React App** — it's archived. Next.js or Vite.
+
+## Final Thought
+
+The best stack is the one you know deeply. I've seen projects fail not because of wrong technology choices, but because the team didn't understand the tools they were using.
+
+Pick a stack. Go deep. Master the fundamentals. The framework you choose matters far less than how well you use it.
+
+---
+
+*What's your frontend stack in 2026? Always curious what other developers are shipping with.*

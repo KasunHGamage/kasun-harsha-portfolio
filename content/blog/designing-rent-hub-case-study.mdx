@@ -1,0 +1,147 @@
+---
+title: "Designing Rent Hub: A Case Study"
+description: "How I designed a vehicle rental app from zero to prototype — the research, decisions, and lessons learned along the way."
+date: "2026-02-18"
+updatedAt: "2026-03-29"
+category: "Case Study"
+tags: ["Case Study", "UX Design", "Mobile App", "Figma", "Product Design", "User Research"]
+coverImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&h=630&fit=crop"
+tldr: "Rent Hub is a vehicle rental mobile app I designed from research to high-fidelity prototype over six months. The biggest UX insight: customers don't search by company, they search by location and date. A map-first discovery model, transparent pricing breakdown, and offline booking confirmation were the three decisions that had the highest measurable impact on usability."
+tldrPoints:
+  - "Vehicle rental in Sri Lanka is still managed via WhatsApp and phone calls — a major UX gap"
+  - "8 user interviews revealed the two biggest pain points: unknown availability and hidden pricing"
+  - "Map-first discovery reduced average time-to-booking by ~40% in user testing"
+  - "Transparent pricing and verified operator badges directly addressed the trust deficit users described"
+  - "The prototype achieved a 91% task completion rate and a System Usability Scale (SUS) score of 82 (Excellent)"
+keyTakeaways:
+  - "Always anchor your design decisions in direct user research — not stakeholder assumptions"
+  - "Progressive disclosure works: the map-first approach simplified a complex booking flow significantly"
+  - "Trust signals (verified badges, ratings, transparent pricing) are not decoration — they remove real conversion blockers"
+  - "Design for connectivity constraints early — offline caching for booking confirmations was a non-negotiable for the Sri Lankan context"
+  - "Bring operators and developers into the design process early — late-stage input creates expensive rework"
+faq:
+  - question: "What is Rent Hub and what problem does it solve?"
+    answer: "Rent Hub is a mobile app designed for the Sri Lankan vehicle rental market, where bookings are still managed informally via phone calls and WhatsApp. The app provides customers with real-time availability, transparent pricing, and self-service booking, while giving operators a structured dashboard to manage vehicles, bookings, and customer verification."
+  - question: "What design decisions had the biggest impact in Rent Hub?"
+    answer: "Three decisions stood out: (1) Map-first discovery, which reduced time-to-booking by ~40% compared to a list view in user testing. (2) Fully transparent pricing that shows daily rate, insurance, deposit, and total upfront — eliminating the hidden fees users complained about. (3) Offline-first booking confirmation, which caches booking details locally so users can show their confirmation without an internet connection."
+  - question: "What was the user research process for Rent Hub?"
+    answer: "I conducted 8 semi-structured user interviews — 5 with frequent vehicle renters and 3 with rental operators. Key themes from customers included unknown availability, hidden fees, and low trust in unknown operators. Operators highlighted double-bookings, the need for ID verification, and the value of upfront payment to reduce no-shows."
+  - question: "What were the usability testing results for Rent Hub?"
+    answer: "The high-fidelity prototype was tested with 12 participants across Colombo, Kandy, and Galle. The task completion rate (find and book a vehicle) was 91%. The average time to complete a booking was 3 minutes 20 seconds. The System Usability Scale (SUS) score was 82, which falls in the 'Excellent' range."
+---
+
+
+Rent Hub started as a side project. A friend who runs a small vehicle rental business complained that his customers were calling him at 11pm to ask if a van was available for next week. He was managing bookings on a WhatsApp group and a shared Google Sheet.
+
+That conversation became a six-month design journey.
+
+## The Problem
+
+Vehicle rental in Sri Lanka is predominantly informal. Most operators manage bookings manually — phone calls, WhatsApp, cash on pickup. The experience for customers is:
+
+1. Call the rental company
+2. Wait for them to "check availability"
+3. Call back if available
+4. Show up with cash
+
+There's no self-service. No transparency on pricing. No trust signals. No reviews.
+
+For the operators, it's equally painful — no booking history, no customer database, no automated reminders.
+
+**The goal:** Design a mobile app that brings the vehicle rental experience into the 21st century, for both customers and operators.
+
+## Research Phase
+
+### User Interviews
+
+I conducted 8 user interviews — 5 customers (frequent renters) and 3 rental operators.
+
+**Key customer insights:**
+- Biggest friction: not knowing if a vehicle is available without calling
+- Second biggest: uncertainty about final price (hidden fees)
+- Trust signals matter: photos, ratings, and a known brand beat unknown operators
+
+**Key operator insights:**
+- Double bookings are a real problem
+- They want to know who's renting — ID verification is critical
+- Payment upfront reduces no-shows dramatically
+
+### Competitive Analysis
+
+I analyzed three comparable apps: Yoogo (NZ), Hertz (global), and GOGO Sri Lanka. Key observations:
+
+- Yoogo: best mobile UX, but no local market context
+- Hertz: feature-complete but dated interface designed for web first
+- GOGO: local context but poor visual design and no customer reviews
+
+The gap: **a locally-contextualised app with modern UX standards**.
+
+## Information Architecture
+
+After the research phase, I mapped out the core user flows:
+
+```
+Customer Flow:
+Browse → Filter → Select Vehicle → Check Dates → Book → Pay → Pickup
+
+Operator Flow:
+Add Vehicle → Set Availability → View Bookings → Confirm → Track Returns
+```
+
+The app needed two distinct modes — **Customer** and **Operator** — with the complexity hidden appropriately for each.
+
+## Key Design Decisions
+
+### 1. Map-First Discovery
+
+Customers don't think "I need a van from Company X." They think "I need a van near Colombo 3 next Friday." So I made the map the primary discovery interface, with a card drawer below for filtering.
+
+This was controversial — stakeholders wanted a traditional list view. User testing proved the map reduced time-to-booking by ~40%.
+
+### 2. Transparent Pricing
+
+Every listing shows:
+- Daily rate
+- Insurance breakdown
+- Deposit amount
+- Total for selected dates
+
+No surprises at checkout. This was a deliberate trust-building decision backed by our research.
+
+### 3. Verified Badges
+
+Operators who complete identity verification get a "Verified" badge. Vehicles with more than 10 bookings get a "Popular" tag. These social proof signals were directly requested by users in our research.
+
+### 4. Offline-First Booking Confirmation
+
+In Sri Lanka, connectivity isn't always reliable. Once a booking is confirmed, we cache the full booking details locally. Users can show their confirmation even without internet access — critical for picking up a vehicle in a rural area.
+
+## Visual Design
+
+The design language was inspired by Airbnb and Grab — familiar patterns for the local market with high mobile literacy.
+
+**Palette:** Clean white base, with a deep teal (`#0D6F6F`) as the primary brand colour. Teal reads as trustworthy and professional without being corporate-blue.
+
+**Typography:** Inter for UI. Generous whitespace. Minimum 16px body text.
+
+**Component approach:** Card-based UI with 16px border radius, subtle shadows. Every interactive element has 48px minimum touch target.
+
+## Outcomes & Learnings
+
+The prototype was tested with 12 users across Colombo, Kandy, and Galle.
+
+- **Task completion rate:** 91% (find and book a vehicle)
+- **Average time to book:** 3 minutes 20 seconds
+- **SUS Score:** 82 (Excellent)
+
+### What I'd do differently
+
+1. **Earlier operator testing.** We validated the customer side thoroughly but brought in operators too late. Their workflow needed a significant second round of iteration.
+2. **Accessibility from day one.** I added contrast checks late in the process. Earlier integration would have saved significant rework.
+3. **Involve development earlier.** Some transitions I designed were technically expensive. Earlier dev collaboration would have shifted me toward equally good but more buildable solutions.
+
+## What's Next
+
+Rent Hub is currently in development as a React Native app, with the backend built on MongoDB and Node.js. I'm acting as both designer and frontend developer.
+
+If you'd like to see the full Figma prototype, [reach out](/contact) — I'm happy to walk through the design decisions in detail.

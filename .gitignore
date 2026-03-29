@@ -5,3 +5,5 @@ out/
 .env.local
 .env.production
 .DS_Store
+temp_auto_push.bat
+temp_interactive_push.bat

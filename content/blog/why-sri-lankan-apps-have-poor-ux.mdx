@@ -1,0 +1,107 @@
+---
+title: "Why Most Sri Lankan Apps Have Poor UX"
+description: "A critical look at the common UX failures in local mobile apps — and what designers can do to fix them."
+date: "2026-03-10"
+updatedAt: "2026-03-29"
+category: "UX"
+tags: ["UX Design", "Sri Lanka", "Mobile Apps", "Product Design", "Accessibility"]
+coverImage: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&h=630&fit=crop"
+tldr: "Most Sri Lankan apps fail their users not because of poor engineering, but because UX is treated as an afterthought. The root cause is cultural — design happens after the backend, there's no user research, and no iteration. The result is information overload, broken error states, tiny touch targets, technical copy, and zero accessibility."
+tldrPoints:
+  - "UX failures in Sri Lankan apps are systemic, not technical — they reflect culture and process"
+  - "Information overload, missing error states, and poor mobile design are the top failure patterns"
+  - "UI copy written by engineers reads like error logs — users need plain language, not error codes"
+  - "WCAG AA compliance is the accessibility baseline — most local apps don't come close"
+  - "The fix starts with treating design as a discipline, not a finishing step"
+keyTakeaways:
+  - "Apply progressive disclosure — show users only what they need right now, not everything at once"
+  - "Design every single error state with a human-readable message and a clear recovery action"
+  - "Enforce minimum 44×44px touch targets and test on real physical devices before shipping"
+  - "Have a non-technical person read every error message and UI label aloud before it ships"
+  - "Run a WCAG AA contrast audit as standard practice — Stark or Chrome DevTools both work"
+faq:
+  - question: "Why do most Sri Lankan apps have poor UX?"
+    answer: "The core issue is cultural and process-related, not technical. Design is treated as a decorative finishing step rather than a strategic discipline. Most teams lack dedicated UX research, usability testing, and iteration cycles. Short timelines, low design budgets, and the absence of user feedback loops all compound the problem."
+  - question: "What are the most common UX failures in Sri Lankan mobile apps?"
+    answer: "The five most common failures are: (1) information overload on the first screen with no visual hierarchy, (2) missing or poorly designed error states, (3) broken mobile responsiveness with touch targets too small to tap, (4) technical jargon in UI copy instead of plain language, and (5) complete absence of accessibility considerations like contrast and keyboard navigation."
+  - question: "How can designers improve UX in Sri Lankan apps?"
+    answer: "Start by advocating for user research before any design decisions. Document usability issues with evidence and link them to business costs (support calls, churn, lost revenue). Use accessibility auditing tools like Stark or Chrome DevTools. Push for usability testing with real users — even 5 sessions reveal most critical issues."
+  - question: "What is the minimum accessibility standard mobile apps should meet?"
+    answer: "WCAG AA compliance is the practical baseline. This covers a minimum 4.5:1 contrast ratio for normal text, descriptive alt text on images, minimum touch target sizes of 44×44px on mobile, and keyboard navigability for all interactive elements. Tools like Stark (Figma plugin) or axe (browser extension) can audit this automatically."
+---
+
+
+If you've ever used a Sri Lankan government service, a local bank app, or a telco's mobile client — you've probably felt it. That friction. That confusion. That moment where you tap a button and nothing happens, or worse, something happens but not what you expected.
+
+I've been fascinated by this problem for years. As someone who builds and designs digital products, I see these failures not as bugs, but as symptoms of something deeper.
+
+## The Problem Isn't Technical
+
+Sri Lankan developers are talented. Our engineering talent is genuinely world-class — we build products for Fortune 500 companies, contribute to open source, and run startups that get acquired globally.
+
+The problem is **culture, process, and priority**.
+
+Most local apps are built by teams who treat UI/UX as a finishing step — something you do *after* the backend is done. Design is often handed off to a junior developer as a ticket: "Make it look nice." There's no user research. No usability testing. No iteration.
+
+> "Good design is not about making something look beautiful. It's about making it work beautifully."
+
+## The 5 Most Common Failures
+
+### 1. Information Overload on First Screen
+
+Open most local banking apps, and you're greeted with 12 different options, 3 promotional banners, a news ticker, and a floating support button — all on one screen. The visual hierarchy is nonexistent.
+
+Users don't know where to look. They get overwhelmed and either call the help desk or give up.
+
+**Fix:** Apply progressive disclosure. Show the user what they need *right now*. Hide everything else behind a clear navigation pattern.
+
+### 2. No Error State Design
+
+Type the wrong password in most local apps and you get: a red border. Maybe. Sometimes nothing. Rarely do you get a clear, human-readable message explaining what went wrong and what to do next.
+
+Error states are the most neglected part of UI design, yet they're often the most critical moment in a user's journey.
+
+**Fix:** Design every error state. Explain what happened in plain language. Provide a clear recovery path.
+
+### 3. Broken Mobile Responsiveness
+
+Many apps were designed on a 375px iPhone frame in Figma, then handed to a developer who built it for desktop-first and "adapted" it for mobile. The result: misaligned buttons, overflowing text, touch targets that are 20px wide.
+
+**Fix:** Design mobile-first. Ensure minimum 44×44px touch targets. Test on real devices.
+
+### 4. Using Technical Language in UI Copy
+
+"ERR_AUTH_TOKEN_INVALID" is not a message for users. Neither is "Please ensure the form data adheres to the required validation schema."
+
+Copy matters. Users read text. When copy is written by engineers, it reads like error logs.
+
+**Fix:** Hire a UX writer, or at minimum, have a non-technical team member read every error message and UI label aloud.
+
+### 5. Ignoring Accessibility Entirely
+
+I've worked with apps that have white text on light grey backgrounds (1.5:1 contrast ratio), no keyboard navigation support, and images with no alt text. Accessibility isn't a nice-to-have — it's a legal requirement in many markets and a moral imperative everywhere.
+
+**Fix:** Use tools like Stark or the built-in accessibility audit in Chrome DevTools. Aim for WCAG AA compliance as a baseline.
+
+## Why Does This Happen?
+
+Several systemic reasons:
+
+- **No dedicated UX budget.** Design is not valued as a discipline — it's seen as decoration.
+- **No user research.** Teams build what stakeholders want, not what users need.
+- **Short timelines.** UX work is cut first when deadlines loom.
+- **No feedback loops.** Apps ship and disappear into maintenance mode without any data on how users actually use them.
+
+## What Can We Do?
+
+If you're a designer in Sri Lanka, fight for the user. Document your research. Make the business case for usability — show how poor UX costs money in support calls, churn, and lost revenue.
+
+If you're a developer, read about UX. Study apps you love. Ask *why* they feel good. Apply those principles.
+
+If you're a product manager or founder, invest in UX before launch. A ₹50,000 Figma audit before development saves ₹500,000 in rework after.
+
+The Sri Lankan tech ecosystem is growing fast. We're building more products, for more users, across more sectors than ever before. Now is the time to raise the bar.
+
+---
+
+*Have thoughts on this? I'd love to hear from designers and developers working on local products.*

@@ -110,3 +110,159 @@
     scrollbar-width: none;  /* Firefox */
   }
 }
+
+/* ─── Blog Prose Styles ──────────────────────────────────────── */
+@layer components {
+  .prose-blog {
+    @apply text-foreground/80 leading-relaxed;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+
+  /* Paragraphs */
+  .prose-blog p {
+    @apply mb-6 text-foreground/75 leading-[1.85];
+  }
+
+  /* Headings */
+  .prose-blog h2 {
+    @apply text-2xl font-bold text-foreground mt-12 mb-4 tracking-tight;
+    scroll-margin-top: 6rem;
+  }
+
+  .prose-blog h3 {
+    @apply text-xl font-semibold text-foreground mt-8 mb-3 tracking-tight;
+    scroll-margin-top: 6rem;
+  }
+
+  .prose-blog h4 {
+    @apply text-base font-semibold text-foreground mt-6 mb-2;
+    scroll-margin-top: 6rem;
+  }
+
+  /* Links */
+  .prose-blog a {
+    @apply text-primary underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-colors duration-150;
+  }
+
+  /* Strong & emphasis */
+  .prose-blog strong {
+    @apply font-semibold text-foreground;
+  }
+
+  .prose-blog em {
+    @apply italic text-foreground/70;
+  }
+
+  /* Blockquote */
+  .prose-blog blockquote {
+    @apply relative pl-5 my-8 text-foreground/60 italic;
+    border-left: 3px solid hsl(var(--primary));
+  }
+
+  .prose-blog blockquote p {
+    @apply mb-0 text-foreground/60;
+  }
+
+  /* Lists */
+  .prose-blog ul {
+    @apply mb-6 space-y-1.5 pl-5;
+    list-style: disc;
+  }
+
+  .prose-blog ol {
+    @apply mb-6 space-y-1.5 pl-5;
+    list-style: decimal;
+  }
+
+  .prose-blog li {
+    @apply text-foreground/75 leading-relaxed;
+  }
+
+  .prose-blog li::marker {
+    color: hsl(var(--primary) / 0.6);
+  }
+
+  /* Horizontal rule */
+  .prose-blog hr {
+    @apply my-12 border-border;
+  }
+
+  /* Inline code */
+  .prose-blog :not(pre) > code {
+    @apply bg-secondary text-foreground font-mono text-[0.85em] px-1.5 py-0.5 rounded-md;
+  }
+
+  /* Code blocks */
+  .prose-blog pre {
+    @apply bg-foreground/[0.04] border border-border rounded-xl overflow-x-auto my-8 p-5;
+  }
+
+  .prose-blog pre code {
+    @apply text-sm font-mono text-foreground/85 leading-relaxed;
+    background: transparent;
+    padding: 0;
+  }
+
+  /* Images */
+  .prose-blog img {
+    @apply w-full rounded-xl my-8 border border-border;
+  }
+
+  /* First paragraph lead style */
+  .prose-blog > p:first-of-type {
+    @apply text-lg text-foreground/70 leading-[1.75];
+  }
+
+  /* ── Heading anchor links (appended by rehype-autolink-headings) ── */
+  .prose-blog h2 a[data-heading-anchor],
+  .prose-blog h3 a[data-heading-anchor] {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.4rem;
+    opacity: 0;
+    color: hsl(var(--foreground) / 0.3);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.85em;
+    vertical-align: middle;
+    transition: opacity 0.15s ease;
+  }
+
+  .prose-blog h2 a[data-heading-anchor]::before,
+  .prose-blog h3 a[data-heading-anchor]::before {
+    content: '#';
+  }
+
+  .prose-blog h2:hover a[data-heading-anchor],
+  .prose-blog h3:hover a[data-heading-anchor] {
+    opacity: 1;
+  }
+}
+
+/* ─── Share + Feedback Button Utilities ─────────────────────── */
+@layer components {
+  .share-btn {
+    @apply inline-flex items-center justify-center h-7 w-7 rounded-full
+           bg-secondary text-foreground/50 hover:text-foreground hover:bg-secondary/80
+           transition-colors duration-150;
+  }
+
+  .helpful-btn {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium
+           border border-border text-foreground/60
+           hover:border-primary hover:text-primary hover:bg-primary/5
+           transition-all duration-150;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease forwards;
+  }
+}
+
+
